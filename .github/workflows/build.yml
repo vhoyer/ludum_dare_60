@@ -64,18 +64,30 @@ jobs:
           path: .godot
           key: ${{ github.workflow }}-${{ github.ref }}-${{ matrix.target }}
 
+      - name: Verify setup
+        run: godot --version
+
       - name: Build
         run: |
-          mkdir -v -p build/${{ matrix.target }}
-          EXPORT_DIR="$(readlink -f build)"
-          cd $PROJECT_PATH
-          case "${{ matrix.target }}" in
-            "windows"*) EXPORT_FILENAME="$EXPORT_NAME.exe";;
-            "linux"*) EXPORT_FILENAME="$EXPORT_NAME.x86_64";;
-            "web"*) EXPORT_FILENAME="index.html";;
-            *) exit 1;;
-          esac
-          godot --headless --verbose --export-release "${{ matrix.target }}" "$EXPORT_DIR/${{ matrix.target }}/$EXPORT_FILENAME"
+          for attempt in 1 2 3; do
+            mkdir -v -p build/${{ matrix.target }}
+            EXPORT_DIR="$(readlink -f build)"
+            cd $PROJECT_PATH
+            case "${{ matrix.target }}" in
+              "windows"*) EXPORT_FILENAME="$EXPORT_NAME.exe";;
+              "linux"*) EXPORT_FILENAME="$EXPORT_NAME.x86_64";;
+              "web"*) EXPORT_FILENAME="index.html";;
+              *) exit 1;;
+            esac
+            if timeout 600 godot --headless --verbose --export-release "${{ matrix.target }}" "$EXPORT_DIR/${{ matrix.target }}/$EXPORT_FILENAME"; then
+              break
+            fi
+            echo "Attempt $attempt/3 failed"
+            if [ "$attempt" -eq 3 ]; then
+              echo "All attempts exhausted, failing build"
+              exit 1
+            fi
+          done
 
       - name: Exported Files Check
         run: |
@@ -123,7 +135,7 @@ jobs:
           ls build
 
           echo "---- begin upload"
-          for channel in web_demo; do
+          for channel in web; do
             target_dir="build/${channel}"
 
             echo "-- uploading $channel..."
