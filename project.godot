@@ -1,0 +1,48 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="ludum_dare_60"
+run/main_scene="uid://bosgk23prc6ca"
+config/features=PackedStringArray("4.7")
+config/icon="res://assets/icon.svg"
+
+[autoload]
+
+GlobalBGM="*uid://c3g4ksp50okr7"
+StageManager="*uid://bn2wxfhk62jb3"
+SaveManager="*uid://cif12kgdyeewr"
+VHDStatus="*uid://pb8nfnts8jvp"
+CheatSystem="*uid://d1q0ynk0goke5"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/vhoyer_devkit/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://addons/": "gray",
+"res://assets/": "pink",
+"res://auto_loads/": "blue",
+"res://components/": "green",
+"res://stages/": "yellow"
+}
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+
+[vhoyer_devkit]
+
+save_manager/custom_empty_save_data_type="res://components/game_save_data/empty_game_save_data.gd"
+stage_manager/transition_scene="uid://dlmbkfb1rdfmd"

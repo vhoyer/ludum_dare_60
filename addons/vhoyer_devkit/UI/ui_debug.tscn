@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://wq57dpmione1"]
+
+[ext_resource type="Script" uid="uid://dkol6mtxhbma5" path="res://addons/vhoyer_devkit/UI/ui_debug.gd" id="1_a1bva"]
+
+[node name="UiDebug" type="CanvasLayer" unique_id=1951890624]
+script = ExtResource("1_a1bva")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1479120042]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 176.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 56
+theme_override_constants/margin_top = 56
+theme_override_constants/margin_right = 56
+theme_override_constants/margin_bottom = 56
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1531749006]
+layout_mode = 2

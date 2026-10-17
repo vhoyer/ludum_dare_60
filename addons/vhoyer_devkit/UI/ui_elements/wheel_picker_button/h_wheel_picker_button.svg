@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="16mm"
+   height="16mm"
+   viewBox="0 0 16 16"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="h_wheel_picker_button.svg"
+   inkscape:export-filename="h_wheel_picker_button.svg"
+   inkscape:export-xdpi="25.4"
+   inkscape:export-ydpi="25.4"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showguides="false"
+     inkscape:zoom="11.313709"
+     inkscape:cx="-3.8448931"
+     inkscape:cy="33.322407"
+     inkscape:window-width="2473"
+     inkscape:window-height="1360"
+     inkscape:window-x="-7"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg1"
+     showgrid="true">
+    <sodipodi:guide
+       position="0.99942217,15.766422"
+       orientation="1,0"
+       id="guide1"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="0.18706868,0.99936521"
+       orientation="0,-1"
+       id="guide2"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-0.11782226,14.999544"
+       orientation="0,-1"
+       id="guide3"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="14.999249,15.926918"
+       orientation="1,0"
+       id="guide4"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-2.6458333,2.8245768"
+       orientation="1,0"
+       id="guide5"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="7.9512682,4.9851545"
+       orientation="0,-1"
+       id="guide6"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="8.8867115,6.0141421"
+       orientation="0,-1"
+       id="guide7"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="6.9924388,8.1422757"
+       orientation="1,0"
+       id="guide8"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="9.0036419,7.5342375"
+       orientation="1,0"
+       id="guide9"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-8.7973956,10.493359"
+       orientation="0,-1"
+       id="guide11"
+       inkscape:locked="false" />
+    <inkscape:grid
+       id="grid19"
+       units="mm"
+       originx="0"
+       originy="0"
+       spacingx="0.49999999"
+       spacingy="0.49999999"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="2"
+       dotted="false"
+       gridanglex="30"
+       gridanglez="30"
+       visible="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="rect4"
+       style="fill:#8eef97;stroke-width:0.264583"
+       d="M 0.99999997,13 H 2.9999999 V 11 L 13,11 v 2 h 1.999249 L 15,15 0.99999997,15 Z"
+       sodipodi:nodetypes="ccccccccc" />
+  </g>
+  <g
+     inkscape:label="Rendered Gear Rack"
+     transform="matrix(1.4164922,0,0,1.4164922,0.27048336,3.2907599)"
+     id="g18">
+    <path
+       style="color:#000000;fill:#8eef97;-inkscape-stroke:none"
+       d="M 3.6918783,-1.6172061 0.51501637,1.5596558 3.6918783,4.7365177 4.7508323,3.6775637 2.6329243,1.5596558 4.7508323,-0.55825216 Z"
+       id="path18"
+       sodipodi:nodetypes="ccccccc" />
+  </g>
+  <g
+     inkscape:label="Rendered Gear Rack"
+     transform="matrix(-1.4164922,0,0,1.4164922,15.770206,3.3072964)"
+     id="g19">
+    <path
+       style="color:#000000;fill:#8eef97;-inkscape-stroke:none"
+       d="M 3.7206034,-1.6288804 0.54374149,1.5479815 3.7206034,4.7248434 4.7795574,3.6658895 2.6616494,1.5479815 4.7795574,-0.56992642 Z"
+       id="path19"
+       sodipodi:nodetypes="ccccccc" />
+  </g>
+</svg>

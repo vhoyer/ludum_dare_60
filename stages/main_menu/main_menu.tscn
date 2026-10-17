@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bosgk23prc6ca"]
+
+[ext_resource type="Script" uid="uid://7i1g42nagf2j" path="res://stages/main_menu/start_button.gd" id="1_6almw"]
+
+[node name="Main" type="CenterContainer" unique_id=1983816057]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartButton" type="Button" parent="." unique_id=303258699]
+layout_mode = 2
+text = "start! ;)"
+script = ExtResource("1_6almw")
+next_stage = "uid://boew20gyqimy6"

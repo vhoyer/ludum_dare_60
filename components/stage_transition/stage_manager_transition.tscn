@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dlmbkfb1rdfmd"]
+
+[ext_resource type="Script" uid="uid://ddthhas2siyla" path="res://components/stage_transition/stage_manager_transition.gd" id="1_txc1h"]
+[ext_resource type="Shader" uid="uid://bfqqeagfy0ct4" path="res://addons/vhoyer_devkit/StageManager/transition/universal_transition_shader.gdshader" id="2_fm78y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cq2q5"]
+shader = ExtResource("2_fm78y")
+shader_parameter/use_sprite_alpha = true
+shader_parameter/use_transition_texture = false
+shader_parameter/transition_type = 3
+shader_parameter/position = Vector2(0.5, 0.5)
+shader_parameter/invert = true
+shader_parameter/grid_size = Vector2(1, 1)
+shader_parameter/rotation_angle = 0.0
+shader_parameter/stagger = Vector2(0, 0)
+shader_parameter/stagger_frequency = Vector2i(2, 2)
+shader_parameter/flip_frequency = Vector2i(1, 1)
+shader_parameter/basic_feather = 0.0
+shader_parameter/use_mask_size = false
+shader_parameter/mask_size = Vector2(100, 100)
+shader_parameter/edges = 6
+shader_parameter/shape_feather = 0.1
+shader_parameter/sectors = 1
+shader_parameter/clock_feather = 0.50000002375
+shader_parameter/progress = 0.0
+shader_parameter/progress_bias = Vector2(0, 0)
+
+[node name="StageManagerTransition" type="CanvasLayer" unique_id=1575758094]
+layer = 128
+script = ExtResource("1_txc1h")
+duration = 0.5
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=736203938]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_cq2q5")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
