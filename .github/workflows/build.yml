@@ -1,0 +1,135 @@
+name: "Build"
+
+on:
+  workflow_dispatch:
+  push:
+    branches-ignore:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+# NOTE: If your `project.godot` is at the repository root, set `PROJECT_PATH` below to ".".
+
+env:
+  GODOT_VERSION: 4.7.2
+  EXPORT_NAME: "game"
+  PROJECT_PATH: .
+
+  # https://nbumgardner.itch.io/ludum-dare-60-dice
+  ITCH_USER: nbumgardner
+  ITCH_GAME: ludum-dare-60-dice
+
+# secrets:
+#   BUTLER_API_KEY:
+
+
+jobs:
+  export-game:
+    name: Export Game
+    runs-on: ubuntu-latest
+    strategy:
+      # Don't cancel other OS runners if one fails.
+      fail-fast: false
+      matrix:
+        target:
+          - web
+    env:
+      DOTNET_CLI_TELEMETRY_OPTOUT: true
+      DOTNET_NOLOGO: true
+      # Smaller cache size
+      NUGET_PACKAGES: ${{ github.workspace }}/.nuget/packages
+      DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+    defaults:
+      run:
+        # Use bash shells on all platforms.
+        shell: bash
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Setup Godot
+        uses: chickensoft-games/setup-godot@v2
+        with:
+          version: ${{ env.GODOT_VERSION }}
+          use-dotnet: false
+          include-templates: true
+
+      - name: '.godot cache'
+        uses: actions/cache@main
+        with:
+          path: .godot
+          key: ${{ github.workflow }}-${{ github.ref }}-${{ matrix.target }}
+
+      - name: Build
+        run: |
+          mkdir -v -p build/${{ matrix.target }}
+          EXPORT_DIR="$(readlink -f build)"
+          cd $PROJECT_PATH
+          case "${{ matrix.target }}" in
+            "windows"*) EXPORT_FILENAME="$EXPORT_NAME.exe";;
+            "linux"*) EXPORT_FILENAME="$EXPORT_NAME.x86_64";;
+            "web"*) EXPORT_FILENAME="index.html";;
+            *) exit 1;;
+          esac
+          godot --headless --verbose --export-release "${{ matrix.target }}" "$EXPORT_DIR/${{ matrix.target }}/$EXPORT_FILENAME"
+
+      - name: Exported Files Check
+        run: |
+          echo "Export complete, checking files:"
+          ls -la "build/${{ matrix.target }}/"
+
+      - name: Create Build Info
+        run: |
+          echo "$GITHUB_SHA" > "build/${{ matrix.target }}/version"
+          echo "Version file created:"
+          cat "build/${{ matrix.target }}/version"
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.target }}
+          path: build/${{ matrix.target }}
+          retention-days: 1
+
+
+  butler-push:
+    # only run this if running the CI on the main branch
+    if: github.ref == 'refs/heads/main'
+    needs: [export-game]
+    name: Upload builds to itch.io
+    runs-on: ubuntu-latest
+    env:
+      BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: build
+      - name: setup butler
+        run: |
+          # -O specifies output name
+          wget -O butler.zip https://broth.itch.zone/butler/linux-amd64/LATEST/archive/default
+          unzip butler.zip
+          # GNU unzip tends to not set the executable bit even though it's set in the .zip
+          chmod +x butler
+          # just a sanity check run (and also helpful in case you're sharing CI logs)
+          ./butler -V
+      - name: upload builds
+        run: |
+          echo "---- builds available:"
+          ls build
+
+          echo "---- begin upload"
+          for channel in web_demo; do
+            target_dir="build/${channel}"
+
+            echo "-- uploading $channel..."
+            echo "-- list of files in $channel..."
+            ls "$target_dir"
+
+            ./butler push $target_dir $ITCH_USER/$ITCH_GAME:${channel%_*}
+          done
+
