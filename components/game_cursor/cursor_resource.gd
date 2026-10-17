@@ -16,6 +16,9 @@ var _pressed: Texture2D
 @export
 var _pressed_offset: Vector2
 
+@export
+var _pressed_sound: AudioEventBus.Id
+
 
 enum Type {
 	NORMAL,
@@ -31,3 +34,4 @@ func apply(sprite: Sprite2D, type: Type) -> void:
 		Type.PRESSED:
 			sprite.texture = _pressed
 			sprite.offset = _pressed_offset
+			AudioEventBus.emit(_pressed_sound)

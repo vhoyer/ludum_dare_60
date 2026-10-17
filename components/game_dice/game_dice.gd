@@ -71,7 +71,7 @@ func _process(delta: float) -> void:
 func roll(result: int) -> void:
 	_rolling = true
 	_rolling_counter = 0
-	AudioEventBus.emit(AudioEventBus.DIE_ROLLING)
+	AudioEventBus.emit(AudioEventBus.Id.DIE_ROLLING)
 
 	const ROTATION_RANGE = 18
 	var tween_rotation = self.create_tween()
@@ -91,7 +91,7 @@ func roll(result: int) -> void:
 		_rolling = false
 		sprite_dice.frame = result - 1
 		roll_finished.emit()
-		AudioEventBus.emit(AudioEventBus.DIE_LANDED)
+		AudioEventBus.emit(AudioEventBus.Id.DIE_LANDED)
 		pass)
 
 
