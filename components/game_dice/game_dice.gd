@@ -3,6 +3,8 @@ class_name GameDice
 extends Node2D
 
 
+signal roll_finished()
+
 signal _model_updated()
 
 @export_group('private')
@@ -66,6 +68,7 @@ func _process(delta: float) -> void:
 func roll(result: int) -> void:
 	_rolling = true
 	_rolling_counter = 0
+	AudioEventBus.emit(AudioEventBus.DIE_ROLLING)
 
 	var tween = self.create_tween()
 	tween.set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
@@ -74,6 +77,8 @@ func roll(result: int) -> void:
 	tween.tween_callback(func():
 		_rolling = false
 		sprite_dice.frame = result - 1
+		roll_finished.emit()
+		AudioEventBus.emit(AudioEventBus.DIE_LANDED)
 		pass)
 
 
