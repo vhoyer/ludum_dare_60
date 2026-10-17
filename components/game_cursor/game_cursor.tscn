@@ -7,8 +7,8 @@
 
 [sub_resource type="Resource" id="Resource_n26ti"]
 script = ExtResource("3_gjuo2")
-pressed = ExtResource("2_kqhv7")
-pressed_offset = Vector2(-132, -132)
+_pressed = ExtResource("2_kqhv7")
+_pressed_offset = Vector2(-132, -132)
 metadata/_custom_type_script = "uid://ea62rs5o56wh"
 
 [sub_resource type="Curve" id="Curve_44guq"]
@@ -35,7 +35,6 @@ alpha_curve = SubResource("CurveTexture_wbdmm")
 process_mode = 3
 z_index = 100
 script = ExtResource("1_0mnap")
-cursor_pressed = ExtResource("2_kqhv7")
 cursor = SubResource("Resource_n26ti")
 
 [node name="Particles" type="GPUParticles2D" parent="." unique_id=1649770786]
