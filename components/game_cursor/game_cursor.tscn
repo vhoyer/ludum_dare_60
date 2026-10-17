@@ -50,5 +50,4 @@ process_material = SubResource("ParticleProcessMaterial_n26ti")
 [node name="Cursor" type="Sprite2D" parent="." unique_id=917597537]
 unique_name_in_owner = true
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("2_kqhv7")
 centered = false
