@@ -11,6 +11,17 @@ signal _model_updated()
 var value: float = 0.5:
 	set(v):
 		value = v
+
+		if _value_tween: _value_tween.kill()
+		_value_tween = self.create_tween()
+		_value_tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CIRC)
+		_value_tween.tween_property(self, '_value_but_real', v, 0.2)
+
+var _value_tween: Tween
+
+var _value_but_real: float = 0.5:
+	set(value):
+		_value_but_real = value
 		_model_updated.emit()
 
 @export_group('private')
@@ -47,7 +58,7 @@ func _ready() -> void:
 
 
 func _update_view() -> void:
-	fill_bar.position.y = (self.size.y - _fill_margin * 2) * value + _fill_margin + _jitter
+	fill_bar.position.y = (self.size.y - _fill_margin * 2) * _value_but_real + _fill_margin + _jitter
 
 
 func _on_jitter_scheduler_timeout() -> void:

@@ -17,7 +17,7 @@ anchor_bottom = 1.0
 grow_vertical = 2
 size_flags_horizontal = 0
 script = ExtResource("1_4rdbg")
-value = 0.557
+value = 0.506
 _fill_margin = 120.0
 _jitter_range = 10.0
 
@@ -29,8 +29,8 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_top = 23.256012
-offset_bottom = 23.256012
+offset_top = 2.447998
+offset_bottom = 2.447998
 grow_horizontal = 2
 grow_vertical = 2
 
