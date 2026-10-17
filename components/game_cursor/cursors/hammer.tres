@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CursorResource" format=3 uid="uid://d17wkpun5jdvw"]
+
+[ext_resource type="Texture2D" uid="uid://d3nubfa7guqxt" path="res://assets/cursor/hammer_up.png" id="1_t5x37"]
+[ext_resource type="Texture2D" uid="uid://bmyno83kqu0ct" path="res://assets/cursor/hammer_down.png" id="2_qnb4u"]
+[ext_resource type="Script" uid="uid://ea62rs5o56wh" path="res://components/game_cursor/cursor_resource.gd" id="3_2i7ei"]
+
+[resource]
+script = ExtResource("3_2i7ei")
+_normal = ExtResource("1_t5x37")
+_pressed = ExtResource("2_qnb4u")
+_pressed_offset = Vector2(-77, -69)
+metadata/_custom_type_script = "uid://ea62rs5o56wh"

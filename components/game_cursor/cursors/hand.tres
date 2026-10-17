@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CursorResource" format=3 uid="uid://i1wcyjmq7t4p"]
+
+[ext_resource type="Texture2D" uid="uid://cq5q4q1it8mwt" path="res://assets/cursor/right_hand.png" id="1_xh8nm"]
+[ext_resource type="Script" uid="uid://ea62rs5o56wh" path="res://components/game_cursor/cursor_resource.gd" id="2_es7e0"]
+
+[resource]
+script = ExtResource("2_es7e0")
+_pressed = ExtResource("1_xh8nm")
+_pressed_offset = Vector2(-132, -132)
+metadata/_custom_type_script = "uid://ea62rs5o56wh"
