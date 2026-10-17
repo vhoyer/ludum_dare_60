@@ -27,6 +27,7 @@ size_flags_vertical = 3
 [node name="Enemy" type="MarginContainer" parent="VBoxContainer" unique_id=1041880809]
 layout_mode = 2
 size_flags_vertical = 3
+theme_type_variation = &"MarginContainerMedium"
 
 [node name="Enemy" type="TextureRect" parent="VBoxContainer/Enemy" unique_id=324893705]
 layout_mode = 2
@@ -37,6 +38,7 @@ stretch_mode = 5
 [node name="Dices" type="MarginContainer" parent="VBoxContainer" unique_id=350811888]
 layout_mode = 2
 size_flags_vertical = 3
+theme_type_variation = &"MarginContainerMedium"
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16

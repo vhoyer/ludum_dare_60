@@ -1,3 +1,8 @@
 [gd_resource type="Theme" format=3 uid="uid://b10mtsfylwshn"]
 
 [resource]
+MarginContainerMedium/base_type = &"MarginContainer"
+MarginContainerMedium/constants/margin_bottom = 16
+MarginContainerMedium/constants/margin_left = 16
+MarginContainerMedium/constants/margin_right = 16
+MarginContainerMedium/constants/margin_top = 16
