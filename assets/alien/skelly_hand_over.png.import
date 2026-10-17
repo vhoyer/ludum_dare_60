@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyynsmjqwl4mc"
-path="res://.godot/imported/dice_gradient.png-e9652c5ecd577d6f4dc6e3d970c92028.ctex"
+uid="uid://bpjaiglaf4qph"
+path="res://.godot/imported/skelly_hand_over.png-76c49087ef350b6ab710703269ab3c3d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/dice/dice_gradient.png"
-dest_files=["res://.godot/imported/dice_gradient.png-e9652c5ecd577d6f4dc6e3d970c92028.ctex"]
+source_file="res://assets/alien/skelly_hand_over.png"
+dest_files=["res://.godot/imported/skelly_hand_over.png-76c49087ef350b6ab710703269ab3c3d.ctex"]
 
 [params]
 

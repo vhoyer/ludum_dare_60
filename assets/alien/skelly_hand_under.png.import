@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxab3cd5x2ya4"
-path="res://.godot/imported/dice dropshadow1.png-1097ff4661337c1cd4aa4a79356d2903.ctex"
+uid="uid://mltwii3sq85y"
+path="res://.godot/imported/skelly_hand_under.png-865cb93fa961acd35ec6777f00cf51d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/dice/dice dropshadow1.png"
-dest_files=["res://.godot/imported/dice dropshadow1.png-1097ff4661337c1cd4aa4a79356d2903.ctex"]
+source_file="res://assets/alien/skelly_hand_under.png"
+dest_files=["res://.godot/imported/skelly_hand_under.png-865cb93fa961acd35ec6777f00cf51d5.ctex"]
 
 [params]
 

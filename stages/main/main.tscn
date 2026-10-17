@@ -1,3 +1,79 @@
 [gd_scene format=3 uid="uid://boew20gyqimy6"]
 
-[node name="Main" type="Node2D" unique_id=1823494651]
+[ext_resource type="Script" uid="uid://bjdopl13o6krk" path="res://stages/main/main.gd" id="1_60rri"]
+[ext_resource type="PackedScene" uid="uid://cvf0j1cif853i" path="res://components/game_dice/game_dice.tscn" id="2_5powy"]
+[ext_resource type="Texture2D" uid="uid://bgsm4wruhcjqm" path="res://assets/alien/enemy1.png" id="2_j6wwd"]
+[ext_resource type="PackedScene" uid="uid://cpsa1qlgdobpb" path="res://components/game_tug_of_war/game_tug_of_war.tscn" id="2_usqqw"]
+
+[node name="Main" type="HBoxContainer" unique_id=1820559237]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_60rri")
+
+[node name="GameTugOfWar" parent="." unique_id=598563760 instance=ExtResource("2_usqqw")]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=342927523]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Enemy" type="MarginContainer" parent="VBoxContainer" unique_id=1041880809]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Enemy" type="TextureRect" parent="VBoxContainer/Enemy" unique_id=324893705]
+layout_mode = 2
+texture = ExtResource("2_j6wwd")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Dices" type="MarginContainer" parent="VBoxContainer" unique_id=350811888]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Dices" unique_id=1748016336]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="VBoxContainer/Dices/HBoxContainer" unique_id=721941754]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="VBoxContainer/Dices/HBoxContainer/SubViewportContainer" unique_id=2068035278]
+handle_input_locally = false
+size = Vector2i(800, 290)
+render_target_update_mode = 4
+
+[node name="Dices" type="Node2D" parent="VBoxContainer/Dices/HBoxContainer/SubViewportContainer/SubViewport" unique_id=1878736496]
+unique_name_in_owner = true
+
+[node name="GameDice" parent="VBoxContainer/Dices/HBoxContainer/SubViewportContainer/SubViewport/Dices" unique_id=1293005474 instance=ExtResource("2_5powy")]
+position = Vector2(209, 141)
+
+[node name="GameDice2" parent="VBoxContainer/Dices/HBoxContainer/SubViewportContainer/SubViewport/Dices" unique_id=62987177 instance=ExtResource("2_5powy")]
+position = Vector2(404, 112)
+
+[node name="GameDice3" parent="VBoxContainer/Dices/HBoxContainer/SubViewportContainer/SubViewport/Dices" unique_id=70781987 instance=ExtResource("2_5powy")]
+position = Vector2(603, 161)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Dices/HBoxContainer" unique_id=1919894881]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="RollButton" type="Button" parent="VBoxContainer/Dices/HBoxContainer/VBoxContainer" unique_id=765454622]
+layout_mode = 2
+size_flags_vertical = 8
+text = "roll"
+
+[connection signal="pressed" from="VBoxContainer/Dices/HBoxContainer/VBoxContainer/RollButton" to="." method="_on_roll_button_pressed"]
