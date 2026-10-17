@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxab3cd5x2ya4"
-path="res://.godot/imported/dice dropshadow1.png-5e1090cd4e10e2c15be0d8b696a16cde.ctex"
+uid="uid://b1yhhvq2od4hu"
+path="res://.godot/imported/dots accessibility.png-fe629af29d5773afbee6c03b6c32e0c0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/dice/dice dropshadow1.png"
-dest_files=["res://.godot/imported/dice dropshadow1.png-5e1090cd4e10e2c15be0d8b696a16cde.ctex"]
+source_file="res://assets/dice/dots accessibility.png"
+dest_files=["res://.godot/imported/dots accessibility.png-fe629af29d5773afbee6c03b6c32e0c0.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpj86n7s2ijns"
-path="res://.godot/imported/dice_spritesheet.png-6e29adba6df18545829900c571310ade.ctex"
+uid="uid://imy73vth6y0f"
+path="res://.godot/imported/hooman_hand_under.png-b4359475d521d6b2e20cf313a3af64cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/dice/dice_spritesheet.png"
-dest_files=["res://.godot/imported/dice_spritesheet.png-6e29adba6df18545829900c571310ade.ctex"]
+source_file="res://assets/player/hooman_hand_under.png"
+dest_files=["res://.godot/imported/hooman_hand_under.png-b4359475d521d6b2e20cf313a3af64cb.ctex"]
 
 [params]
 

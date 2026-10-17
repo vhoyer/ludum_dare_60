@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgsm4wruhcjqm"
-path="res://.godot/imported/enemy1.png-46f7a81dedc2271c407db7834cd53b61.ctex"
+uid="uid://bmobatugaplcl"
+path="res://.godot/imported/dots saturated.png-1ddbe205ef96e2e57c31758c17a48905.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/enemy/enemy1.png"
-dest_files=["res://.godot/imported/enemy1.png-46f7a81dedc2271c407db7834cd53b61.ctex"]
+source_file="res://assets/dice/dots saturated.png"
+dest_files=["res://.godot/imported/dots saturated.png-1ddbe205ef96e2e57c31758c17a48905.ctex"]
 
 [params]
 

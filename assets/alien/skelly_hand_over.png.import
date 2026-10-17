@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3ckkhaqxosn0"
-path="res://.godot/imported/hooman_hand_over.png-e3d1854817a456776ff6eb10b28f9c9b.ctex"
+uid="uid://bpjaiglaf4qph"
+path="res://.godot/imported/skelly_hand_over.png-76c49087ef350b6ab710703269ab3c3d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/enemy/hooman_hand_over.png"
-dest_files=["res://.godot/imported/hooman_hand_over.png-e3d1854817a456776ff6eb10b28f9c9b.ctex"]
+source_file="res://assets/alien/skelly_hand_over.png"
+dest_files=["res://.godot/imported/skelly_hand_over.png-76c49087ef350b6ab710703269ab3c3d.ctex"]
 
 [params]
 

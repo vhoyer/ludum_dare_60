@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://cpsa1qlgdobpb"]
 
-[ext_resource type="Texture2D" uid="uid://bpjaiglaf4qph" path="res://assets/sprites/enemy/skelly_hand_over.png" id="1_2hdvj"]
+[ext_resource type="Texture2D" uid="uid://bpjaiglaf4qph" path="res://assets/alien/skelly_hand_over.png" id="1_2hdvj"]
 [ext_resource type="Script" uid="uid://x1wl8tvths1v" path="res://components/game_tug_of_war/game_tug_of_war.gd" id="1_4rdbg"]
-[ext_resource type="Texture2D" uid="uid://mltwii3sq85y" path="res://assets/sprites/enemy/skelly_hand_under.png" id="2_4rdbg"]
-[ext_resource type="Texture2D" uid="uid://dr233icuhbor5" path="res://assets/sprites/items/boombox.png" id="3_nohnp"]
-[ext_resource type="Texture2D" uid="uid://d3ckkhaqxosn0" path="res://assets/sprites/enemy/hooman_hand_over.png" id="4_8235j"]
-[ext_resource type="Texture2D" uid="uid://imy73vth6y0f" path="res://assets/sprites/enemy/hooman_hand_under.png" id="5_bqop2"]
+[ext_resource type="Texture2D" uid="uid://mltwii3sq85y" path="res://assets/alien/skelly_hand_under.png" id="2_4rdbg"]
+[ext_resource type="Texture2D" uid="uid://dr233icuhbor5" path="res://assets/items/boombox.png" id="3_nohnp"]
+[ext_resource type="Texture2D" uid="uid://d3ckkhaqxosn0" path="res://assets/player/hooman_hand_over.png" id="4_8235j"]
+[ext_resource type="Texture2D" uid="uid://imy73vth6y0f" path="res://assets/player/hooman_hand_under.png" id="5_bqop2"]
 
 [node name="GameTugOfWar" type="Control" unique_id=598563760]
 custom_minimum_size = Vector2(200, 0)

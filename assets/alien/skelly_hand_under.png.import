@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dr233icuhbor5"
-path="res://.godot/imported/boombox.png-48c743faeba9dffa729bbb5392924542.ctex"
+uid="uid://mltwii3sq85y"
+path="res://.godot/imported/skelly_hand_under.png-865cb93fa961acd35ec6777f00cf51d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/items/boombox.png"
-dest_files=["res://.godot/imported/boombox.png-48c743faeba9dffa729bbb5392924542.ctex"]
+source_file="res://assets/alien/skelly_hand_under.png"
+dest_files=["res://.godot/imported/skelly_hand_under.png-865cb93fa961acd35ec6777f00cf51d5.ctex"]
 
 [params]
 

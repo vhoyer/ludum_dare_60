@@ -2,11 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bjdopl13o6krk" path="res://stages/main/main.gd" id="1_60rri"]
 [ext_resource type="PackedScene" uid="uid://cvf0j1cif853i" path="res://components/game_dice/game_dice.tscn" id="2_5powy"]
-[ext_resource type="Texture2D" uid="uid://bgsm4wruhcjqm" path="res://assets/sprites/enemy/enemy1.png" id="2_j6wwd"]
+[ext_resource type="Texture2D" uid="uid://bgsm4wruhcjqm" path="res://assets/alien/enemy1.png" id="2_j6wwd"]
 [ext_resource type="PackedScene" uid="uid://cpsa1qlgdobpb" path="res://components/game_tug_of_war/game_tug_of_war.tscn" id="2_usqqw"]
 
 [node name="Main" type="HBoxContainer" unique_id=1820559237]
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2

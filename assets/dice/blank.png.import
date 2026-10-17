@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpjaiglaf4qph"
-path="res://.godot/imported/skelly_hand_over.png-66b12ecc106179f5922051bd26abc22f.ctex"
+uid="uid://cxyp8fc1co4sa"
+path="res://.godot/imported/blank.png-00824bafc848e69e5867cb48b64f04b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/enemy/skelly_hand_over.png"
-dest_files=["res://.godot/imported/skelly_hand_over.png-66b12ecc106179f5922051bd26abc22f.ctex"]
+source_file="res://assets/dice/blank.png"
+dest_files=["res://.godot/imported/blank.png-00824bafc848e69e5867cb48b64f04b0.ctex"]
 
 [params]
 

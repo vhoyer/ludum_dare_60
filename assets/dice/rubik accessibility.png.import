@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://imy73vth6y0f"
-path="res://.godot/imported/hooman_hand_under.png-eb2f3a7913ad79ed9ba700c59e274b41.ctex"
+uid="uid://kp6n2pnpou77"
+path="res://.godot/imported/rubik accessibility.png-63c8664a836cbb523aeb343d4f33b20c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/enemy/hooman_hand_under.png"
-dest_files=["res://.godot/imported/hooman_hand_under.png-eb2f3a7913ad79ed9ba700c59e274b41.ctex"]
+source_file="res://assets/dice/rubik accessibility.png"
+dest_files=["res://.godot/imported/rubik accessibility.png-63c8664a836cbb523aeb343d4f33b20c.ctex"]
 
 [params]
 
