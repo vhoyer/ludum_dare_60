@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://usqu7frh72wo"]
+
+[ext_resource type="Script" uid="uid://bfrgc2xrx58px" path="res://components/game_cursor/game_cursor.gd" id="1_0mnap"]
+[ext_resource type="Texture2D" uid="uid://cq5q4q1it8mwt" path="res://assets/cursor/right_hand.png" id="2_kqhv7"]
+[ext_resource type="Script" uid="uid://ea62rs5o56wh" path="res://components/game_cursor/cursor_resource.gd" id="3_gjuo2"]
+[ext_resource type="Texture2D" uid="uid://bbecw3msbwwvw" path="res://assets/cursor/wave.png" id="3_kqhv7"]
+
+[sub_resource type="Resource" id="Resource_n26ti"]
+script = ExtResource("3_gjuo2")
+pressed = ExtResource("2_kqhv7")
+pressed_offset = Vector2(-132, -132)
+metadata/_custom_type_script = "uid://ea62rs5o56wh"
+
+[sub_resource type="Curve" id="Curve_44guq"]
+_data = [Vector2(0, 1), 0.0, -2.8594224, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_wbdmm"]
+curve = SubResource("Curve_44guq")
+
+[sub_resource type="Curve" id="Curve_gjuo2"]
+_data = [Vector2(0, 0), 0.0, 3.193123, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_0mnap"]
+curve = SubResource("Curve_gjuo2")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_n26ti"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_0mnap")
+alpha_curve = SubResource("CurveTexture_wbdmm")
+
+[node name="GameCursor" type="Node2D" unique_id=1907159996]
+process_mode = 3
+z_index = 100
+script = ExtResource("1_0mnap")
+cursor_pressed = ExtResource("2_kqhv7")
+cursor = SubResource("Resource_n26ti")
+
+[node name="Particles" type="GPUParticles2D" parent="." unique_id=1649770786]
+unique_name_in_owner = true
+emitting = false
+amount = 1
+texture = ExtResource("3_kqhv7")
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_n26ti")
+
+[node name="Cursor" type="Sprite2D" parent="." unique_id=917597537]
+unique_name_in_owner = true
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_kqhv7")
+centered = false

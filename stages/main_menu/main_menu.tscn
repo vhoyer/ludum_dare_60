@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bosgk23prc6ca"]
 
 [ext_resource type="Script" uid="uid://7i1g42nagf2j" path="res://stages/main_menu/start_button.gd" id="1_6almw"]
+[ext_resource type="PackedScene" uid="uid://usqu7frh72wo" path="res://components/game_cursor/game_cursor.tscn" id="2_owbi8"]
 
 [node name="Main" type="CenterContainer" unique_id=1983816057]
 anchors_preset = 15
@@ -14,3 +15,10 @@ layout_mode = 2
 text = "start! ;)"
 script = ExtResource("1_6almw")
 next_stage = "uid://boew20gyqimy6"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1910558387]
+anchor_mode = 0
+
+[node name="GameCursor" parent="Camera2D" unique_id=1907159996 instance=ExtResource("2_owbi8")]
+
+[connection signal="button_down" from="StartButton" to="StartButton" method="_on_button_down"]

@@ -5,10 +5,8 @@ extends Node
 var dices_group: Node2D = %Dices
 
 
-func _on_roll_button_pressed() -> void:
+func _on_roll_button_button_down() -> void:
 	AudioEventBus.emit(AudioEventBus.DICE_ROLL_REQUESTED)
 
 	for dice: GameDice in dices_group.get_children():
-		dice.roll(randi() % 5 + 1)
-
-	VHDUtils.camera_2d_shake(self, 10, 0.2)
+		dice.roll(randi() % 10 + 1)
