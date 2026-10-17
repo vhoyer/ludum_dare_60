@@ -42,6 +42,9 @@ var test_roll: Callable = func():
 
 
 @onready
+var visual_root: Node2D = %VisualRoot
+
+@onready
 var sprite_dice: Sprite2D = %DiceSprite
 
 @onready
@@ -56,7 +59,7 @@ func _ready() -> void:
 
 func _update_view() -> void:
 	sprite_dice.scale = Vector2.ONE * ((_height * 0.35) + 1)
-	sprite_shadow.position = _light_direction * ((_height * 250) + 1)
+	sprite_shadow.position = _light_direction.rotated(-1 * visual_root.rotation) * ((_height * 250) + 1)
 	sprite_shadow.scale = Vector2.ONE / ((_height * 1) + 1)
 	sprite_shadow.modulate.a = 1 - (_height * 0.75)
 
@@ -69,6 +72,16 @@ func roll(result: int) -> void:
 	_rolling = true
 	_rolling_counter = 0
 	AudioEventBus.emit(AudioEventBus.DIE_ROLLING)
+
+	const ROTATION_RANGE = 18
+	var tween_rotation = self.create_tween()
+	tween_rotation.set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+	tween_rotation.tween_property(
+		visual_root,
+		"rotation_degrees",
+		(randf() * ROTATION_RANGE * 2 - ROTATION_RANGE),
+		_dice_rising_time * 2)
+
 
 	var tween = self.create_tween()
 	tween.set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
