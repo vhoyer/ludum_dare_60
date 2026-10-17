@@ -15,6 +15,10 @@ run/main_scene="uid://bosgk23prc6ca"
 config/features=PackedStringArray("4.7")
 config/icon="res://assets/icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://dx6yd5s232reh"
+
 [autoload]
 
 GlobalBGM="*uid://c3g4ksp50okr7"
@@ -22,6 +26,7 @@ StageManager="*uid://bn2wxfhk62jb3"
 SaveManager="*uid://cif12kgdyeewr"
 VHDStatus="*uid://pb8nfnts8jvp"
 CheatSystem="*uid://d1q0ynk0goke5"
+AudioEventBus="*uid://g2x3jrkeiuyt"
 
 [editor_plugins]
 

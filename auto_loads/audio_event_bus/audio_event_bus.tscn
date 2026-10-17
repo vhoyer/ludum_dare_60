@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://g2x3jrkeiuyt"]
+
+[ext_resource type="Script" uid="uid://cbs0o074nkjmb" path="res://auto_loads/audio_event_bus/audio_event_bus.gd" id="1_3yjp7"]
+
+[node name="AudioBus" type="Node" unique_id=827062093]
+script = ExtResource("1_3yjp7")
