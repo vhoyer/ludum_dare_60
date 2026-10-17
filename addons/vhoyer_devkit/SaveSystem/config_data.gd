@@ -63,9 +63,9 @@ var volume_sfx: float:
 	get(): return get_config('volume_sfx')
 	set(value): set_config('volume_sfx', value)
 
-var volume_music: float:
-	get(): return get_config('volume_music')
-	set(value): set_config('volume_music', value)
+var volume_bgm: float:
+	get(): return get_config('volume_bgm')
+	set(value): set_config('volume_bgm', value)
 
 var volume_ambience: float:
 	get(): return get_config('volume_ambience')
@@ -102,7 +102,7 @@ func _init() -> void:
 	# audio
 	register_config('volume_master', 1.0)
 	register_config('volume_sfx', 0.5)
-	register_config('volume_music', 0.5)
+	register_config('volume_bgm', 0.5)
 	register_config('volume_ambience', 0.5)
 	register_config('volume_voice', 0.8)
 
