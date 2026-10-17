@@ -1,2 +1,10 @@
 # Godot 4+ specific ignores
 .godot/
+~*
+*.*~
+*kra-autosave*
+*png-autosave.kra
+*.png.kra
+*.tmp
+*.Identifier
+.DS_Store
