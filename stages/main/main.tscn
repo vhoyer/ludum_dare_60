@@ -6,11 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://cpsa1qlgdobpb" path="res://components/game_tug_of_war/game_tug_of_war.tscn" id="2_usqqw"]
 
 [node name="Main" type="HBoxContainer" unique_id=1820559237]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_60rri")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1225823530]
+anchor_mode = 0
 
 [node name="GameTugOfWar" parent="." unique_id=598563760 instance=ExtResource("2_usqqw")]
 layout_mode = 2
