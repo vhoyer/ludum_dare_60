@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cvf0j1cif853i"]
+
+[ext_resource type="Script" uid="uid://c8woqou4f4j2q" path="res://components/game_dice/game_dice.gd" id="1_kdbr7"]
+[ext_resource type="Texture2D" uid="uid://c6v4lj8v35g2j" path="res://assets/sprites/dice/dice_blue.png" id="2_1pb4h"]
+[ext_resource type="Texture2D" uid="uid://bkq6y0dgmewm2" path="res://assets/sprites/dice/dice_shadow.png" id="2_hpgiv"]
+
+[node name="GameDice" type="Node2D" unique_id=1293005474]
+script = ExtResource("1_kdbr7")
+_rolling_frame_duration = 0.08
+_light_direction = Vector2(0, 1)
+
+[node name="DiceShadow" type="Sprite2D" parent="." unique_id=149343767]
+unique_name_in_owner = true
+position = Vector2(0, 1)
+texture = ExtResource("2_hpgiv")
+offset = Vector2(10, 25)
+
+[node name="DiceSprite" type="Sprite2D" parent="." unique_id=1295971029]
+unique_name_in_owner = true
+texture = ExtResource("2_1pb4h")
+hframes = 6
+frame = 4
