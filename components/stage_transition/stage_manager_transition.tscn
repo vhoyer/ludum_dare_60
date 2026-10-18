@@ -28,7 +28,6 @@ shader_parameter/progress_bias = Vector2(0, 0)
 [node name="StageManagerTransition" type="CanvasLayer" unique_id=1575758094]
 layer = 128
 script = ExtResource("1_txc1h")
-duration = 0.5
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=736203938]
 unique_name_in_owner = true
