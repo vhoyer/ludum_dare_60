@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cd342lxt581l4"]
+
+[ext_resource type="PackedScene" uid="uid://bmh68yefaofg8" path="res://components/settings/settings_menu_content.tscn" id="1_orxww"]
+[ext_resource type="Script" uid="uid://bu4cyxumobyrd" path="res://components/settings/settings_menu.gd" id="1_ttqbk"]
+
+[node name="SettingsMenu" type="Control" unique_id=1569673479]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ttqbk")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2023396947]
+self_modulate = Color(1, 1, 1, 0.4)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1112138623]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=458237452]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/PanelContainer" unique_id=2073665374]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer" unique_id=349388630]
+layout_mode = 2
+
+[node name="SettingsMenuContent" parent="CenterContainer/PanelContainer/MarginContainer" unique_id=942847730 instance=ExtResource("1_orxww")]
+layout_mode = 2
+
+[connection signal="buttonBackPressed" from="CenterContainer/PanelContainer/MarginContainer/SettingsMenuContent" to="." method="_on_settings_menu_content_button_back_pressed"]
