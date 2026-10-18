@@ -10,12 +10,12 @@ signal _model_updated()
 @export_range(0, 1)
 var value: float = 0.5:
 	set(v):
-		value = v
+		value = clamp(v, 0, 1)
 
 		if _value_tween: _value_tween.kill()
 		_value_tween = self.create_tween()
 		_value_tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CIRC)
-		_value_tween.tween_property(self, '_value_but_real', v, 0.2)
+		_value_tween.tween_property(self, '_value_but_real', value, 0.15)
 
 var _value_tween: Tween
 

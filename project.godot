@@ -27,6 +27,7 @@ SaveManager="*uid://cif12kgdyeewr"
 VHDStatus="*uid://pb8nfnts8jvp"
 CheatSystem="*uid://d1q0ynk0goke5"
 AudioEventBusInstance="*uid://g2x3jrkeiuyt"
+LevelsManager="*uid://cjm6mc3n2kcb6"
 
 [display]
 
