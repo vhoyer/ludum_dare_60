@@ -5,12 +5,22 @@ extends Node2D
 static var instance: GameCursor
 
 
+signal _model_updated()
+
+
 @export
 var _default_cursor: CursorResource
 
 
-var cursor: CursorResource
+var cursor: CursorResource:
+	set(value):
+		cursor = value
+		_model_updated.emit()
 
+var _pressed: bool = false:
+	set(value):
+		_pressed = value
+		_model_updated.emit()
 
 @onready
 var sprite: Sprite2D = %Cursor
@@ -25,7 +35,16 @@ func _ready() -> void:
 	instance = self
 
 	cursor = _default_cursor
-	cursor.apply(self, CursorResource.Type.NORMAL)
+
+	_model_updated.connect(_update_view)
+	_model_updated.emit()
+
+
+func _update_view() -> void:
+	if _pressed:
+		cursor.apply(self, CursorResource.Type.PRESSED)
+	else:
+		cursor.apply(self, CursorResource.Type.NORMAL)
 
 
 func _process(_delta: float) -> void:
@@ -35,10 +54,7 @@ func _process(_delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
-			if event.is_pressed():
-				cursor.apply(self, CursorResource.Type.PRESSED)
-			else:
-				cursor.apply(self, CursorResource.Type.NORMAL)
+			_pressed = event.is_pressed()
 
 
 func _effect_impact() -> void:
