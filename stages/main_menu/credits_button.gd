@@ -2,4 +2,4 @@ extends Button
 
 
 func _on_pressed():
-	get_tree().change_scene_to_file("res://stages/credits/credits.tscn")
+	StageManager.push_stage("res://stages/credits/credits.tscn")
