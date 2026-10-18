@@ -13,9 +13,19 @@ var _default_cursor: CursorResource
 
 
 var cursor: CursorResource:
+	get():
+		if override_cursor:
+			return override_cursor
+		return cursor
 	set(value):
 		cursor = value
 		_model_updated.emit()
+
+var override_cursor: CursorResource:
+	set(value):
+		override_cursor = value
+		_model_updated.emit()
+
 
 var _pressed: bool = false:
 	set(value):
@@ -60,3 +70,7 @@ func _input(event: InputEvent) -> void:
 func _effect_impact() -> void:
 	VHDUtils.camera_2d_shake(self, 10, 0.2)
 	_particles.restart()
+
+
+func reset() -> void:
+	cursor = _default_cursor

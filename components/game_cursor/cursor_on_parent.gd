@@ -18,10 +18,10 @@ func _ready() -> void:
 
 
 func _enable_cursor() -> void:
-	_previous_cursor = GameCursor.instance.cursor
-	GameCursor.instance.cursor = cursor
+	_previous_cursor = GameCursor.instance.override_cursor
+	GameCursor.instance.override_cursor = cursor
 
 
 func _disable_cursor() -> void:
-	GameCursor.instance.cursor = _previous_cursor
+	GameCursor.instance.override_cursor = _previous_cursor
 	_previous_cursor = null
