@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://d17wkpun5jdvw" path="res://components/game_cursor/cursors/hammer.tres" id="3_7wn7o"]
 [ext_resource type="Script" uid="uid://tv3dksflndin" path="res://stages/main_menu/quit_button.gd" id="4_7wn7o"]
 [ext_resource type="Script" uid="uid://ueeqi2h4imq1" path="res://stages/main_menu/settings_button.gd" id="4_jofpu"]
+[ext_resource type="Script" uid="uid://ds3sxjjlpw56p" path="res://stages/main_menu/credits_button.gd" id="5_mcab4"]
 
 [node name="Main" type="CenterContainer" unique_id=1983816057]
 anchors_preset = 15
@@ -33,6 +34,11 @@ layout_mode = 2
 text = "Settings"
 script = ExtResource("4_jofpu")
 
+[node name="CreditsButton" type="Button" parent="VBoxContainer" unique_id=157921323]
+layout_mode = 2
+text = "Credits"
+script = ExtResource("5_mcab4")
+
 [node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=493804935]
 layout_mode = 2
 text = "Quit"
@@ -45,4 +51,5 @@ anchor_mode = 0
 
 [connection signal="button_down" from="VBoxContainer/StartButton" to="VBoxContainer/StartButton" method="_on_button_down"]
 [connection signal="pressed" from="VBoxContainer/SettingsButton" to="VBoxContainer/SettingsButton" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/CreditsButton" to="VBoxContainer/CreditsButton" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="VBoxContainer/QuitButton" method="_on_pressed"]
