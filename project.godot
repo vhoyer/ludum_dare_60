@@ -28,6 +28,7 @@ VHDStatus="*uid://pb8nfnts8jvp"
 CheatSystem="*uid://d1q0ynk0goke5"
 AudioEventBusInstance="*uid://g2x3jrkeiuyt"
 LevelsManager="*uid://cjm6mc3n2kcb6"
+AudioManager="*uid://ckw0ak7gwhh1r"
 
 [display]
 
