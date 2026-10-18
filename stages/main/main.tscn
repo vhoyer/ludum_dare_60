@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://boew20gyqimy6"]
 
 [ext_resource type="Script" uid="uid://bjdopl13o6krk" path="res://stages/main/main.gd" id="1_60rri"]
-[ext_resource type="Texture2D" uid="uid://bgsm4wruhcjqm" path="res://assets/alien/enemy1.png" id="2_j6wwd"]
 [ext_resource type="PackedScene" uid="uid://cpsa1qlgdobpb" path="res://components/game_tug_of_war/game_tug_of_war.tscn" id="2_usqqw"]
 [ext_resource type="PackedScene" uid="uid://usqu7frh72wo" path="res://components/game_cursor/game_cursor.tscn" id="2_woy08"]
 [ext_resource type="PackedScene" uid="uid://kfbhin5nkdnx" path="res://components/game_table/game_table.tscn" id="5_no1gd"]
@@ -82,17 +81,14 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 0
 
-[node name="Enemy" type="MarginContainer" parent="VBoxContainer" unique_id=1041880809]
-visible = false
+[node name="GoalGauge" type="MarginContainer" parent="VBoxContainer" unique_id=1041880809]
 layout_mode = 2
-size_flags_vertical = 3
 theme_type_variation = &"MarginContainerMedium"
 
-[node name="Enemy" type="TextureRect" parent="VBoxContainer/Enemy" unique_id=324893705]
+[node name="GoalGauge" type="Label" parent="VBoxContainer/GoalGauge" unique_id=994138250]
+unique_name_in_owner = true
 layout_mode = 2
-texture = ExtResource("2_j6wwd")
-expand_mode = 2
-stretch_mode = 5
+text = "points: {points} | min target: {goal_min}; max target: {goal_max}"
 
 [node name="Dices" type="MarginContainer" parent="VBoxContainer" unique_id=350811888]
 layout_mode = 2
@@ -119,7 +115,7 @@ stretch = true
 [node name="SubViewport" type="SubViewport" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer" unique_id=2068035278]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(916, 616)
+size = Vector2i(916, 563)
 render_target_update_mode = 4
 
 [node name="TableBoundaries" type="StaticBody2D" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport" unique_id=363925701]
@@ -137,7 +133,7 @@ position = Vector2(404, 40)
 shape = SubResource("WorldBoundaryShape2D_3f6tk")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/TableBoundaries" unique_id=510147364]
-position = Vector2(404, 582)
+position = Vector2(404, 529)
 shape = SubResource("WorldBoundaryShape2D_axbkc")
 
 [node name="Dices" type="Node2D" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport" unique_id=1878736496]
@@ -145,7 +141,7 @@ unique_name_in_owner = true
 
 [node name="DiceSpawn" type="Marker2D" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport" unique_id=289558422]
 unique_name_in_owner = true
-position = Vector2(665, 536)
+position = Vector2(665, 387)
 
 [node name="TableInside" type="MarginContainer" parent="VBoxContainer/Dices" unique_id=1203254494]
 layout_mode = 2

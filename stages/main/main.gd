@@ -10,6 +10,9 @@ var dices_group: Node2D = %Dices
 var dice_spawn: Node2D = %DiceSpawn
 
 @onready
+var goal_gauge: Label = %GoalGauge
+
+@onready
 var tug_of_war: GameTugOfWar = %GameTugOfWar
 
 
@@ -28,8 +31,11 @@ var _throw_inbetween_interval: float = 0.3
 
 
 func _ready() -> void:
+	var goal_gauge_model:= goal_gauge.text
+
 	SaveManager.data.watch(self, ['points', 'current_level'], func():
 		tug_of_war.value = SaveManager.data.points / LevelsManager.current.goal_min
+		goal_gauge.text = goal_gauge_model.format(SaveManager.data).format(LevelsManager.current)
 		pass)
 
 
