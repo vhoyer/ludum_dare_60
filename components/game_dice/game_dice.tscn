@@ -8,7 +8,7 @@
 bounce = 0.4
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n26ti"]
-radius = 92.0
+radius = 90.0
 
 [node name="GameDice" type="RigidBody2D" unique_id=1964370385]
 physics_material_override = SubResource("PhysicsMaterial_no1gd")
@@ -28,7 +28,7 @@ scale = Vector2(0.5, 0.5)
 
 [node name="DiceShadow" type="Sprite2D" parent="VisualRoot" unique_id=149343767]
 unique_name_in_owner = true
-position = Vector2(-0.13571158, 0.48123005)
+position = Vector2(0, 0.5)
 texture = ExtResource("2_1pb4h")
 offset = Vector2(5, 10)
 

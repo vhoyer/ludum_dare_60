@@ -44,6 +44,12 @@ var test_roll: Callable = func():
 	pass
 
 
+@export_range(0.1, 2)
+var _size: float = 1:
+	set(value):
+		_size = clamp(value, 0.1, 2)
+		_model_updated.emit()
+
 
 @onready
 var visual_root: Node2D = %VisualRoot
@@ -54,14 +60,25 @@ var sprite_dice: Sprite2D = %DiceSprite
 @onready
 var sprite_shadow: Sprite2D = %DiceShadow
 
+@onready
+var collider: CollisionShape2D = %CollisionShape2D
 
+
+var _initial_visual_root_scale: Vector2
+var _initial_colider_radius: float
 
 func _ready() -> void:
+	_initial_visual_root_scale = visual_root.scale
+	_initial_colider_radius = collider.shape.radius
+
 	_model_updated.connect(_update_view)
 	_model_updated.emit()
 
 
 func _update_view() -> void:
+	visual_root.scale = _initial_visual_root_scale * _size
+	collider.shape.radius = _initial_colider_radius * _size
+
 	sprite_dice.scale = Vector2.ONE * ((_height * 0.35) + 1)
 	sprite_shadow.position = _light_direction.rotated(-1 * visual_root.rotation) * ((_height * 250) + 1)
 	sprite_shadow.scale = Vector2.ONE / ((_height * 1) + 1)
