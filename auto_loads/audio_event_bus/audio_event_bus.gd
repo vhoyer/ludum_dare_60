@@ -18,7 +18,6 @@ static var instance: AudioEventBus
 static func emit(event_name: Id) -> void:
 	if not instance: return
 	instance.audio_requested.emit(event_name)
-	instance.logger.debug('%s audio requested' % Id.find_key(event_name))
 
 
 
