@@ -28,6 +28,10 @@ VHDStatus="*uid://pb8nfnts8jvp"
 CheatSystem="*uid://d1q0ynk0goke5"
 AudioEventBusInstance="*uid://g2x3jrkeiuyt"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/vhoyer_devkit/plugin.cfg")

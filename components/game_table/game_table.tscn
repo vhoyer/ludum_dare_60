@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://kfbhin5nkdnx"]
+
+[ext_resource type="Texture2D" uid="uid://84pks8q2jil" path="res://assets/table/wood_placeholder.png" id="1_0jmbw"]
+[ext_resource type="Texture2D" uid="uid://un38aj1sbywe" path="res://assets/table/cloth_fabric.png" id="2_86wg2"]
+
+[node name="GameTable" type="MarginContainer" unique_id=1424488825]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Border" type="NinePatchRect" parent="." unique_id=320899430]
+modulate = Color(0.9248491, 0.93102807, 0.7186616, 1)
+layout_mode = 2
+texture = ExtResource("1_0jmbw")
+region_rect = Rect2(0, 0, 300, 300)
+patch_margin_left = 100
+patch_margin_top = 100
+patch_margin_right = 100
+patch_margin_bottom = 100
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Surface" type="NinePatchRect" parent="." unique_id=402797298]
+modulate = Color(0.9250591, 0.78387344, 0.6656046, 1)
+layout_mode = 2
+texture = ExtResource("2_86wg2")
+region_rect = Rect2(0, 0, 300, 300)
+patch_margin_left = 100
+patch_margin_top = 100
+patch_margin_right = 100
+patch_margin_bottom = 100
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 1
