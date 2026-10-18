@@ -1,14 +1,15 @@
 [gd_resource type="Resource" script_class="CursorResource" format=3 uid="uid://d17wkpun5jdvw"]
 
-[ext_resource type="Texture2D" uid="uid://d3nubfa7guqxt" path="res://assets/cursor/hammer_up.png" id="1_t5x37"]
-[ext_resource type="Texture2D" uid="uid://bmyno83kqu0ct" path="res://assets/cursor/hammer_down.png" id="2_qnb4u"]
+[ext_resource type="Texture2D" uid="uid://coi5iha6ct8ep" path="res://assets/hammer/hammer1.png" id="1_t5x37"]
+[ext_resource type="Texture2D" uid="uid://dau2lmk6s1pvp" path="res://assets/hammer/hammer3.png" id="2_qnb4u"]
 [ext_resource type="Script" uid="uid://ea62rs5o56wh" path="res://components/game_cursor/cursor_resource.gd" id="3_2i7ei"]
 
 [resource]
 script = ExtResource("3_2i7ei")
 _normal = ExtResource("1_t5x37")
+_normal_offset = Vector2(0, -37)
 _pressed = ExtResource("2_qnb4u")
-_pressed_offset = Vector2(-77, -69)
+_pressed_offset = Vector2(-43, -37)
 _pressed_sound = 5
 _pressed_effect = "impact"
 metadata/_custom_type_script = "uid://ea62rs5o56wh"
