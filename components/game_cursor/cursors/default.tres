@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="CursorResource" format=3 uid="uid://bx586f3ywe4bs"]
+
+[ext_resource type="Script" uid="uid://ea62rs5o56wh" path="res://components/game_cursor/cursor_resource.gd" id="1_btclw"]
+
+[resource]
+script = ExtResource("1_btclw")
+_pressed_sound = 1
+metadata/_custom_type_script = "uid://ea62rs5o56wh"

@@ -19,6 +19,9 @@ var _pressed_offset: Vector2
 @export
 var _pressed_sound: AudioEventBus.Id
 
+@export_enum('none', 'impact')
+var pressed_effect: String = 'none'
+
 
 enum Type {
 	NORMAL,

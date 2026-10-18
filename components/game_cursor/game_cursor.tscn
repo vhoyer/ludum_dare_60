@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://usqu7frh72wo"]
 
 [ext_resource type="Script" uid="uid://bfrgc2xrx58px" path="res://components/game_cursor/game_cursor.gd" id="1_0mnap"]
-[ext_resource type="Resource" uid="uid://d17wkpun5jdvw" path="res://components/game_cursor/cursors/hammer.tres" id="2_kqhv7"]
+[ext_resource type="Resource" uid="uid://bx586f3ywe4bs" path="res://components/game_cursor/cursors/default.tres" id="2_kqhv7"]
 [ext_resource type="Texture2D" uid="uid://bbecw3msbwwvw" path="res://assets/cursor/wave.png" id="3_kqhv7"]
 
 [sub_resource type="Curve" id="Curve_44guq"]
@@ -28,7 +28,7 @@ alpha_curve = SubResource("CurveTexture_wbdmm")
 process_mode = 3
 z_index = 100
 script = ExtResource("1_0mnap")
-cursor = ExtResource("2_kqhv7")
+_default_cursor = ExtResource("2_kqhv7")
 
 [node name="Particles" type="GPUParticles2D" parent="." unique_id=1649770786]
 unique_name_in_owner = true

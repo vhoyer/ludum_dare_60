@@ -3,6 +3,9 @@ extends Node2D
 
 
 @export
+var _default_cursor: CursorResource
+
+
 var cursor: CursorResource
 
 
@@ -14,6 +17,7 @@ var _particles: GPUParticles2D = %Particles
 
 
 func _ready() -> void:
+	cursor = _default_cursor
 	cursor.apply(_cursor_sprite, CursorResource.Type.NORMAL)
 
 
@@ -26,7 +30,9 @@ func _input(event: InputEvent) -> void:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.is_pressed():
 				cursor.apply(_cursor_sprite, CursorResource.Type.PRESSED)
-				_impact()
+
+				match cursor.pressed_effect:
+					'impact': _impact()
 			else:
 				cursor.apply(_cursor_sprite, CursorResource.Type.NORMAL)
 

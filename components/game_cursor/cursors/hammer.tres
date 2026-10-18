@@ -9,4 +9,6 @@ script = ExtResource("3_2i7ei")
 _normal = ExtResource("1_t5x37")
 _pressed = ExtResource("2_qnb4u")
 _pressed_offset = Vector2(-77, -69)
+_pressed_sound = 5
+pressed_effect = "impact"
 metadata/_custom_type_script = "uid://ea62rs5o56wh"
