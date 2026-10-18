@@ -20,7 +20,7 @@ var _pressed_offset: Vector2
 var _pressed_sound: AudioEventBus.Id
 
 @export_enum('none', 'impact')
-var pressed_effect: String = 'none'
+var _pressed_effect: String = 'none'
 
 
 enum Type {
@@ -29,12 +29,17 @@ enum Type {
 }
 
 
-func apply(sprite: Sprite2D, type: Type) -> void:
+func apply(cursor: GameCursor, type: Type) -> void:
 	match type:
 		Type.NORMAL:
-			sprite.texture = _normal
-			sprite.offset = _normal_offset
+			cursor.sprite.texture = _normal
+			cursor.sprite.offset = _normal_offset
+
 		Type.PRESSED:
-			sprite.texture = _pressed
-			sprite.offset = _pressed_offset
+			cursor.sprite.texture = _pressed
+			cursor.sprite.offset = _pressed_offset
+
 			AudioEventBus.emit(_pressed_sound)
+
+			if cursor.has_method('_effect_%s' % _pressed_effect):
+				cursor.call('_effect_%s' % _pressed_effect)

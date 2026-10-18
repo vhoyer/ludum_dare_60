@@ -10,7 +10,7 @@ var cursor: CursorResource
 
 
 @onready
-var _cursor_sprite: Sprite2D = %Cursor
+var sprite: Sprite2D = %Cursor
 
 @onready
 var _particles: GPUParticles2D = %Particles
@@ -18,7 +18,7 @@ var _particles: GPUParticles2D = %Particles
 
 func _ready() -> void:
 	cursor = _default_cursor
-	cursor.apply(_cursor_sprite, CursorResource.Type.NORMAL)
+	cursor.apply(self, CursorResource.Type.NORMAL)
 
 
 func _process(_delta: float) -> void:
@@ -29,14 +29,11 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.is_pressed():
-				cursor.apply(_cursor_sprite, CursorResource.Type.PRESSED)
-
-				match cursor.pressed_effect:
-					'impact': _impact()
+				cursor.apply(self, CursorResource.Type.PRESSED)
 			else:
-				cursor.apply(_cursor_sprite, CursorResource.Type.NORMAL)
+				cursor.apply(self, CursorResource.Type.NORMAL)
 
 
-func _impact() -> void:
+func _effect_impact() -> void:
 	VHDUtils.camera_2d_shake(self, 10, 0.2)
 	_particles.restart()
