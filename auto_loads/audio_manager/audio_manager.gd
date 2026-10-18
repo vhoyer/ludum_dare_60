@@ -17,4 +17,4 @@ func _play_sfx(event_name: AudioEventBus.Id):
 			$SFXButtonPressed.play()
 			return
 
-	push_warning("SFX not found for audio event %s." % event_name)
+	push_warning("SFX not found for audio event %s (%s)." % [AudioEventBus.Id.find_key(event_name), event_name])
