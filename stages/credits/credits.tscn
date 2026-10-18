@@ -142,7 +142,7 @@ size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember4/Roles" unique_id=1887226698]
 layout_mode = 2
-text = "Music Composer"
+text = "Composer"
 
 [node name="TeamMember5" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection" unique_id=401644792]
 layout_mode = 2
