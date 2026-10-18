@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bnfwtncedr0e4"]
 
-[ext_resource type="Script" uid="uid://b3p3rtsr1i0qb" path="res://src/menus/settings/volume/volume_slider.gd" id="1_7iqg0"]
-[ext_resource type="Theme" uid="uid://d0ltv0r1flidc" path="res://assets/themes/default.tres" id="1_174ar"]
+[ext_resource type="Script" uid="uid://bv3sxcffm2ilm" path="res://components/settings/volume/volume_slider.gd" id="1_7iqg0"]
 
 [node name="VolumeSlider" type="VBoxContainer" unique_id=1954663764]
 anchors_preset = 15
@@ -9,7 +8,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_174ar")
 script = ExtResource("1_7iqg0")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1411493082]
