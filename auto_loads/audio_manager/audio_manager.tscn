@@ -10,14 +10,18 @@ process_mode = 3
 script = ExtResource("1_61g61")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=2140701379]
+bus = &"BGM"
 
 [node name="SFXPoundHammer" type="AudioStreamPlayer" parent="." unique_id=1328380582]
 stream = ExtResource("2_0qhmr")
 volume_db = -8.0
+bus = &"SFX"
 
 [node name="SFXPoundHand" type="AudioStreamPlayer" parent="." unique_id=364105366]
 stream = ExtResource("3_0qhmr")
 volume_db = -12.0
+bus = &"SFX"
 
 [node name="SFXButtonPressed" type="AudioStreamPlayer" parent="." unique_id=1961397351]
 stream = ExtResource("4_0qhmr")
+bus = &"SFX"
