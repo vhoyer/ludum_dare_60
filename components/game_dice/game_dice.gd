@@ -89,7 +89,7 @@ func roll(result: int) -> void:
 	tween.tween_property(self, "_height", 0, _dice_rising_time)
 	tween.tween_callback(func():
 		_rolling = false
-		sprite_dice.frame = result - 1
+		sprite_dice.frame = result
 		roll_finished.emit()
 		AudioEventBus.emit(AudioEventBus.Id.DIE_LANDED)
 		pass)
