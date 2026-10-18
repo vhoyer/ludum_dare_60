@@ -1,7 +1,5 @@
 [gd_scene format=3 uid="uid://ldnl1vo4236d"]
 
-[ext_resource type="Script" uid="uid://0sqebelupmb2" path="res://addons/vhoyer_devkit/UI/ui_elements/credits_roll/credits_roll.gd" id="1_erhdw"]
-
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_erhdw"]
 content_margin_left = 0.0
 content_margin_top = 4.0
@@ -19,230 +17,225 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CreditsRoll" type="ScrollContainer" parent="." unique_id=797353805]
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=56211112]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-horizontal_scroll_mode = 0
-vertical_scroll_mode = 3
-script = ExtResource("1_erhdw")
-mouse_wheel_scroll_enabled = true
-metadata/_custom_type_script = "uid://0sqebelupmb2"
 
-[node name="ScrollingMargin" type="MarginContainer" parent="CreditsRoll" unique_id=2068206641]
+[node name="ScrollingMargin" type="MarginContainer" parent="ScrollContainer" unique_id=2068206641]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CreditsRoll/ScrollingMargin" unique_id=489628804]
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/ScrollingMargin" unique_id=489628804]
 layout_mode = 2
 theme_override_constants/separation = 64
 
-[node name="TeamSection" type="VBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer" unique_id=287751154]
+[node name="TeamSection" type="VBoxContainer" parent="ScrollContainer/ScrollingMargin/VBoxContainer" unique_id=287751154]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="Team" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection" unique_id=2028980635]
+[node name="Team" type="Label" parent="ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection" unique_id=2028980635]
 layout_mode = 2
 theme_type_variation = &"HeaderLarge"
 text = "Team"
 horizontal_alignment = 1
 
-[node name="TeamMember" type="HBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection" unique_id=600675511]
+[node name="TeamMember" type="HBoxContainer" parent="ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection" unique_id=600675511]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/TeamMember" unique_id=2092063504]
+[node name="Label" type="Label" parent="ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember" unique_id=2092063504]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 text = "Eya"
 horizontal_alignment = 2
 
-[node name="VSeparator" type="VSeparator" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/TeamMember" unique_id=2011463372]
+[node name="VSeparator" type="VSeparator" parent="ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember" unique_id=2011463372]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_erhdw")
 
-[node name="Roles" type="VBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/TeamMember" unique_id=760234923]
+[node name="Roles" type="VBoxContainer" parent="ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember" unique_id=760234923]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/TeamMember/Roles" unique_id=268333858]
+[node name="Label" type="Label" parent="ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember/Roles" unique_id=268333858]
 layout_mode = 2
 text = "Artist"
 
-[node name="TeamMember2" type="HBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection" unique_id=131182514]
+[node name="TeamMember2" type="HBoxContainer" parent="ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection" unique_id=131182514]
 layout_mode = 2
 alignment = 1
 
-[node name="Name" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/TeamMember2" unique_id=26772380]
+[node name="Name" type="Label" parent="ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember2" unique_id=26772380]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 text = "Luke Bumgardner"
 horizontal_alignment = 2
 
-[node name="VSeparator" type="VSeparator" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/TeamMember2" unique_id=1773895337]
+[node name="VSeparator" type="VSeparator" parent="ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember2" unique_id=1773895337]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_erhdw")
 
-[node name="Roles" type="VBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/TeamMember2" unique_id=1653422194]
+[node name="Roles" type="VBoxContainer" parent="ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember2" unique_id=1653422194]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/TeamMember2/Roles" unique_id=407300615]
+[node name="Label" type="Label" parent="ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember2/Roles" unique_id=407300615]
 layout_mode = 2
 text = "Voice Actor"
 
-[node name="TeamMember3" type="HBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection" unique_id=1052422410]
+[node name="TeamMember3" type="HBoxContainer" parent="ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection" unique_id=1052422410]
 layout_mode = 2
 alignment = 1
 
-[node name="Name" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/TeamMember3" unique_id=586666012]
+[node name="Name" type="Label" parent="ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember3" unique_id=586666012]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 text = "Nick Evans"
 horizontal_alignment = 2
 
-[node name="VSeparator" type="VSeparator" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/TeamMember3" unique_id=44371764]
+[node name="VSeparator" type="VSeparator" parent="ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember3" unique_id=44371764]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_erhdw")
 
-[node name="Roles" type="VBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/TeamMember3" unique_id=387991726]
+[node name="Roles" type="VBoxContainer" parent="ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember3" unique_id=387991726]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/TeamMember3/Roles" unique_id=1189624105]
+[node name="Label" type="Label" parent="ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember3/Roles" unique_id=1189624105]
 layout_mode = 2
 text = "Game Designer"
 
-[node name="TeamMember4" type="HBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection" unique_id=1526705881]
+[node name="TeamMember4" type="HBoxContainer" parent="ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection" unique_id=1526705881]
 layout_mode = 2
 alignment = 1
 
-[node name="Name" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/TeamMember4" unique_id=1267931568]
+[node name="Name" type="Label" parent="ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember4" unique_id=1267931568]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 text = "Noah Bumgardner"
 horizontal_alignment = 2
 
-[node name="VSeparator" type="VSeparator" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/TeamMember4" unique_id=903589659]
+[node name="VSeparator" type="VSeparator" parent="ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember4" unique_id=903589659]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_erhdw")
 
-[node name="Roles" type="VBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/TeamMember4" unique_id=149864292]
+[node name="Roles" type="VBoxContainer" parent="ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember4" unique_id=149864292]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/TeamMember4/Roles" unique_id=1887226698]
+[node name="Label" type="Label" parent="ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember4/Roles" unique_id=1887226698]
 layout_mode = 2
 text = "Music Composer"
 
-[node name="TeamMember5" type="HBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection" unique_id=401644792]
+[node name="TeamMember5" type="HBoxContainer" parent="ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection" unique_id=401644792]
 layout_mode = 2
 alignment = 1
 
-[node name="Name" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/TeamMember5" unique_id=508160102]
+[node name="Name" type="Label" parent="ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember5" unique_id=508160102]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 text = "Tom Bumgardner"
 horizontal_alignment = 2
 
-[node name="VSeparator" type="VSeparator" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/TeamMember5" unique_id=17538377]
+[node name="VSeparator" type="VSeparator" parent="ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember5" unique_id=17538377]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_erhdw")
 
-[node name="Roles" type="VBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/TeamMember5" unique_id=1638745746]
+[node name="Roles" type="VBoxContainer" parent="ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember5" unique_id=1638745746]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/TeamMember5/Roles" unique_id=120207315]
+[node name="Label" type="Label" parent="ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember5/Roles" unique_id=120207315]
 layout_mode = 2
 text = "Artist"
 
-[node name="TeamMember6" type="HBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection" unique_id=1214803440]
+[node name="TeamMember6" type="HBoxContainer" parent="ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection" unique_id=1214803440]
 layout_mode = 2
 alignment = 1
 
-[node name="Name" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/TeamMember6" unique_id=1879302540]
+[node name="Name" type="Label" parent="ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember6" unique_id=1879302540]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 text = "vhoyer"
 horizontal_alignment = 2
 
-[node name="VSeparator" type="VSeparator" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/TeamMember6" unique_id=1670217862]
+[node name="VSeparator" type="VSeparator" parent="ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember6" unique_id=1670217862]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_erhdw")
 
-[node name="Roles" type="VBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/TeamMember6" unique_id=2048802736]
+[node name="Roles" type="VBoxContainer" parent="ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember6" unique_id=2048802736]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/TeamMember6/Roles" unique_id=119740678]
+[node name="Label" type="Label" parent="ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember6/Roles" unique_id=119740678]
 layout_mode = 2
 text = "Lead Programmer"
 
-[node name="AdditionalAssetsSection" type="VBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer" unique_id=1940969167]
+[node name="AdditionalAssetsSection" type="VBoxContainer" parent="ScrollContainer/ScrollingMargin/VBoxContainer" unique_id=1940969167]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="Title" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/AdditionalAssetsSection" unique_id=127928000]
+[node name="Title" type="Label" parent="ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection" unique_id=127928000]
 layout_mode = 2
 theme_type_variation = &"HeaderLarge"
 text = "Additional Assets from:"
 horizontal_alignment = 1
 
-[node name="AdditionalAsset" type="HBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/AdditionalAssetsSection" unique_id=785921605]
+[node name="AdditionalAsset" type="HBoxContainer" parent="ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection" unique_id=785921605]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset" unique_id=1514358936]
+[node name="Label" type="Label" parent="ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset" unique_id=1514358936]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 text = "Andy Clymer"
 horizontal_alignment = 2
 
-[node name="VSeparator" type="VSeparator" parent="CreditsRoll/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset" unique_id=1865239708]
+[node name="VSeparator" type="VSeparator" parent="ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset" unique_id=1865239708]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_erhdw")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset" unique_id=2003648468]
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset" unique_id=2003648468]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset/VBoxContainer" unique_id=981100227]
+[node name="Label" type="Label" parent="ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset/VBoxContainer" unique_id=981100227]
 layout_mode = 2
 text = "Tilt Neon Font"
 
-[node name="AdditionalAsset2" type="HBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/AdditionalAssetsSection" unique_id=1728892367]
+[node name="AdditionalAsset2" type="HBoxContainer" parent="ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection" unique_id=1728892367]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset2" unique_id=989400989]
+[node name="Label" type="Label" parent="ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset2" unique_id=989400989]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 text = "Hubert and Fischer"
 horizontal_alignment = 2
 
-[node name="VSeparator" type="VSeparator" parent="CreditsRoll/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset2" unique_id=382389674]
+[node name="VSeparator" type="VSeparator" parent="ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset2" unique_id=382389674]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_erhdw")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset2" unique_id=548513289]
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset2" unique_id=548513289]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset2/VBoxContainer" unique_id=598672295]
+[node name="Label" type="Label" parent="ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset2/VBoxContainer" unique_id=598672295]
 layout_mode = 2
 text = "Rubik Mono One Font"
