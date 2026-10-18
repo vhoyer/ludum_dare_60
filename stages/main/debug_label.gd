@@ -6,7 +6,7 @@ func _ready() -> void:
 		return
 
 	SaveManager.data.watch(self, ['points', 'current_level', 'roll_counter', 'dice_count'], func():
-		self.text = "\n".join(["""
+		self.text = "\n------------\n".join(["""
 goal_min: {goal_min}
 goal_max: {goal_max}
 dice_starting_count: {dice_starting_count}
