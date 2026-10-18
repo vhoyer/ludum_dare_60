@@ -151,6 +151,11 @@ layout_mode = 2
 size_flags_vertical = 8
 text = "roll"
 
+[node name="Label2" type="Label" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer2" unique_id=348406944]
+layout_mode = 2
+text = "Old Cheats"
+horizontal_alignment = 1
+
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer2" unique_id=1699371908]
 layout_mode = 2
 

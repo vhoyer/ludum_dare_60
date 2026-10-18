@@ -34,4 +34,4 @@ func _ready() -> void:
 
 
 func _current_level_updated() -> void:
-	SaveManager.data.dice_count = current.starting_dice_count
+	SaveManager.data.dice_count = current.dice_starting_count

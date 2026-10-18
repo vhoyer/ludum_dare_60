@@ -8,6 +8,7 @@
 bounce = 0.4
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n26ti"]
+resource_local_to_scene = true
 radius = 90.0
 
 [node name="GameDice" type="RigidBody2D" unique_id=1964370385]
@@ -16,11 +17,6 @@ lock_rotation = true
 script = ExtResource("1_kdbr7")
 _dice_rising_time = 0.2
 _light_direction = Vector2(0, 0.5)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1753354572]
-unique_name_in_owner = true
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CircleShape2D_n26ti")
 
 [node name="VisualRoot" type="Node2D" parent="." unique_id=1336242043]
 unique_name_in_owner = true
@@ -37,3 +33,8 @@ unique_name_in_owner = true
 texture = ExtResource("3_hpgiv")
 hframes = 11
 frame = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1753354572]
+unique_name_in_owner = true
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_n26ti")

@@ -45,9 +45,9 @@ var test_roll: Callable = func():
 
 
 @export_range(0.1, 2)
-var _size: float = 1:
+var size: float = 1:
 	set(value):
-		_size = clamp(value, 0.1, 2)
+		size = clamp(value, 0.1, 2)
 		_model_updated.emit()
 
 
@@ -76,8 +76,8 @@ func _ready() -> void:
 
 
 func _update_view() -> void:
-	visual_root.scale = _initial_visual_root_scale * _size
-	collider.shape.radius = _initial_colider_radius * _size
+	visual_root.scale = _initial_visual_root_scale * size
+	collider.shape.radius = _initial_colider_radius * size
 
 	sprite_dice.scale = Vector2.ONE * ((_height * 0.35) + 1)
 	sprite_shadow.position = _light_direction.rotated(-1 * visual_root.rotation) * ((_height * 250) + 1)
