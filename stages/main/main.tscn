@@ -1,13 +1,23 @@
 [gd_scene format=3 uid="uid://boew20gyqimy6"]
 
 [ext_resource type="Script" uid="uid://bjdopl13o6krk" path="res://stages/main/main.gd" id="1_60rri"]
-[ext_resource type="PackedScene" uid="uid://cvf0j1cif853i" path="res://components/game_dice/game_dice.tscn" id="2_5powy"]
 [ext_resource type="Texture2D" uid="uid://bgsm4wruhcjqm" path="res://assets/alien/enemy1.png" id="2_j6wwd"]
 [ext_resource type="PackedScene" uid="uid://cpsa1qlgdobpb" path="res://components/game_tug_of_war/game_tug_of_war.tscn" id="2_usqqw"]
 [ext_resource type="PackedScene" uid="uid://usqu7frh72wo" path="res://components/game_cursor/game_cursor.tscn" id="2_woy08"]
 [ext_resource type="PackedScene" uid="uid://kfbhin5nkdnx" path="res://components/game_table/game_table.tscn" id="5_no1gd"]
 [ext_resource type="Script" uid="uid://d161jm3n6y53c" path="res://components/game_cursor/cursor_on_parent.gd" id="6_4vbm2"]
 [ext_resource type="Resource" uid="uid://i1wcyjmq7t4p" path="res://components/game_cursor/cursors/hand.tres" id="7_no1gd"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n26ti"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_no1gd"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3f6tk"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_axbkc"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_no1gd"]
 content_margin_left = 0.0
@@ -24,6 +34,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_60rri")
+_throw_direction = Vector2(-1, -1)
+_throw_direction_variation_rad = 0.5
+_throw_force = 1000.0
+_throw_inbetween_interval = 0.015
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1225823530]
 anchor_mode = 0
@@ -84,11 +98,30 @@ handle_input_locally = false
 size = Vector2i(916, 616)
 render_target_update_mode = 4
 
+[node name="TableBoundaries" type="StaticBody2D" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport" unique_id=363925701]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/TableBoundaries" unique_id=1716343004]
+position = Vector2(40, 249)
+shape = SubResource("WorldBoundaryShape2D_n26ti")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/TableBoundaries" unique_id=1843171515]
+position = Vector2(728, 249)
+shape = SubResource("WorldBoundaryShape2D_no1gd")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/TableBoundaries" unique_id=675039779]
+position = Vector2(404, 40)
+shape = SubResource("WorldBoundaryShape2D_3f6tk")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/TableBoundaries" unique_id=510147364]
+position = Vector2(404, 582)
+shape = SubResource("WorldBoundaryShape2D_axbkc")
+
 [node name="Dices" type="Node2D" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport" unique_id=1878736496]
 unique_name_in_owner = true
 
-[node name="GameDice" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=1293005474 instance=ExtResource("2_5powy")]
-position = Vector2(105, 105)
+[node name="DiceSpawn" type="Marker2D" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport" unique_id=289558422]
+unique_name_in_owner = true
+position = Vector2(665, 536)
 
 [node name="TableInside" type="MarginContainer" parent="VBoxContainer/Dices" unique_id=1203254494]
 layout_mode = 2
@@ -118,9 +151,17 @@ layout_mode = 2
 size_flags_vertical = 8
 text = "roll"
 
-[node name="CursorOnParent" type="Node" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer2/RollButton" unique_id=1497928893]
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer2" unique_id=1699371908]
+layout_mode = 2
+
+[node name="HitTableButton" type="Button" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer2" unique_id=1059237294]
+layout_mode = 2
+text = "Hit Table"
+
+[node name="CursorOnParent" type="Node" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer2/HitTableButton" unique_id=1497928893]
 script = ExtResource("6_4vbm2")
 cursor = ExtResource("7_no1gd")
 metadata/_custom_type_script = "uid://d161jm3n6y53c"
 
 [connection signal="button_down" from="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer2/RollButton" to="." method="_on_roll_button_button_down"]
+[connection signal="button_down" from="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer2/HitTableButton" to="." method="_on_hit_table_button_button_down"]

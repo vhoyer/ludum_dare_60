@@ -4,14 +4,26 @@
 [ext_resource type="Texture2D" uid="uid://c5nmda5fkohgw" path="res://assets/dice/dropshadow.png" id="2_1pb4h"]
 [ext_resource type="Texture2D" uid="uid://eiphalqmewu4" path="res://assets/dice/rubik saturated.png" id="3_hpgiv"]
 
-[node name="GameDice" type="Node2D" unique_id=1293005474]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_no1gd"]
+bounce = 0.4
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n26ti"]
+radius = 92.0
+
+[node name="GameDice" type="RigidBody2D" unique_id=1964370385]
+physics_material_override = SubResource("PhysicsMaterial_no1gd")
+lock_rotation = true
 script = ExtResource("1_kdbr7")
 _dice_rising_time = 0.2
 _light_direction = Vector2(0, 0.5)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1753354572]
+unique_name_in_owner = true
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_n26ti")
+
 [node name="VisualRoot" type="Node2D" parent="." unique_id=1336242043]
 unique_name_in_owner = true
-rotation = -0.2748714
 scale = Vector2(0.5, 0.5)
 
 [node name="DiceShadow" type="Sprite2D" parent="VisualRoot" unique_id=149343767]
