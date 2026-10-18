@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ckw0ak7gwhh1r"]
+
+[ext_resource type="Script" uid="uid://c7tpdisl0ge2n" path="res://auto_loads/audio_manager/audio_manager.gd" id="1_61g61"]
+[ext_resource type="AudioStream" uid="uid://l1erir0h7dph" path="res://assets/audio/sfx/sfx_213_pound_heavy_randomizer.tres" id="2_0qhmr"]
+[ext_resource type="AudioStream" uid="uid://b1tkjxioa7hvn" path="res://assets/audio/sfx/sfx_214_pound_medium_randomizer.tres" id="3_0qhmr"]
+[ext_resource type="AudioStream" uid="uid://br1b37xebg7je" path="res://assets/audio/sfx/sfx_301_button_click.wav" id="4_0qhmr"]
+
+[node name="AudioManager" type="Node" unique_id=548666010]
+process_mode = 3
+script = ExtResource("1_61g61")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=2140701379]
+
+[node name="SFXPoundHammer" type="AudioStreamPlayer" parent="." unique_id=1328380582]
+stream = ExtResource("2_0qhmr")
+volume_db = -8.0
+
+[node name="SFXPoundHand" type="AudioStreamPlayer" parent="." unique_id=364105366]
+stream = ExtResource("3_0qhmr")
+volume_db = -12.0
+
+[node name="SFXButtonPressed" type="AudioStreamPlayer" parent="." unique_id=1961397351]
+stream = ExtResource("4_0qhmr")
