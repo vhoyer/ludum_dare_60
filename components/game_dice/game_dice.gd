@@ -1,6 +1,8 @@
 @tool
 class_name GameDice
-extends Node2D
+extends RigidBody2D
+
+const ROTATION_RANGE = 18
 
 
 signal roll_finished()
@@ -22,7 +24,9 @@ var _rolling_frame_duration: float = 0.05
 @export_range(0, 1)
 var _height: float = 0:
 	set(value):
-		_height = value
+		_height = clamp(value, 0, 1)
+		if _height <= 0:
+			AudioEventBus.emit(AudioEventBus.Id.DIE_LANDED)
 		_model_updated.emit()
 
 
@@ -68,20 +72,39 @@ func _process(delta: float) -> void:
 	_process_rolling(delta)
 
 
-func roll(result: int) -> void:
+func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
+	if _height > 0.05: return
+
+	state.apply_impulse(-1 * state.linear_velocity * 0.1)
+	pass
+
+
+func roll(result: int, throw_direction:= Vector2.ZERO, throw_force:= 10.0) -> void:
 	_rolling = true
 	_rolling_counter = 0
 	AudioEventBus.emit(AudioEventBus.Id.DIE_ROLLING)
 
-	const ROTATION_RANGE = 18
-	var tween_rotation = self.create_tween()
-	tween_rotation.set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
-	tween_rotation.tween_property(
-		visual_root,
-		"rotation_degrees",
-		(randf() * ROTATION_RANGE * 2 - ROTATION_RANGE),
-		_dice_rising_time * 2)
+	_randomize_rotation(_dice_rising_time * 10)
 
+	_height = 1
+
+	var tween = self.create_tween()
+	tween.set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "_height", 0, _dice_rising_time * 10)
+	tween.tween_callback(func():
+		_rolling = false
+		sprite_dice.frame = result
+		roll_finished.emit()
+		pass)
+
+	self.apply_impulse(throw_direction.normalized() * throw_force)
+
+func reroll(result: int) -> void:
+	_rolling = true
+	_rolling_counter = 0
+	AudioEventBus.emit(AudioEventBus.Id.DIE_ROLLING)
+
+	_randomize_rotation(_dice_rising_time * 2)
 
 	var tween = self.create_tween()
 	tween.set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
@@ -91,8 +114,18 @@ func roll(result: int) -> void:
 		_rolling = false
 		sprite_dice.frame = result
 		roll_finished.emit()
-		AudioEventBus.emit(AudioEventBus.Id.DIE_LANDED)
 		pass)
+
+
+func _randomize_rotation(duration: float) -> void:
+	var tween_rotation = self.create_tween()
+	tween_rotation.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	tween_rotation.tween_property(
+		visual_root,
+		"rotation_degrees",
+		(randf() * ROTATION_RANGE * 2 - ROTATION_RANGE),
+		duration)
+
 
 
 func _process_rolling(delta: float) -> void:

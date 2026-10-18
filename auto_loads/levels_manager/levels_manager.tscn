@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cjm6mc3n2kcb6"]
+
+[ext_resource type="Script" uid="uid://c6nhi0n7ir0mk" path="res://auto_loads/levels_manager/game_level.gd" id="1_3gud8"]
+[ext_resource type="Script" uid="uid://b88m5ka3hrfu8" path="res://auto_loads/levels_manager/levels_manager.gd" id="1_6pqnw"]
+
+[node name="LevelsManager" type="Node" unique_id=791325084]
+script = ExtResource("1_6pqnw")
+
+[node name="GameLevel1" type="Node" parent="." unique_id=275224358]
+script = ExtResource("1_3gud8")
+metadata/_custom_type_script = "uid://c6nhi0n7ir0mk"
+
+[node name="GameLevel2" type="Node" parent="." unique_id=1620483075]
+script = ExtResource("1_3gud8")
+goal = 12.0
+starting_dice_count = 2
+metadata/_custom_type_script = "uid://c6nhi0n7ir0mk"
