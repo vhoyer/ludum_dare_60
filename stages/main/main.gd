@@ -41,9 +41,10 @@ func _on_roll_button_button_down() -> void:
 	AudioEventBus.emit(AudioEventBus.Id.DICE_ROLL_REQUESTED)
 
 	for _i: int in SaveManager.data.dice_count:
-		var dice = GAME_DICE_SCENE.instantiate()
+		var dice: GameDice = GAME_DICE_SCENE.instantiate()
 		dices_group.add_child(dice)
 		dice.global_position = dice_spawn.global_position
+		dice.size = LevelsManager.current.dice_size
 
 		var value = randi() % 6 + 1
 

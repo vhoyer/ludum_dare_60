@@ -6,4 +6,7 @@ extends Node
 var goal: float = 6.0
 
 @export
-var starting_dice_count: int = 1
+var dice_starting_count: int = 1
+
+@export_range(0.1, 2)
+var dice_size: float = 1
