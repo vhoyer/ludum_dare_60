@@ -30,16 +30,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=458237452]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1755873581]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/PanelContainer" unique_id=2073665374]
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=461063435]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer/VBoxContainer" unique_id=458237452]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer" unique_id=349388630]
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer/PanelContainer" unique_id=2073665374]
 layout_mode = 2
 
-[node name="SettingsMenuContent" parent="CenterContainer/PanelContainer/MarginContainer" unique_id=942847730 instance=ExtResource("1_orxww")]
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/VBoxContainer/PanelContainer" unique_id=349388630]
+layout_mode = 2
+theme_type_variation = &"MarginContainerMedium"
+
+[node name="SettingsMenuContent" parent="CenterContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=942847730 instance=ExtResource("1_orxww")]
 layout_mode = 2
 
-[connection signal="buttonBackPressed" from="CenterContainer/PanelContainer/MarginContainer/SettingsMenuContent" to="." method="_on_settings_menu_content_button_back_pressed"]
+[connection signal="buttonBackPressed" from="CenterContainer/VBoxContainer/PanelContainer/MarginContainer/SettingsMenuContent" to="." method="_on_settings_menu_content_button_back_pressed"]
