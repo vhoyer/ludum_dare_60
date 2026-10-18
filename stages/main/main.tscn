@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://bgsm4wruhcjqm" path="res://assets/alien/enemy1.png" id="2_j6wwd"]
 [ext_resource type="PackedScene" uid="uid://cpsa1qlgdobpb" path="res://components/game_tug_of_war/game_tug_of_war.tscn" id="2_usqqw"]
 [ext_resource type="PackedScene" uid="uid://usqu7frh72wo" path="res://components/game_cursor/game_cursor.tscn" id="2_woy08"]
+[ext_resource type="Script" uid="uid://d161jm3n6y53c" path="res://components/game_cursor/cursor_on_parent.gd" id="6_4vbm2"]
+[ext_resource type="Resource" uid="uid://i1wcyjmq7t4p" path="res://components/game_cursor/cursors/hand.tres" id="7_no1gd"]
 
 [node name="Main" type="HBoxContainer" unique_id=1820559237]
 anchors_preset = 15
@@ -89,5 +91,10 @@ size_flags_vertical = 4
 layout_mode = 2
 size_flags_vertical = 8
 text = "roll"
+
+[node name="CursorOnParent" type="Node" parent="MarginContainer/VBoxContainer2/RollButton" unique_id=1497928893]
+script = ExtResource("6_4vbm2")
+cursor = ExtResource("7_no1gd")
+metadata/_custom_type_script = "uid://d161jm3n6y53c"
 
 [connection signal="button_down" from="MarginContainer/VBoxContainer2/RollButton" to="." method="_on_roll_button_button_down"]

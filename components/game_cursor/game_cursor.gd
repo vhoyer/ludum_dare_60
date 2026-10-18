@@ -2,6 +2,9 @@ class_name GameCursor
 extends Node2D
 
 
+static var instance: GameCursor
+
+
 @export
 var _default_cursor: CursorResource
 
@@ -17,6 +20,10 @@ var _particles: GPUParticles2D = %Particles
 
 
 func _ready() -> void:
+	if instance:
+		push_warning('You should just have one GameCursor loaded at a time')
+	instance = self
+
 	cursor = _default_cursor
 	cursor.apply(self, CursorResource.Type.NORMAL)
 
