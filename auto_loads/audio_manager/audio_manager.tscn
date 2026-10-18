@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://br1b37xebg7je" path="res://assets/audio/sfx/sfx_301_button_click.wav" id="4_0qhmr"]
 
 [node name="AudioManager" type="Node" unique_id=548666010]
+process_mode = 3
 script = ExtResource("1_61g61")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=2140701379]
