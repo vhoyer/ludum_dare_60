@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://d161jm3n6y53c" path="res://components/game_cursor/cursor_on_parent.gd" id="2_wyd67"]
 [ext_resource type="Resource" uid="uid://d17wkpun5jdvw" path="res://components/game_cursor/cursors/hammer.tres" id="3_7wn7o"]
 [ext_resource type="Script" uid="uid://tv3dksflndin" path="res://stages/main_menu/quit_button.gd" id="4_7wn7o"]
+[ext_resource type="Script" uid="uid://ueeqi2h4imq1" path="res://stages/main_menu/settings_button.gd" id="4_jofpu"]
 
 [node name="Main" type="CenterContainer" unique_id=1983816057]
 anchors_preset = 15
@@ -30,6 +31,7 @@ metadata/_custom_type_script = "uid://d161jm3n6y53c"
 [node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=1420342401]
 layout_mode = 2
 text = "Settings"
+script = ExtResource("4_jofpu")
 
 [node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=493804935]
 layout_mode = 2
@@ -42,4 +44,5 @@ anchor_mode = 0
 [node name="GameCursor" parent="Camera2D" unique_id=1907159996 instance=ExtResource("2_owbi8")]
 
 [connection signal="button_down" from="VBoxContainer/StartButton" to="VBoxContainer/StartButton" method="_on_button_down"]
+[connection signal="pressed" from="VBoxContainer/SettingsButton" to="VBoxContainer/SettingsButton" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="VBoxContainer/QuitButton" method="_on_pressed"]
