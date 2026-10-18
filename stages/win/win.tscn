@@ -34,10 +34,12 @@ size_flags_vertical = 3
 
 [node name="Explanation" type="Label" parent="MarginContainer/VBoxContainer" unique_id=185177693]
 visible = false
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_type_variation = &"HeaderMedium"
-text = "You may return to Earth in your spaceship, or stay longer to play games of chance with the locals."
+text = "Thank you for playing! You may return to Earth in your spaceship, or stay longer to play games of chance with the locals."
 horizontal_alignment = 1
+autowrap_mode = 1
 
 [node name="Control2" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1124633707]
 visible = false
