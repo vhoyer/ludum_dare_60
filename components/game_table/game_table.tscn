@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://kfbhin5nkdnx"]
 
-[ext_resource type="Texture2D" uid="uid://84pks8q2jil" path="res://assets/table/wood_placeholder.png" id="1_0jmbw"]
+[ext_resource type="Texture2D" uid="uid://blocfv7o3r18n" path="res://assets/table/simple_wood.png" id="1_86wg2"]
 [ext_resource type="Texture2D" uid="uid://un38aj1sbywe" path="res://assets/table/cloth_fabric.png" id="2_86wg2"]
 [ext_resource type="Texture2D" uid="uid://brpshq550hbwj" path="res://assets/table/lighting.png" id="3_86wg2"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_86wg2"]
+blend_mode = 1
 
 [node name="GameTable" type="MarginContainer" unique_id=1424488825]
 anchors_preset = 15
@@ -14,14 +17,13 @@ grow_vertical = 2
 [node name="Border" type="NinePatchRect" parent="." unique_id=320899430]
 modulate = Color(0.9248491, 0.93102807, 0.7186616, 1)
 layout_mode = 2
-texture = ExtResource("1_0jmbw")
+texture = ExtResource("1_86wg2")
 region_rect = Rect2(0, 0, 300, 300)
 patch_margin_left = 100
 patch_margin_top = 100
 patch_margin_right = 100
 patch_margin_bottom = 100
 axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
 
 [node name="Surface" type="NinePatchRect" parent="." unique_id=402797298]
 modulate = Color(0.9250591, 0.78387344, 0.6656046, 1)
@@ -37,6 +39,7 @@ axis_stretch_horizontal = 2
 axis_stretch_vertical = 1
 
 [node name="TextureRect" type="TextureRect" parent="Surface" unique_id=1389379479]
+material = SubResource("CanvasItemMaterial_86wg2")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
