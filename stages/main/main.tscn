@@ -6,7 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://usqu7frh72wo" path="res://components/game_cursor/game_cursor.tscn" id="2_woy08"]
 [ext_resource type="PackedScene" uid="uid://kfbhin5nkdnx" path="res://components/game_table/game_table.tscn" id="5_no1gd"]
 [ext_resource type="Script" uid="uid://d161jm3n6y53c" path="res://components/game_cursor/cursor_on_parent.gd" id="6_4vbm2"]
+[ext_resource type="Script" uid="uid://bkm48xrdtc50e" path="res://stages/main/debug_label.gd" id="6_no1gd"]
 [ext_resource type="Resource" uid="uid://i1wcyjmq7t4p" path="res://components/game_cursor/cursors/hand.tres" id="7_no1gd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_no1gd"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0, 0, 0, 0.6)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n26ti"]
 normal = Vector2(1, 0)
@@ -43,6 +51,15 @@ _throw_inbetween_interval = 0.015
 anchor_mode = 0
 
 [node name="GameCursor" parent="Camera2D" unique_id=1907159996 instance=ExtResource("2_woy08")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D" unique_id=2115178302]
+
+[node name="DebugLabel" type="Label" parent="Camera2D/CanvasLayer" unique_id=2041311537]
+offset_right = 107.0
+offset_bottom = 23.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_no1gd")
+text = "DEBUG LABEL"
+script = ExtResource("6_no1gd")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1559845026]
 layout_mode = 2

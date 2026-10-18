@@ -3,7 +3,10 @@ extends Node
 
 
 @export
-var goal: float = 6.0
+var goal_min: float = -INF
+
+@export
+var goal_max: float = INF
 
 @export
 var dice_starting_count: int = 1

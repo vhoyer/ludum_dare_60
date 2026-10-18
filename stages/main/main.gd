@@ -29,16 +29,15 @@ var _throw_inbetween_interval: float = 0.3
 
 func _ready() -> void:
 	SaveManager.data.watch(self, ['points', 'current_level'], func():
-		tug_of_war.value = SaveManager.data.points / LevelsManager.current.goal
+		tug_of_war.value = SaveManager.data.points / LevelsManager.current.goal_min
 		pass)
 
 
 func _on_roll_button_button_down() -> void:
 	VHDUtils.remove_children(dices_group)
-
-	SaveManager.data.points = 0
-
 	AudioEventBus.emit(AudioEventBus.Id.DICE_ROLL_REQUESTED)
+
+	var points: int = 0
 
 	for _i: int in SaveManager.data.dice_count:
 		var dice: GameDice = GAME_DICE_SCENE.instantiate()
@@ -53,22 +52,24 @@ func _on_roll_button_button_down() -> void:
 			_throw_direction.rotated(randf() * _throw_direction_variation_rad * 2 - _throw_direction_variation_rad),
 			_throw_force)
 
-		dice.roll_finished.connect(func():
-			SaveManager.data.points += value
-			pass,
-			CONNECT_ONE_SHOT)
-
 		await self.get_tree().create_timer(_throw_inbetween_interval).timeout
+
+	for dice: GameDice in dices_group.get_children():
+		points += await dice.roll_finished
+
+	SaveManager.data.points = points
+	SaveManager.data.roll_counter += 1
+
 
 
 func _on_hit_table_button_button_down() -> void:
-	SaveManager.data.points = 0
+	var points: int = 0
 
 	for dice: GameDice in dices_group.get_children():
 		var value = randi() % 6 + 1
 		dice.reroll(value)
 
-		dice.roll_finished.connect(func():
-			SaveManager.data.points += value
-			pass,
-			CONNECT_ONE_SHOT)
+	for dice: GameDice in dices_group.get_children():
+		points += await dice.roll_finished
+
+	SaveManager.data.points = points
