@@ -5,10 +5,17 @@
 [ext_resource type="Texture2D" uid="uid://bgsm4wruhcjqm" path="res://assets/alien/enemy1.png" id="2_j6wwd"]
 [ext_resource type="PackedScene" uid="uid://cpsa1qlgdobpb" path="res://components/game_tug_of_war/game_tug_of_war.tscn" id="2_usqqw"]
 [ext_resource type="PackedScene" uid="uid://usqu7frh72wo" path="res://components/game_cursor/game_cursor.tscn" id="2_woy08"]
-[ext_resource type="Texture2D" uid="uid://84pks8q2jil" path="res://assets/table/wood_placeholder.png" id="5_3f6tk"]
+[ext_resource type="PackedScene" uid="uid://kfbhin5nkdnx" path="res://components/game_table/game_table.tscn" id="5_no1gd"]
 [ext_resource type="Script" uid="uid://d161jm3n6y53c" path="res://components/game_cursor/cursor_on_parent.gd" id="6_4vbm2"]
-[ext_resource type="Texture2D" uid="uid://un38aj1sbywe" path="res://assets/table/cloth_fabric.png" id="6_axbkc"]
 [ext_resource type="Resource" uid="uid://i1wcyjmq7t4p" path="res://components/game_cursor/cursors/hand.tres" id="7_no1gd"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_no1gd"]
+content_margin_left = 0.0
+content_margin_top = 4.0
+content_margin_right = 0.0
+content_margin_bottom = 4.0
+thickness = 2
+vertical = true
 
 [node name="Main" type="HBoxContainer" unique_id=1820559237]
 anchors_preset = 15
@@ -23,14 +30,19 @@ anchor_mode = 0
 
 [node name="GameCursor" parent="Camera2D" unique_id=1907159996 instance=ExtResource("2_woy08")]
 
-[node name="GameTugOfWar" parent="." unique_id=598563760 instance=ExtResource("2_usqqw")]
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1559845026]
+layout_mode = 2
+
+[node name="GameTugOfWar" parent="VBoxContainer2" unique_id=598563760 instance=ExtResource("2_usqqw")]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=342927523]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_constants/separation = 0
 
 [node name="Enemy" type="MarginContainer" parent="VBoxContainer" unique_id=1041880809]
 visible = false
@@ -48,37 +60,9 @@ stretch_mode = 5
 layout_mode = 2
 size_flags_vertical = 3
 theme_type_variation = &"MarginContainerMedium"
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
 
-[node name="Table" type="MarginContainer" parent="VBoxContainer/Dices" unique_id=363571521]
+[node name="GameTable" parent="VBoxContainer/Dices" unique_id=1424488825 instance=ExtResource("5_no1gd")]
 layout_mode = 2
-
-[node name="Border" type="NinePatchRect" parent="VBoxContainer/Dices/Table" unique_id=133034112]
-modulate = Color(0.9248491, 0.93102807, 0.7186616, 1)
-layout_mode = 2
-texture = ExtResource("5_3f6tk")
-region_rect = Rect2(0, 0, 300, 300)
-patch_margin_left = 100
-patch_margin_top = 100
-patch_margin_right = 100
-patch_margin_bottom = 100
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
-
-[node name="Surface" type="NinePatchRect" parent="VBoxContainer/Dices/Table" unique_id=1177314493]
-modulate = Color(0.9250591, 0.78387344, 0.6656046, 1)
-layout_mode = 2
-texture = ExtResource("6_axbkc")
-region_rect = Rect2(0, 0, 300, 300)
-patch_margin_left = 100
-patch_margin_top = 100
-patch_margin_right = 100
-patch_margin_bottom = 100
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Dices" unique_id=1748016336]
 layout_mode = 2
@@ -104,189 +88,39 @@ render_target_update_mode = 4
 unique_name_in_owner = true
 
 [node name="GameDice" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=1293005474 instance=ExtResource("2_5powy")]
-position = Vector2(57, 53)
+position = Vector2(105, 105)
 
-[node name="GameDice2" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=62987177 instance=ExtResource("2_5powy")]
-position = Vector2(156, 52)
-
-[node name="GameDice3" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=70781987 instance=ExtResource("2_5powy")]
-position = Vector2(253, 49)
-
-[node name="GameDice4" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=2098725385 instance=ExtResource("2_5powy")]
-position = Vector2(347, 49)
-
-[node name="GameDice5" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=674446434 instance=ExtResource("2_5powy")]
-position = Vector2(439, 49)
-
-[node name="GameDice6" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=694826078 instance=ExtResource("2_5powy")]
-position = Vector2(532, 49)
-
-[node name="GameDice7" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=1591463411 instance=ExtResource("2_5powy")]
-position = Vector2(629, 49)
-
-[node name="GameDice8" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=799059039 instance=ExtResource("2_5powy")]
-position = Vector2(726, 49)
-
-[node name="GameDice9" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=996700495 instance=ExtResource("2_5powy")]
-position = Vector2(827, 49)
-
-[node name="GameDice10" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=675530952 instance=ExtResource("2_5powy")]
-position = Vector2(62, 148)
-
-[node name="GameDice11" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=277694751 instance=ExtResource("2_5powy")]
-position = Vector2(160, 148)
-
-[node name="GameDice12" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=1074127629 instance=ExtResource("2_5powy")]
-position = Vector2(261, 148)
-
-[node name="GameDice13" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=1404361116 instance=ExtResource("2_5powy")]
-position = Vector2(360, 148)
-
-[node name="GameDice14" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=1732644369 instance=ExtResource("2_5powy")]
-position = Vector2(451, 148)
-
-[node name="GameDice15" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=952611557 instance=ExtResource("2_5powy")]
-position = Vector2(545, 148)
-
-[node name="GameDice16" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=647197674 instance=ExtResource("2_5powy")]
-position = Vector2(638, 148)
-
-[node name="GameDice17" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=1818766971 instance=ExtResource("2_5powy")]
-position = Vector2(733, 148)
-
-[node name="GameDice18" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=148463188 instance=ExtResource("2_5powy")]
-position = Vector2(835, 148)
-
-[node name="GameDice19" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=1702807765 instance=ExtResource("2_5powy")]
-position = Vector2(57, 256)
-
-[node name="GameDice20" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=525802147 instance=ExtResource("2_5powy")]
-position = Vector2(156, 255)
-
-[node name="GameDice21" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=1539433503 instance=ExtResource("2_5powy")]
-position = Vector2(253, 252)
-
-[node name="GameDice22" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=1722100049 instance=ExtResource("2_5powy")]
-position = Vector2(347, 252)
-
-[node name="GameDice23" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=1764333624 instance=ExtResource("2_5powy")]
-position = Vector2(439, 252)
-
-[node name="GameDice24" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=1055019825 instance=ExtResource("2_5powy")]
-position = Vector2(532, 252)
-
-[node name="GameDice25" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=260605917 instance=ExtResource("2_5powy")]
-position = Vector2(629, 252)
-
-[node name="GameDice26" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=1559619443 instance=ExtResource("2_5powy")]
-position = Vector2(726, 252)
-
-[node name="GameDice27" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=2020052940 instance=ExtResource("2_5powy")]
-position = Vector2(827, 252)
-
-[node name="GameDice28" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=1715664000 instance=ExtResource("2_5powy")]
-position = Vector2(62, 351)
-
-[node name="GameDice29" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=963355933 instance=ExtResource("2_5powy")]
-position = Vector2(160, 351)
-
-[node name="GameDice30" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=1906792518 instance=ExtResource("2_5powy")]
-position = Vector2(261, 351)
-
-[node name="GameDice31" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=1863448229 instance=ExtResource("2_5powy")]
-position = Vector2(360, 351)
-
-[node name="GameDice32" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=927004619 instance=ExtResource("2_5powy")]
-position = Vector2(451, 351)
-
-[node name="GameDice33" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=661064250 instance=ExtResource("2_5powy")]
-position = Vector2(545, 351)
-
-[node name="GameDice34" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=997714553 instance=ExtResource("2_5powy")]
-position = Vector2(638, 351)
-
-[node name="GameDice35" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=1847959158 instance=ExtResource("2_5powy")]
-position = Vector2(733, 351)
-
-[node name="GameDice36" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=337469566 instance=ExtResource("2_5powy")]
-position = Vector2(835, 351)
-
-[node name="GameDice37" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=1780253111 instance=ExtResource("2_5powy")]
-position = Vector2(57, 451)
-
-[node name="GameDice38" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=312899190 instance=ExtResource("2_5powy")]
-position = Vector2(156, 450)
-
-[node name="GameDice39" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=1689496296 instance=ExtResource("2_5powy")]
-position = Vector2(253, 447)
-
-[node name="GameDice40" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=1869138915 instance=ExtResource("2_5powy")]
-position = Vector2(347, 447)
-
-[node name="GameDice41" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=402297950 instance=ExtResource("2_5powy")]
-position = Vector2(439, 447)
-
-[node name="GameDice42" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=944933619 instance=ExtResource("2_5powy")]
-position = Vector2(532, 447)
-
-[node name="GameDice43" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=1758507548 instance=ExtResource("2_5powy")]
-position = Vector2(629, 447)
-
-[node name="GameDice44" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=1956729959 instance=ExtResource("2_5powy")]
-position = Vector2(726, 447)
-
-[node name="GameDice45" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=636902151 instance=ExtResource("2_5powy")]
-position = Vector2(827, 447)
-
-[node name="GameDice46" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=1107594687 instance=ExtResource("2_5powy")]
-position = Vector2(62, 546)
-
-[node name="GameDice47" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=1431481214 instance=ExtResource("2_5powy")]
-position = Vector2(160, 546)
-
-[node name="GameDice48" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=1420347663 instance=ExtResource("2_5powy")]
-position = Vector2(261, 546)
-
-[node name="GameDice49" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=1588150137 instance=ExtResource("2_5powy")]
-position = Vector2(360, 546)
-
-[node name="GameDice50" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=1013389874 instance=ExtResource("2_5powy")]
-position = Vector2(451, 546)
-
-[node name="GameDice51" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=589059898 instance=ExtResource("2_5powy")]
-position = Vector2(545, 546)
-
-[node name="GameDice52" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=651344759 instance=ExtResource("2_5powy")]
-position = Vector2(638, 546)
-
-[node name="GameDice53" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=1438516087 instance=ExtResource("2_5powy")]
-position = Vector2(733, 546)
-
-[node name="GameDice54" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Dices" unique_id=517584537 instance=ExtResource("2_5powy")]
-position = Vector2(835, 546)
-
-[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/Dices" unique_id=1203254494]
+[node name="TableInside" type="MarginContainer" parent="VBoxContainer/Dices" unique_id=1203254494]
 layout_mode = 2
 theme_type_variation = &"MarginContainerMedium"
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 45
-theme_override_constants/margin_right = 50
-theme_override_constants/margin_bottom = 45
+theme_override_constants/margin_left = 70
+theme_override_constants/margin_top = 70
+theme_override_constants/margin_right = 70
+theme_override_constants/margin_bottom = 70
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/Dices/MarginContainer2" unique_id=1919894881]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Dices/TableInside" unique_id=1938651238]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 2
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/Dices/TableInside/HBoxContainer" unique_id=2002874918]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_no1gd")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/Dices/TableInside/HBoxContainer" unique_id=1919894881]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 8
-size_flags_vertical = 4
+size_flags_vertical = 0
 
-[node name="RollButton" type="Button" parent="VBoxContainer/Dices/MarginContainer2/VBoxContainer2" unique_id=765454622]
+[node name="RollButton" type="Button" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer2" unique_id=765454622]
 layout_mode = 2
 size_flags_vertical = 8
 text = "roll"
 
-[node name="CursorOnParent" type="Node" parent="VBoxContainer/Dices/MarginContainer2/VBoxContainer2/RollButton" unique_id=1497928893]
+[node name="CursorOnParent" type="Node" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer2/RollButton" unique_id=1497928893]
 script = ExtResource("6_4vbm2")
 cursor = ExtResource("7_no1gd")
 metadata/_custom_type_script = "uid://d161jm3n6y53c"
 
-[connection signal="button_down" from="VBoxContainer/Dices/MarginContainer2/VBoxContainer2/RollButton" to="." method="_on_roll_button_button_down"]
+[connection signal="button_down" from="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer2/RollButton" to="." method="_on_roll_button_button_down"]
