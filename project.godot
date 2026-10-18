@@ -13,7 +13,7 @@ config_version=5
 config/name="ludum_dare_60"
 run/main_scene="uid://bosgk23prc6ca"
 config/features=PackedStringArray("4.7")
-config/icon="res://assets/icon.svg"
+config/icon="uid://cxyp8fc1co4sa"
 
 [audio]
 
