@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ldnl1vo4236d"]
 
-[ext_resource type="Script" uid="uid://0sqebelupmb2" path="res://addons/vhoyer_devkit/UI/ui_elements/credits_roll/credits_roll.gd" id="1_erhdw"]
+[ext_resource type="Script" uid="uid://dpcogepx22kr8" path="res://stages/credits/back_button.gd" id="1_erhdw"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_erhdw"]
 content_margin_left = 0.0
@@ -19,379 +19,241 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CreditsRoll" type="ScrollContainer" parent="." unique_id=797353805]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1866837023]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-horizontal_scroll_mode = 0
-vertical_scroll_mode = 3
-script = ExtResource("1_erhdw")
-metadata/_custom_type_script = "uid://0sqebelupmb2"
 
-[node name="ScrollingMargin" type="MarginContainer" parent="CreditsRoll" unique_id=2068206641]
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer" unique_id=56211112]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ScrollingMargin" type="MarginContainer" parent="VBoxContainer/ScrollContainer" unique_id=2068206641]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CreditsRoll/ScrollingMargin" unique_id=489628804]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/ScrollingMargin" unique_id=489628804]
 layout_mode = 2
 theme_override_constants/separation = 64
 
-[node name="TeamSection" type="VBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer" unique_id=287751154]
+[node name="TeamSection" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer" unique_id=287751154]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="Team" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection" unique_id=2028980635]
+[node name="Team" type="Label" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection" unique_id=2028980635]
 layout_mode = 2
 theme_type_variation = &"HeaderLarge"
 text = "Team"
 horizontal_alignment = 1
 
-[node name="vhoyer" type="HBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection" unique_id=1214803440]
+[node name="TeamMember" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection" unique_id=600675511]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/vhoyer" unique_id=1879302540]
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember" unique_id=2092063504]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Eya"
+horizontal_alignment = 2
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember" unique_id=2011463372]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_erhdw")
+
+[node name="Roles" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember" unique_id=760234923]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember/Roles" unique_id=268333858]
+layout_mode = 2
+text = "Artist"
+
+[node name="TeamMember2" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection" unique_id=131182514]
+layout_mode = 2
+alignment = 1
+
+[node name="Name" type="Label" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember2" unique_id=26772380]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Luke Bumgardner"
+horizontal_alignment = 2
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember2" unique_id=1773895337]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_erhdw")
+
+[node name="Roles" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember2" unique_id=1653422194]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember2/Roles" unique_id=407300615]
+layout_mode = 2
+text = "Voice Actor"
+
+[node name="TeamMember3" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection" unique_id=1052422410]
+layout_mode = 2
+alignment = 1
+
+[node name="Name" type="Label" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember3" unique_id=586666012]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Nick Evans"
+horizontal_alignment = 2
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember3" unique_id=44371764]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_erhdw")
+
+[node name="Roles" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember3" unique_id=387991726]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember3/Roles" unique_id=1189624105]
+layout_mode = 2
+text = "Game Designer"
+
+[node name="TeamMember4" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection" unique_id=1526705881]
+layout_mode = 2
+alignment = 1
+
+[node name="Name" type="Label" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember4" unique_id=1267931568]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Noah Bumgardner"
+horizontal_alignment = 2
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember4" unique_id=903589659]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_erhdw")
+
+[node name="Roles" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember4" unique_id=149864292]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember4/Roles" unique_id=1887226698]
+layout_mode = 2
+text = "Composer"
+
+[node name="TeamMember5" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection" unique_id=401644792]
+layout_mode = 2
+alignment = 1
+
+[node name="Name" type="Label" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember5" unique_id=508160102]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Tom Bumgardner"
+horizontal_alignment = 2
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember5" unique_id=17538377]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_erhdw")
+
+[node name="Roles" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember5" unique_id=1638745746]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember5/Roles" unique_id=120207315]
+layout_mode = 2
+text = "Artist"
+
+[node name="TeamMember6" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection" unique_id=1214803440]
+layout_mode = 2
+alignment = 1
+
+[node name="Name" type="Label" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember6" unique_id=1879302540]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 text = "vhoyer"
 horizontal_alignment = 2
 
-[node name="VSeparator" type="VSeparator" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/vhoyer" unique_id=1670217862]
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember6" unique_id=1670217862]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_erhdw")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/vhoyer" unique_id=2048802736]
+[node name="Roles" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember6" unique_id=2048802736]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/vhoyer/VBoxContainer" unique_id=606115224]
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/TeamSection/TeamMember6/Roles" unique_id=119740678]
 layout_mode = 2
-text = "programming"
+text = "Lead Programmer"
 
-[node name="Label2" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/vhoyer/VBoxContainer" unique_id=499228668]
-layout_mode = 2
-text = "complaining"
-
-[node name="vhoyer2" type="HBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection" unique_id=1052422410]
-layout_mode = 2
-alignment = 1
-
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/vhoyer2" unique_id=586666012]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 0
-text = "vhoyer"
-horizontal_alignment = 2
-
-[node name="VSeparator" type="VSeparator" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/vhoyer2" unique_id=44371764]
-layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxLine_erhdw")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/vhoyer2" unique_id=387991726]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/vhoyer2/VBoxContainer" unique_id=1189624105]
-layout_mode = 2
-text = "programming"
-
-[node name="Label2" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/vhoyer2/VBoxContainer" unique_id=1409906561]
-layout_mode = 2
-text = "complaining"
-
-[node name="vhoyer3" type="HBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection" unique_id=600675511]
-layout_mode = 2
-alignment = 1
-
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/vhoyer3" unique_id=2092063504]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 0
-text = "vhoyer"
-horizontal_alignment = 2
-
-[node name="VSeparator" type="VSeparator" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/vhoyer3" unique_id=2011463372]
-layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxLine_erhdw")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/vhoyer3" unique_id=760234923]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/vhoyer3/VBoxContainer" unique_id=268333858]
-layout_mode = 2
-text = "programming"
-
-[node name="Label2" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/vhoyer3/VBoxContainer" unique_id=1077362528]
-layout_mode = 2
-text = "complaining"
-
-[node name="vhoyer4" type="HBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection" unique_id=401644792]
-layout_mode = 2
-alignment = 1
-
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/vhoyer4" unique_id=508160102]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 0
-text = "vhoyer"
-horizontal_alignment = 2
-
-[node name="VSeparator" type="VSeparator" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/vhoyer4" unique_id=17538377]
-layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxLine_erhdw")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/vhoyer4" unique_id=1638745746]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/vhoyer4/VBoxContainer" unique_id=120207315]
-layout_mode = 2
-text = "programming"
-
-[node name="Label2" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection/vhoyer4/VBoxContainer" unique_id=1562241244]
-layout_mode = 2
-text = "complaining"
-
-[node name="TeamSection2" type="VBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer" unique_id=1940969167]
+[node name="AdditionalAssetsSection" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer" unique_id=1940969167]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="Team" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection2" unique_id=127928000]
+[node name="Title" type="Label" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection" unique_id=127928000]
 layout_mode = 2
 theme_type_variation = &"HeaderLarge"
-text = "Team"
+text = "Additional Assets from:"
 horizontal_alignment = 1
 
-[node name="vhoyer" type="HBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection2" unique_id=1728892367]
+[node name="AdditionalAsset" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection" unique_id=785921605]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection2/vhoyer" unique_id=989400989]
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset" unique_id=1514358936]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-text = "vhoyer"
+text = "Andy Clymer"
 horizontal_alignment = 2
 
-[node name="VSeparator" type="VSeparator" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection2/vhoyer" unique_id=382389674]
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset" unique_id=1865239708]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_erhdw")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection2/vhoyer" unique_id=548513289]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset" unique_id=2003648468]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection2/vhoyer/VBoxContainer" unique_id=598672295]
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset/VBoxContainer" unique_id=981100227]
 layout_mode = 2
-text = "programming"
+text = "Tilt Neon Font"
 
-[node name="Label2" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection2/vhoyer/VBoxContainer" unique_id=1867944252]
-layout_mode = 2
-text = "complaining"
-
-[node name="vhoyer2" type="HBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection2" unique_id=785921605]
+[node name="AdditionalAsset2" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection" unique_id=1728892367]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection2/vhoyer2" unique_id=1514358936]
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset2" unique_id=989400989]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-text = "vhoyer"
+text = "Hubert and Fischer"
 horizontal_alignment = 2
 
-[node name="VSeparator" type="VSeparator" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection2/vhoyer2" unique_id=1865239708]
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset2" unique_id=382389674]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_erhdw")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection2/vhoyer2" unique_id=2003648468]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset2" unique_id=548513289]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection2/vhoyer2/VBoxContainer" unique_id=981100227]
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset2/VBoxContainer" unique_id=598672295]
 layout_mode = 2
-text = "programming"
+text = "Rubik Mono One Font"
 
-[node name="Label2" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection2/vhoyer2/VBoxContainer" unique_id=1593409977]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=1785607489]
 layout_mode = 2
-text = "complaining"
+theme_type_variation = &"MarginContainerMedium"
 
-[node name="vhoyer3" type="HBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection2" unique_id=1677113042]
+[node name="BackButton" type="Button" parent="VBoxContainer/MarginContainer" unique_id=1472576453]
 layout_mode = 2
-alignment = 1
+size_flags_horizontal = 4
+text = "Back"
+script = ExtResource("1_erhdw")
 
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection2/vhoyer3" unique_id=1416391167]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 0
-text = "vhoyer"
-horizontal_alignment = 2
-
-[node name="VSeparator" type="VSeparator" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection2/vhoyer3" unique_id=976306955]
-layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxLine_erhdw")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection2/vhoyer3" unique_id=1348759535]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection2/vhoyer3/VBoxContainer" unique_id=1812879321]
-layout_mode = 2
-text = "programming"
-
-[node name="Label2" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection2/vhoyer3/VBoxContainer" unique_id=377596607]
-layout_mode = 2
-text = "complaining"
-
-[node name="vhoyer4" type="HBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection2" unique_id=2139531967]
-layout_mode = 2
-alignment = 1
-
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection2/vhoyer4" unique_id=1112092474]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 0
-text = "vhoyer"
-horizontal_alignment = 2
-
-[node name="VSeparator" type="VSeparator" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection2/vhoyer4" unique_id=738996980]
-layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxLine_erhdw")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection2/vhoyer4" unique_id=332024822]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection2/vhoyer4/VBoxContainer" unique_id=1916997102]
-layout_mode = 2
-text = "programming"
-
-[node name="Label2" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection2/vhoyer4/VBoxContainer" unique_id=969554182]
-layout_mode = 2
-text = "complaining"
-
-[node name="TeamSection3" type="VBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer" unique_id=409262199]
-layout_mode = 2
-theme_override_constants/separation = 16
-
-[node name="Team" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection3" unique_id=1033934275]
-layout_mode = 2
-theme_type_variation = &"HeaderLarge"
-text = "Team"
-horizontal_alignment = 1
-
-[node name="vhoyer" type="HBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection3" unique_id=212722756]
-layout_mode = 2
-alignment = 1
-
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection3/vhoyer" unique_id=509584193]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 0
-text = "vhoyer"
-horizontal_alignment = 2
-
-[node name="VSeparator" type="VSeparator" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection3/vhoyer" unique_id=1266248518]
-layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxLine_erhdw")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection3/vhoyer" unique_id=124839144]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection3/vhoyer/VBoxContainer" unique_id=280979439]
-layout_mode = 2
-text = "programming"
-
-[node name="Label2" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection3/vhoyer/VBoxContainer" unique_id=177655961]
-layout_mode = 2
-text = "complaining"
-
-[node name="vhoyer2" type="HBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection3" unique_id=1499418669]
-layout_mode = 2
-alignment = 1
-
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection3/vhoyer2" unique_id=974712727]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 0
-text = "vhoyer"
-horizontal_alignment = 2
-
-[node name="VSeparator" type="VSeparator" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection3/vhoyer2" unique_id=179812978]
-layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxLine_erhdw")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection3/vhoyer2" unique_id=557994728]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection3/vhoyer2/VBoxContainer" unique_id=1622821378]
-layout_mode = 2
-text = "programming"
-
-[node name="Label2" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection3/vhoyer2/VBoxContainer" unique_id=1624569036]
-layout_mode = 2
-text = "complaining"
-
-[node name="vhoyer3" type="HBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection3" unique_id=1496389356]
-layout_mode = 2
-alignment = 1
-
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection3/vhoyer3" unique_id=956064573]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 0
-text = "vhoyer"
-horizontal_alignment = 2
-
-[node name="VSeparator" type="VSeparator" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection3/vhoyer3" unique_id=1396636088]
-layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxLine_erhdw")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection3/vhoyer3" unique_id=2021513081]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection3/vhoyer3/VBoxContainer" unique_id=1051146485]
-layout_mode = 2
-text = "programming"
-
-[node name="Label2" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection3/vhoyer3/VBoxContainer" unique_id=1930460093]
-layout_mode = 2
-text = "complaining"
-
-[node name="vhoyer4" type="HBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection3" unique_id=448544354]
-layout_mode = 2
-alignment = 1
-
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection3/vhoyer4" unique_id=2130491254]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 0
-text = "vhoyer"
-horizontal_alignment = 2
-
-[node name="VSeparator" type="VSeparator" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection3/vhoyer4" unique_id=890505319]
-layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxLine_erhdw")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection3/vhoyer4" unique_id=1352366813]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection3/vhoyer4/VBoxContainer" unique_id=460610866]
-layout_mode = 2
-text = "programming"
-
-[node name="Label2" type="Label" parent="CreditsRoll/ScrollingMargin/VBoxContainer/TeamSection3/vhoyer4/VBoxContainer" unique_id=1396759223]
-layout_mode = 2
-text = "complaining"
+[connection signal="pressed" from="VBoxContainer/MarginContainer/BackButton" to="VBoxContainer/MarginContainer/BackButton" method="_on_pressed"]

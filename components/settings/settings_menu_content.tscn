@@ -13,26 +13,21 @@ script = ExtResource("1_ygsja")
 
 [node name="VolumeSliderMaster" parent="." unique_id=27669893 instance=ExtResource("3_my5v2")]
 layout_mode = 2
-theme = null
 
 [node name="VolumeSliderMusic" parent="." unique_id=1084705858 instance=ExtResource("3_my5v2")]
 layout_mode = 2
-theme = null
 audioBusNameToEdit = &"BGM"
 
 [node name="VolumeSliderSFX" parent="." unique_id=837995633 instance=ExtResource("3_my5v2")]
 layout_mode = 2
-theme = null
 audioBusNameToEdit = &"SFX"
 
 [node name="VolumeSliderSFXAmbience" parent="." unique_id=1954663764 instance=ExtResource("3_my5v2")]
 layout_mode = 2
-theme = null
 audioBusNameToEdit = &"Ambience"
 
 [node name="VolumeSliderSFXVocal" parent="." unique_id=1274741418 instance=ExtResource("3_my5v2")]
 layout_mode = 2
-theme = null
 audioBusNameToEdit = &"Voice"
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=488616549]
