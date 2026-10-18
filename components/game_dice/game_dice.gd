@@ -5,7 +5,7 @@ extends RigidBody2D
 const ROTATION_RANGE = 18
 
 
-signal roll_finished()
+signal roll_finished(result: int)
 
 signal _model_updated()
 
@@ -111,7 +111,7 @@ func roll(result: int, throw_direction:= Vector2.ZERO, throw_force:= 10.0) -> vo
 	tween.tween_callback(func():
 		_rolling = false
 		sprite_dice.frame = result
-		roll_finished.emit()
+		roll_finished.emit(result)
 		pass)
 
 	self.apply_impulse(throw_direction.normalized() * throw_force)
@@ -130,7 +130,7 @@ func reroll(result: int) -> void:
 	tween.tween_callback(func():
 		_rolling = false
 		sprite_dice.frame = result
-		roll_finished.emit()
+		roll_finished.emit(result)
 		pass)
 
 

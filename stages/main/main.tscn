@@ -6,7 +6,19 @@
 [ext_resource type="PackedScene" uid="uid://usqu7frh72wo" path="res://components/game_cursor/game_cursor.tscn" id="2_woy08"]
 [ext_resource type="PackedScene" uid="uid://kfbhin5nkdnx" path="res://components/game_table/game_table.tscn" id="5_no1gd"]
 [ext_resource type="Script" uid="uid://d161jm3n6y53c" path="res://components/game_cursor/cursor_on_parent.gd" id="6_4vbm2"]
+[ext_resource type="Script" uid="uid://bkm48xrdtc50e" path="res://stages/main/debug_label.gd" id="6_no1gd"]
 [ext_resource type="Resource" uid="uid://i1wcyjmq7t4p" path="res://components/game_cursor/cursors/hand.tres" id="7_no1gd"]
+[ext_resource type="Texture2D" uid="uid://coi5iha6ct8ep" path="res://assets/hammer/hammer1.png" id="9_802tp"]
+[ext_resource type="Script" uid="uid://df5gcvr3up6cb" path="res://stages/main/tool_button.gd" id="10_l7y0w"]
+[ext_resource type="Resource" uid="uid://d17wkpun5jdvw" path="res://components/game_cursor/cursors/hammer.tres" id="11_drn0y"]
+[ext_resource type="Resource" uid="uid://bx586f3ywe4bs" path="res://components/game_cursor/cursors/default.tres" id="12_l7y0w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_no1gd"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0, 0, 0, 0.6)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n26ti"]
 normal = Vector2(1, 0)
@@ -27,6 +39,9 @@ content_margin_bottom = 4.0
 thickness = 2
 vertical = true
 
+[sub_resource type="ButtonGroup" id="ButtonGroup_n26ti"]
+allow_unpress = true
+
 [node name="Main" type="HBoxContainer" unique_id=1820559237]
 anchors_preset = 15
 anchor_right = 1.0
@@ -43,6 +58,15 @@ _throw_inbetween_interval = 0.015
 anchor_mode = 0
 
 [node name="GameCursor" parent="Camera2D" unique_id=1907159996 instance=ExtResource("2_woy08")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D" unique_id=2115178302]
+
+[node name="DebugLabel" type="Label" parent="Camera2D/CanvasLayer" unique_id=2041311537]
+offset_right = 107.0
+offset_bottom = 23.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_no1gd")
+text = "DEBUG LABEL"
+script = ExtResource("6_no1gd")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1559845026]
 layout_mode = 2
@@ -140,33 +164,81 @@ alignment = 2
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_no1gd")
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/Dices/TableInside/HBoxContainer" unique_id=1919894881]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Dices/TableInside/HBoxContainer" unique_id=1812104140]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer" unique_id=1919894881]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 8
-size_flags_vertical = 0
+size_flags_vertical = 2
 
-[node name="RollButton" type="Button" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer2" unique_id=765454622]
+[node name="RollButton" type="Button" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2" unique_id=765454622]
 layout_mode = 2
 size_flags_vertical = 8
 text = "roll"
 
-[node name="Label2" type="Label" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer2" unique_id=348406944]
+[node name="Label2" type="Label" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2" unique_id=348406944]
 layout_mode = 2
 text = "Old Cheats"
 horizontal_alignment = 1
 
-[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer2" unique_id=1699371908]
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2" unique_id=1699371908]
 layout_mode = 2
 
-[node name="HitTableButton" type="Button" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer2" unique_id=1059237294]
+[node name="HitTableButton" type="Button" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2" unique_id=1059237294]
 layout_mode = 2
 text = "Hit Table"
 
-[node name="CursorOnParent" type="Node" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer2/HitTableButton" unique_id=1497928893]
+[node name="CursorOnParent" type="Node" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2/HitTableButton" unique_id=1497928893]
 script = ExtResource("6_4vbm2")
 cursor = ExtResource("7_no1gd")
 metadata/_custom_type_script = "uid://d161jm3n6y53c"
 
-[connection signal="button_down" from="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer2/RollButton" to="." method="_on_roll_button_button_down"]
-[connection signal="button_down" from="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer2/HitTableButton" to="." method="_on_hit_table_button_button_down"]
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2" unique_id=1561723587]
+layout_mode = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2" unique_id=1213762350]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+stretch_mode = 0
+
+[node name="HammerButton" type="Button" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2/AspectRatioContainer" unique_id=1320561716]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_n26ti")
+text = "Hammer
+"
+icon = ExtResource("9_802tp")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+script = ExtResource("10_l7y0w")
+cursor = ExtResource("11_drn0y")
+
+[node name="CursorOnParent" type="Node" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2/AspectRatioContainer/HammerButton" unique_id=1771497619]
+script = ExtResource("6_4vbm2")
+cursor = ExtResource("12_l7y0w")
+metadata/_custom_type_script = "uid://d161jm3n6y53c"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer" unique_id=1402469312]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+alignment = 2
+
+[node name="SubmitButton" type="Button" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer3" unique_id=273079299]
+layout_mode = 2
+size_flags_vertical = 8
+text = "End Turn"
+
+[node name="CursorOnParent2" type="Node" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer3/SubmitButton" unique_id=75567156]
+script = ExtResource("6_4vbm2")
+cursor = ExtResource("7_no1gd")
+metadata/_custom_type_script = "uid://d161jm3n6y53c"
+
+[connection signal="button_down" from="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2/RollButton" to="." method="_on_roll_button_button_down"]
+[connection signal="button_down" from="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2/HitTableButton" to="." method="_on_hit_table_button_button_down"]
+[connection signal="toggled" from="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2/AspectRatioContainer/HammerButton" to="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2/AspectRatioContainer/HammerButton" method="_on_toggled"]
+[connection signal="button_down" from="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer3/SubmitButton" to="." method="_on_roll_button_button_down"]

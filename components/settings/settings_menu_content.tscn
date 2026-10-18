@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://bmh68yefaofg8"]
+
+[ext_resource type="Script" uid="uid://i8ry21644gvb" path="res://components/settings/settings_menu_content.gd" id="1_ygsja"]
+[ext_resource type="PackedScene" uid="uid://bnfwtncedr0e4" path="res://components/settings/volume/volume_slider.tscn" id="3_my5v2"]
+
+[node name="SettingsMenuContent" type="VBoxContainer" unique_id=2007361946]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ygsja")
+
+[node name="VolumeSliderMaster" parent="." unique_id=27669893 instance=ExtResource("3_my5v2")]
+layout_mode = 2
+theme = null
+
+[node name="VolumeSliderMusic" parent="." unique_id=1084705858 instance=ExtResource("3_my5v2")]
+layout_mode = 2
+theme = null
+audioBusNameToEdit = &"BGM"
+
+[node name="VolumeSliderSFX" parent="." unique_id=837995633 instance=ExtResource("3_my5v2")]
+layout_mode = 2
+theme = null
+audioBusNameToEdit = &"SFX"
+
+[node name="VolumeSliderSFXAmbience" parent="." unique_id=1954663764 instance=ExtResource("3_my5v2")]
+layout_mode = 2
+theme = null
+audioBusNameToEdit = &"Ambience"
+
+[node name="VolumeSliderSFXVocal" parent="." unique_id=1274741418 instance=ExtResource("3_my5v2")]
+layout_mode = 2
+theme = null
+audioBusNameToEdit = &"Voice"
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=488616549]
+layout_mode = 2
+
+[node name="ButtonBack" type="Button" parent="MarginContainer" unique_id=1965433552]
+layout_mode = 2
+text = "Back"
+
+[connection signal="mouse_entered" from="MarginContainer/ButtonBack" to="." method="_on_button_back_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/ButtonBack" to="." method="_on_button_back_pressed"]

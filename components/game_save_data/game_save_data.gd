@@ -14,6 +14,12 @@ var dice_count: int:
 	set(value):
 		self._set_item('dice_count', value)
 
+var roll_counter: int:
+	get():
+		return self._get_item('roll_counter', 0)
+	set(value):
+		self._set_item('roll_counter', value)
+
 var current_level: int:
 	get():
 		return self._get_item('current_level', 0)
