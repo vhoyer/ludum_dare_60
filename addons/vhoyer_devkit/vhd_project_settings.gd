@@ -77,7 +77,7 @@ static var empty_save_type: Resource:
 		var klass_name = StringName(_get_config('custom_empty_save_data_type'))
 		var klass_list = ProjectSettings.get_global_class_list()
 		var index:= klass_list.find_custom(func(_klass: Dictionary):
-			return _klass.class == klass_name)
+			return _klass.class == klass_name || _klass.path == klass_name)
 
 		if index == -1:
 			return SaveDataEmptyDefault
