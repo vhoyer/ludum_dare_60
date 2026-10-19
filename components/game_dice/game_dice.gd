@@ -129,7 +129,7 @@ func reroll(roll_result: int) -> void:
 
 func _finish_roll(roll_result: int) -> void:
 	_rolling = false
-	sprite_dice.frame = roll_result
+	sprite_dice.frame = roll_result - 1
 	result = roll_result
 	roll_finished.emit(roll_result)
 

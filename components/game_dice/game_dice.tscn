@@ -31,8 +31,9 @@ offset = Vector2(5, 10)
 [node name="DiceSprite" type="Sprite2D" parent="VisualRoot" unique_id=1295971029]
 unique_name_in_owner = true
 texture = ExtResource("3_hpgiv")
-hframes = 11
-frame = 4
+hframes = 6
+region_enabled = true
+region_rect = Rect2(170, 0, 1020, 170)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1753354572]
 unique_name_in_owner = true
