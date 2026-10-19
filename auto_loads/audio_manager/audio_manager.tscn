@@ -2,10 +2,22 @@
 
 [ext_resource type="Script" uid="uid://c7tpdisl0ge2n" path="res://auto_loads/audio_manager/audio_manager.gd" id="1_61g61"]
 [ext_resource type="AudioStream" uid="uid://l1erir0h7dph" path="res://assets/audio/sfx/sfx_213_pound_heavy_randomizer.tres" id="2_0qhmr"]
-[ext_resource type="AudioStream" uid="uid://cvo7cvn7fdh5j" path="res://assets/audio/music_101.ogg" id="2_78sg7"]
+[ext_resource type="AudioStream" uid="uid://ds5as5vwncf3i" path="res://assets/audio/music_101.ogg" id="2_78sg7"]
 [ext_resource type="AudioStream" uid="uid://b1tkjxioa7hvn" path="res://assets/audio/sfx/sfx_214_pound_medium_randomizer.tres" id="3_0qhmr"]
 [ext_resource type="AudioStream" uid="uid://br1b37xebg7je" path="res://assets/audio/sfx/sfx_301_button_click.wav" id="4_0qhmr"]
 [ext_resource type="AudioStream" uid="uid://5bs6i8qbpeqj" path="res://assets/audio/sfx/sfx_407_grunt_astronaut_randomizer.tres" id="5_rco6r"]
+[ext_resource type="AudioStream" uid="uid://c3nd8vqg13mh0" path="res://assets/audio/sfx/sfx_506_bird_win_randomizer.tres" id="7_fpwru"]
+[ext_resource type="AudioStream" uid="uid://b4rpirirwiw7w" path="res://assets/audio/sfx/sfx_504_AbirdD1.wav" id="7_m240t"]
+[ext_resource type="AudioStream" uid="uid://b543uvvlhnioy" path="res://assets/audio/sfx/sfx_505_Abirdv1.wav" id="8_fpwru"]
+[ext_resource type="AudioStream" uid="uid://b1mvjga4e8l2o" path="res://assets/audio/sfx/sfx_607_kind_win_randomizer.tres" id="10_3iup4"]
+[ext_resource type="AudioStream" uid="uid://c53ceaa05kt4j" path="res://assets/audio/sfx/sfx_604_AkindD1.wav" id="11_57epe"]
+[ext_resource type="AudioStream" uid="uid://b1o1dhmjdbons" path="res://assets/audio/sfx/sfx_605_AkindV1.wav" id="12_kqagw"]
+[ext_resource type="AudioStream" uid="uid://dlmgp8ju1eghc" path="res://assets/audio/sfx/sfx_709_evil_win_randomizer.tres" id="13_bn8tc"]
+[ext_resource type="AudioStream" uid="uid://deef4vuws87ra" path="res://assets/audio/sfx/sfx_705_AevilD.wav" id="14_eyrmi"]
+[ext_resource type="AudioStream" uid="uid://c4lrme0mlch38" path="res://assets/audio/sfx/sfx_704_AevilV.wav" id="15_py808"]
+[ext_resource type="AudioStream" uid="uid://de1vivapcx2yk" path="res://assets/audio/sfx/sfx_807_bloop_win_randomizer.tres" id="16_py808"]
+[ext_resource type="AudioStream" uid="uid://c3yb3cue3ivft" path="res://assets/audio/sfx/sfx_804_AbloopD.wav" id="17_bivk5"]
+[ext_resource type="AudioStream" uid="uid://cvds4rt78sudi" path="res://assets/audio/sfx/sfx_805_AbloopV.wav" id="18_bivk5"]
 
 [node name="AudioManager" type="Node" unique_id=548666010]
 process_mode = 3
@@ -32,4 +44,52 @@ bus = &"SFX"
 
 [node name="SFXVoiceGruntAstronaut" type="AudioStreamPlayer" parent="." unique_id=208615400]
 stream = ExtResource("5_rco6r")
+bus = &"Voice"
+
+[node name="SFXVoicePlayerAgainstAlienBirdWin" type="AudioStreamPlayer" parent="." unique_id=792922028]
+stream = ExtResource("7_fpwru")
+bus = &"Voice"
+
+[node name="SFXVoicePlayerAgainstAlienBirdLastWin" type="AudioStreamPlayer" parent="." unique_id=174050416]
+stream = ExtResource("7_m240t")
+bus = &"Voice"
+
+[node name="SFXVoicePlayerAgainstAlienBirdLose" type="AudioStreamPlayer" parent="." unique_id=1233464146]
+stream = ExtResource("8_fpwru")
+bus = &"Voice"
+
+[node name="SFXVoicePlayerAgainstAlienKindWin" type="AudioStreamPlayer" parent="." unique_id=492915618]
+stream = ExtResource("10_3iup4")
+bus = &"Voice"
+
+[node name="SFXVoicePlayerAgainstAlienKindLastWin" type="AudioStreamPlayer" parent="." unique_id=2035034785]
+stream = ExtResource("11_57epe")
+bus = &"Voice"
+
+[node name="SFXVoicePlayerAgainstAlienKindLose" type="AudioStreamPlayer" parent="." unique_id=786477140]
+stream = ExtResource("12_kqagw")
+bus = &"Voice"
+
+[node name="SFXVoicePlayerAgainstAlienEvilWin" type="AudioStreamPlayer" parent="." unique_id=1472111348]
+stream = ExtResource("13_bn8tc")
+bus = &"Voice"
+
+[node name="SFXVoicePlayerAgainstAlienEvilLastWin" type="AudioStreamPlayer" parent="." unique_id=1298103742]
+stream = ExtResource("14_eyrmi")
+bus = &"Voice"
+
+[node name="SFXVoicePlayerAgainstAlienEvilLose" type="AudioStreamPlayer" parent="." unique_id=1805729528]
+stream = ExtResource("15_py808")
+bus = &"Voice"
+
+[node name="SFXVoicePlayerAgainstAlienBloopWin" type="AudioStreamPlayer" parent="." unique_id=1588397163]
+stream = ExtResource("16_py808")
+bus = &"Voice"
+
+[node name="SFXVoicePlayerAgainstAlienBloopLastWin" type="AudioStreamPlayer" parent="." unique_id=898216496]
+stream = ExtResource("17_bivk5")
+bus = &"Voice"
+
+[node name="SFXVoicePlayerAgainstAlienBloopLose" type="AudioStreamPlayer" parent="." unique_id=32530676]
+stream = ExtResource("18_bivk5")
 bus = &"Voice"
