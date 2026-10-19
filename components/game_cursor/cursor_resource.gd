@@ -2,6 +2,15 @@ class_name CursorResource
 extends Resource
 
 
+# used outside of class
+@warning_ignore('unused_signal')
+signal hit_collisions(origin: Vector2, bodies: Array)
+
+# used outside of class
+@warning_ignore('unused_signal')
+signal aoe_collisions(origin: Vector2, bodies: Array)
+
+
 @export_group('normal')
 @export
 var _normal: Texture2D

@@ -11,6 +11,7 @@ signal _model_updated()
 
 @export_group('private')
 
+var result: int
 
 @export
 var _rolling: bool = false
@@ -96,7 +97,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	pass
 
 
-func roll(result: int, throw_direction:= Vector2.ZERO, throw_force:= 10.0) -> void:
+func roll(roll_result: int, throw_direction:= Vector2.ZERO, throw_force:= 10.0) -> void:
 	_rolling = true
 	_rolling_counter = 0
 	AudioEventBus.emit(AudioEventBus.Id.DIE_ROLLING)
@@ -108,15 +109,11 @@ func roll(result: int, throw_direction:= Vector2.ZERO, throw_force:= 10.0) -> vo
 	var tween = self.create_tween()
 	tween.set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
 	tween.tween_property(self, "_height", 0, _dice_rising_time * 10)
-	tween.tween_callback(func():
-		_rolling = false
-		sprite_dice.frame = result
-		roll_finished.emit(result)
-		pass)
+	tween.tween_callback(_finish_roll.bind(roll_result))
 
 	self.apply_impulse(throw_direction.normalized() * throw_force)
 
-func reroll(result: int) -> void:
+func reroll(roll_result: int) -> void:
 	_rolling = true
 	_rolling_counter = 0
 	AudioEventBus.emit(AudioEventBus.Id.DIE_ROLLING)
@@ -127,11 +124,14 @@ func reroll(result: int) -> void:
 	tween.set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(self, "_height", 1, _dice_rising_time)
 	tween.tween_property(self, "_height", 0, _dice_rising_time)
-	tween.tween_callback(func():
-		_rolling = false
-		sprite_dice.frame = result
-		roll_finished.emit(result)
-		pass)
+	tween.tween_callback(_finish_roll.bind(roll_result))
+
+
+func _finish_roll(roll_result: int) -> void:
+	_rolling = false
+	sprite_dice.frame = roll_result
+	result = roll_result
+	roll_finished.emit(roll_result)
 
 
 func _randomize_rotation(duration: float) -> void:
@@ -161,3 +161,8 @@ func _randomize_side() -> void:
 		if new_frame != sprite_dice.frame:
 			sprite_dice.frame = new_frame
 			break
+
+
+func destroy() -> void:
+	AudioEventBus.emit(AudioEventBus.Id.DIE_DESTROY)
+	self.queue_free()

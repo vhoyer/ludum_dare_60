@@ -25,3 +25,7 @@ var current_level: int:
 		return self._get_item('current_level', 0)
 	set(value):
 		self._set_item('current_level', value)
+
+
+func generate_dice_result() -> int:
+	return randi() % 6 + 1

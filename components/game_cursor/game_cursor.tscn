@@ -51,18 +51,18 @@ unique_name_in_owner = true
 scale = Vector2(0.75, 0.75)
 centered = false
 
-[node name="AEFBox" type="Area2D" parent="." unique_id=1309662202]
+[node name="AoEArea" type="Area2D" parent="." unique_id=1309662202]
 unique_name_in_owner = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="AEFBox" unique_id=286830533]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="AoEArea" unique_id=286830533]
 visible = false
 shape = SubResource("CircleShape2D_n26ti")
 debug_color = Color(0.6407307, 0.52277815, 0.12784731, 0.41960785)
 
-[node name="HitBox" type="Area2D" parent="." unique_id=710958357]
+[node name="HitArea" type="Area2D" parent="." unique_id=710958357]
 unique_name_in_owner = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=1972770096]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea" unique_id=1972770096]
 visible = false
 shape = SubResource("CircleShape2D_wbdmm")
 debug_color = Color(0.8287924, 0.00014083058, 7.7297984e-05, 0.41960785)

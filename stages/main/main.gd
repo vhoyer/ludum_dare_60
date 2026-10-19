@@ -62,7 +62,7 @@ func _on_roll_button_button_down() -> void:
 		dice.global_position = dice_spawn.global_position
 		dice.size = LevelsManager.current.dice_size
 
-		var value = randi() % 6 + 1
+		var value = SaveManager.data.generate_dice_result()
 
 		dice.roll(
 			value,
@@ -82,7 +82,7 @@ func _on_hit_table_button_button_down() -> void:
 	var points: int = 0
 
 	for dice: GameDice in dices_group.get_children():
-		var value = randi() % 6 + 1
+		var value = SaveManager.data.generate_dice_result()
 		dice.reroll(value)
 
 	for dice: GameDice in dices_group.get_children():

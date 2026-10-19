@@ -36,6 +36,12 @@ var _pressed: bool = false:
 var sprite: Sprite2D = %Cursor
 
 @onready
+var _aoe_area: Area2D = %AoEArea
+
+@onready
+var _hit_area: Area2D = %HitArea
+
+@onready
 var _particles: GPUParticles2D = %Particles
 
 
@@ -53,6 +59,8 @@ func _ready() -> void:
 func _update_view() -> void:
 	if _pressed:
 		cursor.apply(self, CursorResource.Type.PRESSED)
+		cursor.hit_collisions.emit(self.global_position, _hit_area.get_overlapping_bodies())
+		cursor.aoe_collisions.emit(self.global_position, _aoe_area.get_overlapping_bodies())
 	else:
 		cursor.apply(self, CursorResource.Type.NORMAL)
 

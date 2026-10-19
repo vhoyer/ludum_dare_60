@@ -8,7 +8,12 @@ var data: SaveData:
 		return data
 
 func load_data(_data: SaveData) -> void:
-	data = _data if _data else VHDSettings.empty_save_type.new()
+	var new_data: SaveData = _data if _data else VHDSettings.empty_save_type.new()
+
+	for conn: Dictionary in data.changed.get_connections():
+		new_data.changed.connect(conn.get('callable'), conn.get('flags'))
+
+	data = new_data
 
 
 

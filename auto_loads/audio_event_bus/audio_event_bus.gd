@@ -2,6 +2,7 @@ class_name AudioEventBus
 extends Node
 
 # List of all events used
+# don't reorder keys after the fact, their value is based on the list position
 enum Id {
 	NOOP,
 	BUTTON_PRESSED,
@@ -12,6 +13,7 @@ enum Id {
 	HAND_DOWN,
 	HUMAN_PULL_LOSE_GRUNT,
 	HUMAN_PULL_WIN_GRUNT,
+	DIE_DESTROY,
 }
 
 

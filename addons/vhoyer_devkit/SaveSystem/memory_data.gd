@@ -21,13 +21,13 @@ func consolidate_memory() -> void:
 
 func remember() -> void:
 	_short_term._override_with(_long_term)
-	changed.emit()
+	changed.emit('')
 
 
 func amnesia() -> void:
 	_long_term.erase_storage()
 	_short_term.erase_storage()
-	changed.emit()
+	changed.emit('')
 	saved.emit()
 
 
