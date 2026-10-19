@@ -23,6 +23,36 @@ layout_mode = 1
 offset_top = -103.0
 offset_bottom = 103.0
 
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1926120422]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -257.5
+offset_top = 20.0
+offset_right = 257.5
+offset_bottom = 112.0
+grow_horizontal = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=875325231]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer" unique_id=928913801]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 72
+text = "Hammer or Dice"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1167894273]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 42
+text = "A Ludum Dare 60 Game Jam Entry"
+horizontal_alignment = 1
+
 [node name="MainCentered" type="CenterContainer" parent="." unique_id=1983816057]
 layout_mode = 1
 anchors_preset = 15
