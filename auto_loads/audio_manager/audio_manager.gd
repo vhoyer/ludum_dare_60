@@ -17,9 +17,21 @@ func _play_sfx(event_name: AudioEventBus.Id):
 			$SFXButtonPressed.play()
 			return
 		AudioEventBus.Id.HUMAN_PULL_WIN_GRUNT:
+			match SaveManager.data.current_level:
+				3:
+					$SFXVoiceGruntAlienBird.play()
+					return
+				4:
+					$SFXVoiceGruntAlienBird.play()
+					return
+				5:
+					$SFXVoiceGruntAlienBird.play()
+					return
+			## Default grunt when specific alien not found.
 			$SFXVoiceGruntAstronaut.play()
 			return
 		AudioEventBus.Id.HUMAN_PULL_LOSE_GRUNT:
+			## Default grunt when specific alien not found.
 			$SFXVoiceGruntAstronaut.play()
 			return
 
