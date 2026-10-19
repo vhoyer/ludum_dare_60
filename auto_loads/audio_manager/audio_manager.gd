@@ -16,5 +16,11 @@ func _play_sfx(event_name: AudioEventBus.Id):
 		AudioEventBus.Id.BUTTON_PRESSED:
 			$SFXButtonPressed.play()
 			return
+		AudioEventBus.Id.HUMAN_PULL_WIN_GRUNT:
+			$SFXVoiceGruntAstronaut.play()
+			return
+		AudioEventBus.Id.HUMAN_PULL_LOSE_GRUNT:
+			$SFXVoiceGruntAstronaut.play()
+			return
 
 	push_warning("SFX not found for audio event %s (%s)." % [AudioEventBus.Id.find_key(event_name), event_name])

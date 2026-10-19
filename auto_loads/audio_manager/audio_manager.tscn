@@ -4,6 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://l1erir0h7dph" path="res://assets/audio/sfx/sfx_213_pound_heavy_randomizer.tres" id="2_0qhmr"]
 [ext_resource type="AudioStream" uid="uid://b1tkjxioa7hvn" path="res://assets/audio/sfx/sfx_214_pound_medium_randomizer.tres" id="3_0qhmr"]
 [ext_resource type="AudioStream" uid="uid://br1b37xebg7je" path="res://assets/audio/sfx/sfx_301_button_click.wav" id="4_0qhmr"]
+[ext_resource type="AudioStream" uid="uid://5bs6i8qbpeqj" path="res://assets/audio/sfx/sfx_407_grunt_astronaut_randomizer.tres" id="5_rco6r"]
 
 [node name="AudioManager" type="Node" unique_id=548666010]
 process_mode = 3
@@ -25,3 +26,7 @@ bus = &"SFX"
 [node name="SFXButtonPressed" type="AudioStreamPlayer" parent="." unique_id=1961397351]
 stream = ExtResource("4_0qhmr")
 bus = &"SFX"
+
+[node name="SFXVoiceGruntAstronaut" type="AudioStreamPlayer" parent="." unique_id=208615400]
+stream = ExtResource("5_rco6r")
+bus = &"Voice"

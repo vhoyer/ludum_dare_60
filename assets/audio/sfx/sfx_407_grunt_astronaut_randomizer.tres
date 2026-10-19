@@ -1,0 +1,17 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://5bs6i8qbpeqj"]
+
+[ext_resource type="AudioStream" uid="uid://bckvmtuc6xxfi" path="res://assets/audio/sfx/sfx_401_grunt_astronaut.wav" id="1_4t24t"]
+[ext_resource type="AudioStream" uid="uid://d4gablp7xrp2j" path="res://assets/audio/sfx/sfx_402_grunt_astronaut.wav" id="2_npqyx"]
+[ext_resource type="AudioStream" uid="uid://cn6q8tnqnofw1" path="res://assets/audio/sfx/sfx_403_grunt_astronaut.wav" id="3_6sq8w"]
+[ext_resource type="AudioStream" uid="uid://djjwtl8qe6ab" path="res://assets/audio/sfx/sfx_404_grunt_astronaut.wav" id="4_ig10b"]
+[ext_resource type="AudioStream" uid="uid://egwsascitwh" path="res://assets/audio/sfx/sfx_405_grunt_astronaut.wav" id="5_7yrgx"]
+[ext_resource type="AudioStream" uid="uid://bg0hkrv5615aq" path="res://assets/audio/sfx/sfx_406_grunt_astronaut.wav" id="6_ok3of"]
+
+[resource]
+streams_count = 6
+stream_0/stream = ExtResource("1_4t24t")
+stream_1/stream = ExtResource("2_npqyx")
+stream_2/stream = ExtResource("3_6sq8w")
+stream_3/stream = ExtResource("4_ig10b")
+stream_4/stream = ExtResource("5_7yrgx")
+stream_5/stream = ExtResource("6_ok3of")
