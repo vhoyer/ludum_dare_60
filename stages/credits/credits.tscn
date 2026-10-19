@@ -200,51 +200,97 @@ theme_type_variation = &"HeaderLarge"
 text = "Additional Assets from:"
 horizontal_alignment = 1
 
-[node name="AdditionalAsset" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection" unique_id=785921605]
+[node name="AdditionalAsset" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection" unique_id=1622041927]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset" unique_id=1514358936]
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset" unique_id=1734271429]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "ambientCG.com"
+horizontal_alignment = 2
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset" unique_id=215079981]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_erhdw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset" unique_id=1246168522]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset/VBoxContainer" unique_id=1156947612]
+layout_mode = 2
+text = "Fabric 034 Surface"
+
+[node name="AdditionalAsset2" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection" unique_id=785921605]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset2" unique_id=1514358936]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 text = "Andy Clymer"
 horizontal_alignment = 2
 
-[node name="VSeparator" type="VSeparator" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset" unique_id=1865239708]
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset2" unique_id=1865239708]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_erhdw")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset" unique_id=2003648468]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset2" unique_id=2003648468]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset/VBoxContainer" unique_id=981100227]
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset2/VBoxContainer" unique_id=981100227]
 layout_mode = 2
 text = "Tilt Neon Font"
 
-[node name="AdditionalAsset2" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection" unique_id=1728892367]
+[node name="AdditionalAsset3" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection" unique_id=1728892367]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset2" unique_id=989400989]
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset3" unique_id=989400989]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 text = "Hubert and Fischer"
 horizontal_alignment = 2
 
-[node name="VSeparator" type="VSeparator" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset2" unique_id=382389674]
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset3" unique_id=382389674]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_erhdw")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset2" unique_id=548513289]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset3" unique_id=548513289]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset2/VBoxContainer" unique_id=598672295]
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset3/VBoxContainer" unique_id=598672295]
 layout_mode = 2
 text = "Rubik Mono One Font"
+
+[node name="AdditionalAsset4" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection" unique_id=1944268961]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset4" unique_id=1208678664]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Rico Cilliers and colormass"
+horizontal_alignment = 2
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset4" unique_id=1968630884]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_erhdw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset4" unique_id=1257551846]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/ScrollingMargin/VBoxContainer/AdditionalAssetsSection/AdditionalAsset4/VBoxContainer" unique_id=1547995971]
+layout_mode = 2
+text = "Velour Velvet Texture"
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=1785607489]
 layout_mode = 2

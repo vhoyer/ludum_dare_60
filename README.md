@@ -23,8 +23,10 @@ Team members include:
 ### Attributions
 Open source resources used:
 
+- [Fabric 034](https://ambientcg.com/a/Fabric034) surface from ambientCG.com.
 - [Tilt Neon](https://fonts.google.com/specimen/Tilt+Neon) font by Andy Clymer.
 - [Rubik Mono One](https://fonts.google.com/specimen/Rubik+Mono+One) font by Hubert and Fischer.
+- [Velour Velvet Texture](https://polyhaven.com/a/velour_velvet) texture by Rico Cilliers and colormass
 
 Coded using the [Godot](https://godotengine.org) game engine.
 
