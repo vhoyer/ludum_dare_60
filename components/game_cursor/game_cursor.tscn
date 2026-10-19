@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bfrgc2xrx58px" path="res://components/game_cursor/game_cursor.gd" id="1_0mnap"]
 [ext_resource type="Resource" uid="uid://bx586f3ywe4bs" path="res://components/game_cursor/cursors/default.tres" id="2_kqhv7"]
 [ext_resource type="Texture2D" uid="uid://bbecw3msbwwvw" path="res://assets/cursor/wave.png" id="3_kqhv7"]
+[ext_resource type="Texture2D" uid="uid://dau2lmk6s1pvp" path="res://assets/hammer/hammer3.png" id="4_gjuo2"]
 
 [sub_resource type="Curve" id="Curve_44guq"]
 _data = [Vector2(0, 1), 0.0, -2.8594224, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -24,6 +25,12 @@ gravity = Vector3(0, 0, 0)
 scale_curve = SubResource("CurveTexture_0mnap")
 alpha_curve = SubResource("CurveTexture_wbdmm")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_n26ti"]
+radius = 188.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wbdmm"]
+radius = 29.068884
+
 [node name="GameCursor" type="Node2D" unique_id=1907159996]
 process_mode = 3
 z_index = 100
@@ -43,5 +50,20 @@ process_material = SubResource("ParticleProcessMaterial_n26ti")
 [node name="Cursor" type="Sprite2D" parent="." unique_id=917597537]
 unique_name_in_owner = true
 scale = Vector2(0.75, 0.75)
+texture = ExtResource("4_gjuo2")
 centered = false
-offset = Vector2(-77, -69)
+offset = Vector2(-37, -37)
+
+[node name="AEFBox" type="Area2D" parent="." unique_id=1309662202]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="AEFBox" unique_id=286830533]
+shape = SubResource("CircleShape2D_n26ti")
+debug_color = Color(0.6407307, 0.52277815, 0.12784731, 0.41960785)
+
+[node name="HitBox" type="Area2D" parent="." unique_id=710958357]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=1972770096]
+shape = SubResource("CircleShape2D_wbdmm")
+debug_color = Color(0.8287924, 0.00014083058, 7.7297984e-05, 0.41960785)

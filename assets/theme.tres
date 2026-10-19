@@ -1,6 +1,9 @@
 [gd_resource type="Theme" format=3 uid="uid://b10mtsfylwshn"]
 
+[ext_resource type="FontFile" uid="uid://ms2r4r1swcoi" path="res://assets/font/Tilt_Neon/TiltNeon-Regular-VariableFont_XROT,YROT.ttf" id="1_5x3i2"]
+
 [resource]
+default_font = ExtResource("1_5x3i2")
 MarginContainerMedium/base_type = &"MarginContainer"
 MarginContainerMedium/constants/margin_bottom = 16
 MarginContainerMedium/constants/margin_left = 16
