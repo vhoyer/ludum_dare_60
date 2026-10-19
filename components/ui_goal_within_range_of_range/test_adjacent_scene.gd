@@ -4,3 +4,4 @@ extends Control
 func _ready():
 	$UiGoalWithinRangeOfRange.set_value_range(40, 60)
 	$UiGoalWithinRangeOfRange.value = 35
+	$UiGoalWithinRangeOfRange.tick_count = 11
