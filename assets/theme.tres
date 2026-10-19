@@ -5,8 +5,8 @@
 [ext_resource type="StyleBox" uid="uid://dm12gtpmpguw2" path="res://assets/gui/button_disabled_style_box_flat.tres" id="1_x2pqw"]
 [ext_resource type="StyleBox" uid="uid://bt864mib0hhtq" path="res://assets/gui/button_normal_style_box_flat.tres" id="2_lu33j"]
 [ext_resource type="StyleBox" uid="uid://coy51kttqnqas" path="res://assets/gui/button_pressed_style_box_flat.tres" id="2_wycmq"]
-[ext_resource type="Texture2D" uid="uid://bo31puub16e4u" path="res://assets/gui/button1_off.png" id="5_wms38"]
-[ext_resource type="Texture2D" uid="uid://b617a315ll6hd" path="res://assets/gui/button1_on.png" id="6_bcf2e"]
+[ext_resource type="Texture2D" uid="uid://bkkgd611a2m6h" path="res://assets/gui/arrowhead1.png" id="5_7g2p0"]
+[ext_resource type="Texture2D" uid="uid://cvpy73j8fexe7" path="res://assets/gui/slice2_2x.png" id="6_357y2"]
 
 [resource]
 default_font = ExtResource("1_5x3i2")
@@ -14,9 +14,9 @@ Button/styles/disabled = ExtResource("1_x2pqw")
 Button/styles/hover = ExtResource("1_lu33j")
 Button/styles/normal = ExtResource("2_lu33j")
 Button/styles/pressed = ExtResource("2_wycmq")
-HSlider/icons/grabber = ExtResource("5_wms38")
-HSlider/icons/grabber_disabled = ExtResource("5_wms38")
-HSlider/icons/grabber_highlight = ExtResource("6_bcf2e")
+HSlider/icons/grabber = ExtResource("5_7g2p0")
+HSlider/icons/grabber_disabled = ExtResource("5_7g2p0")
+HSlider/icons/grabber_highlight = ExtResource("6_357y2")
 HSlider/styles/slider = ExtResource("2_lu33j")
 LineEdit/styles/normal = ExtResource("2_lu33j")
 LineEdit/styles/read_only = ExtResource("1_x2pqw")
@@ -25,7 +25,7 @@ MarginContainerMedium/constants/margin_bottom = 16
 MarginContainerMedium/constants/margin_left = 16
 MarginContainerMedium/constants/margin_right = 16
 MarginContainerMedium/constants/margin_top = 16
-VSlider/icons/grabber = ExtResource("5_wms38")
-VSlider/icons/grabber_disabled = ExtResource("5_wms38")
-VSlider/icons/grabber_highlight = ExtResource("6_bcf2e")
+VSlider/icons/grabber = ExtResource("5_7g2p0")
+VSlider/icons/grabber_disabled = ExtResource("5_7g2p0")
+VSlider/icons/grabber_highlight = ExtResource("6_357y2")
 VSlider/styles/slider = ExtResource("2_lu33j")
