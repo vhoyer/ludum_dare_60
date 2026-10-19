@@ -111,6 +111,8 @@ var _original_jitter_range: float
 var _original_fill_margin: float
 
 func _let_go(target: MarginContainer, margin: StringName) -> void:
+	AudioEventBus.emit(AudioEventBus.Id.SLIP_SFX)
+
 	_original_jitter_range = _jitter_range
 	_original_fill_margin = _fill_margin
 	_jitter_range = 0
