@@ -26,7 +26,7 @@ patch_margin_bottom = 100
 axis_stretch_horizontal = 1
 
 [node name="Surface" type="NinePatchRect" parent="." unique_id=402797298]
-modulate = Color(0.9250591, 0.78387344, 0.6656046, 1)
+self_modulate = Color(0.2517333, 0.117999986, 0.59, 1)
 clip_children = 2
 layout_mode = 2
 texture = ExtResource("2_86wg2")
@@ -39,6 +39,7 @@ axis_stretch_horizontal = 2
 axis_stretch_vertical = 1
 
 [node name="TextureRect" type="TextureRect" parent="Surface" unique_id=1389379479]
+modulate = Color(0.3168, 0.72, 0.54528, 1)
 material = SubResource("CanvasItemMaterial_86wg2")
 layout_mode = 1
 anchors_preset = 15
