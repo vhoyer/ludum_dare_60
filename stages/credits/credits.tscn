@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dpcogepx22kr8" path="res://stages/credits/back_button.gd" id="1_erhdw"]
 [ext_resource type="PackedScene" uid="uid://bqnj75ank41t6" path="res://components/background_default/background_default.tscn" id="1_ufutd"]
+[ext_resource type="Texture2D" uid="uid://cc7f8hwgam7e2" path="res://assets/gui/9slice1.png" id="2_sennw"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_erhdw"]
 content_margin_left = 0.0
@@ -22,6 +23,19 @@ grow_vertical = 2
 
 [node name="BackgroundDefault" parent="." unique_id=1785069674 instance=ExtResource("1_ufutd")]
 layout_mode = 1
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="." unique_id=1782277828]
+layout_mode = 0
+offset_left = 354.0
+offset_top = -1.0
+offset_right = 798.0
+offset_bottom = 547.0
+texture = ExtResource("2_sennw")
+region_rect = Rect2(9.95327, 10.255995, 151.08038, 149.74887)
+patch_margin_left = 41
+patch_margin_top = 41
+patch_margin_right = 44
+patch_margin_bottom = 41
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1866837023]
 layout_mode = 1
