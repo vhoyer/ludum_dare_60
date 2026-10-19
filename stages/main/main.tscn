@@ -169,10 +169,22 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 2
 
+[node name="RollsLabel" type="Label" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2" unique_id=179544154]
+unique_name_in_owner = true
+layout_mode = 2
+text = "%s/%s"
+horizontal_alignment = 1
+
 [node name="RollButton" type="Button" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2" unique_id=765454622]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 8
 text = "roll"
+
+[node name="CursorOnParent3" type="Node" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2/RollButton" unique_id=1943325524]
+script = ExtResource("6_4vbm2")
+cursor = ExtResource("12_l7y0w")
+metadata/_custom_type_script = "uid://d161jm3n6y53c"
 
 [node name="Label2" type="Label" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2" unique_id=348406944]
 layout_mode = 2
@@ -225,16 +237,29 @@ size_flags_vertical = 8
 alignment = 2
 
 [node name="SubmitButton" type="Button" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer3" unique_id=273079299]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 8
 text = "End Turn"
 
 [node name="CursorOnParent2" type="Node" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer3/SubmitButton" unique_id=75567156]
 script = ExtResource("6_4vbm2")
-cursor = ExtResource("7_no1gd")
+cursor = ExtResource("12_l7y0w")
 metadata/_custom_type_script = "uid://d161jm3n6y53c"
+
+[node name="PreventInteraction" type="CanvasLayer" parent="." unique_id=16300880]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="PreventInteraction" unique_id=1167216264]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
 
 [connection signal="button_down" from="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2/RollButton" to="." method="_on_roll_button_button_down"]
 [connection signal="button_down" from="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2/HitTableButton" to="." method="_on_hit_table_button_button_down"]
 [connection signal="toggled" from="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2/AspectRatioContainer/HammerButton" to="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2/AspectRatioContainer/HammerButton" method="_on_toggled"]
-[connection signal="button_down" from="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer3/SubmitButton" to="." method="_on_roll_button_button_down"]
+[connection signal="button_down" from="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer3/SubmitButton" to="." method="_on_submit_button_button_down"]

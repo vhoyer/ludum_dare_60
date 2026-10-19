@@ -15,6 +15,9 @@ var goal_gauge: Label = %GoalGauge
 @onready
 var tug_of_war: GameTugOfWar = %GameTugOfWar
 
+@onready
+var rolls_label: Label = %RollsLabel
+
 
 @export_group('throw', '_throw')
 @export
@@ -32,16 +35,24 @@ var _throw_inbetween_interval: float = 0.3
 
 func _ready() -> void:
 	var goal_gauge_model:= goal_gauge.text
+	var labels_model:= rolls_label.text
 
 	SaveManager.data.watch(self, ['points', 'current_level'], func():
 		tug_of_war.value = SaveManager.data.points / LevelsManager.current.goal_min
 		goal_gauge.text = goal_gauge_model.format(SaveManager.data).format(LevelsManager.current)
 		pass)
 
+	SaveManager.data.watch(self, ['roll_counter', 'current_level'], func():
+		rolls_label.text = labels_model % [SaveManager.data.roll_counter, LevelsManager.current.max_rolls]
+		%RollButton.disabled = (SaveManager.data.roll_counter >= LevelsManager.current.max_rolls)
+		%SubmitButton.disabled = SaveManager.data.roll_counter <= 0
+		pass)
+
 
 func _on_roll_button_button_down() -> void:
 	VHDUtils.remove_children(dices_group)
 	AudioEventBus.emit(AudioEventBus.Id.DICE_ROLL_REQUESTED)
+	SaveManager.data.roll_counter += 1
 
 	var points: int = 0
 
@@ -64,7 +75,6 @@ func _on_roll_button_button_down() -> void:
 		points += await dice.roll_finished
 
 	SaveManager.data.points = points
-	SaveManager.data.roll_counter += 1
 
 
 
@@ -79,3 +89,18 @@ func _on_hit_table_button_button_down() -> void:
 		points += await dice.roll_finished
 
 	SaveManager.data.points = points
+
+
+func _on_submit_button_button_down() -> void:
+	%PreventInteraction.show()
+
+	if LevelsManager.current.is_goal_met():
+		AudioEventBus.emit(AudioEventBus.Id.HUMAN_PULL_WIN_GRUNT)
+		tug_of_war.win()
+	else:
+		AudioEventBus.emit(AudioEventBus.Id.HUMAN_PULL_LOSE_GRUNT)
+		tug_of_war.lose()
+
+	await tug_of_war.end_animation_finished
+	LevelsManager.next_level()
+	StageManager.reload_current_stage()

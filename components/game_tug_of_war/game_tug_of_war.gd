@@ -4,6 +4,7 @@ extends Control
 
 
 signal _model_updated()
+signal end_animation_finished()
 
 
 ## value of progress from 0 to 1 (0 = enemy win, 1 = player win)
@@ -114,6 +115,9 @@ func _let_go(target: MarginContainer, margin: StringName) -> void:
 		target.add_theme_constant_override(margin, val)
 		_content.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
 		pass, 0, 600, 0.4)
+
+	await tween.finished
+	end_animation_finished.emit()
 
 
 func win() -> void:

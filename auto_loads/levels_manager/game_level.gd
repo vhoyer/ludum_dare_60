@@ -13,3 +13,11 @@ var dice_starting_count: int = 1
 
 @export_range(0.1, 2)
 var dice_size: float = 1
+
+@export
+var max_rolls: int = 3
+
+
+func is_goal_met() -> bool:
+	var points: int = SaveManager.data.points
+	return goal_min <= points and points <= goal_max
