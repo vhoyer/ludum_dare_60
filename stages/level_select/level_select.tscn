@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://dpko61llapn1r"]
+
+[ext_resource type="PackedScene" uid="uid://fn5c0pwwd20k" path="res://components/background_default/background_custom_gathered_at_table.tscn" id="1_v88kk"]
+[ext_resource type="Texture2D" uid="uid://cc7f8hwgam7e2" path="res://assets/gui/9slice1.png" id="2_01kjt"]
+[ext_resource type="PackedScene" uid="uid://wfhmgtoroek" path="res://stages/level_select/level_select_menu.tscn" id="4_0kiw0"]
+[ext_resource type="PackedScene" uid="uid://usqu7frh72wo" path="res://components/game_cursor/game_cursor.tscn" id="9_iovep"]
+
+[node name="LevelSelect" type="Control" unique_id=1060325929]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackgroundCustom" parent="." unique_id=1785069674 instance=ExtResource("1_v88kk")]
+layout_mode = 1
+offset_top = -103.0
+offset_bottom = 103.0
+
+[node name="MainCentered" type="CenterContainer" parent="." unique_id=1983816057]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="MarginContainer" parent="MainCentered" unique_id=958614200]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MainCentered/PanelContainer" unique_id=497893527]
+layout_mode = 2
+texture = ExtResource("2_01kjt")
+region_rect = Rect2(9.95327, 10.255995, 151.08038, 149.74887)
+patch_margin_left = 41
+patch_margin_top = 41
+patch_margin_right = 44
+patch_margin_bottom = 41
+
+[node name="MarginContainer" type="MarginContainer" parent="MainCentered/PanelContainer" unique_id=978862864]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="MarginContainer2" type="MarginContainer" parent="MainCentered/PanelContainer/MarginContainer" unique_id=1011636899]
+layout_mode = 2
+theme_type_variation = &"MarginContainerMedium"
+
+[node name="LevelSelectMenu" parent="MainCentered/PanelContainer/MarginContainer/MarginContainer2" unique_id=666591330 instance=ExtResource("4_0kiw0")]
+layout_mode = 2
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1910558387]
+anchor_mode = 0
+
+[node name="GameCursor" parent="Camera2D" unique_id=1907159996 instance=ExtResource("9_iovep")]
