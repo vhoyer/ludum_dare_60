@@ -5,25 +5,25 @@ extends Control
 @export var editable: bool = true:
 	get:
 		return editable
-	set(value):
+	set(incoming_value):
 		if %HSlider:
-			%HSlider.editable = value
+			%HSlider.editable = incoming_value
 
 ## Minimum value.
 ## Range is clamped if [value_range_start] is less than [min_value].
 @export var min_value: float = 0.0:
 	get:
 		return min_value
-	set(value):
+	set(incoming_value):
 		if %ProgressBarOverlapBelowValue:
-			%ProgressBarOverlapBelowValue.min_value = value
+			%ProgressBarOverlapBelowValue.min_value = incoming_value
 		if %ProgressBarValueRangeEnd:
-			%ProgressBarValueRangeEnd.min_value = value
+			%ProgressBarValueRangeEnd.min_value = incoming_value
 		if %HSlider:
-			%HSlider.min_value = value
+			%HSlider.min_value = incoming_value
 		if %LabelMinValue:
 			%LabelMinValue.text = (
-				_float_to_string_truncate_decimal_if_whole_number(value)
+				_float_to_string_truncate_decimal_if_whole_number(incoming_value)
 			)
 
 ## Maximum value.
@@ -31,52 +31,52 @@ extends Control
 @export var max_value: float = 100.0:
 	get:
 		return max_value
-	set(value):
+	set(incoming_value):
 		if %ProgressBarOverlapBelowValue:
-			%ProgressBarOverlapBelowValue.max_value = value
+			%ProgressBarOverlapBelowValue.max_value = incoming_value
 		if %ProgressBarValueRangeEnd:
-			%ProgressBarValueRangeEnd.max_value = value
+			%ProgressBarValueRangeEnd.max_value = incoming_value
 		if %HSlider:
-			%HSlider.max_value = value
+			%HSlider.max_value = incoming_value
 		if %LabelMaxValue:
 			%LabelMaxValue.text = (
-				_float_to_string_truncate_decimal_if_whole_number(value)
+				_float_to_string_truncate_decimal_if_whole_number(incoming_value)
 			)
 
 ## Lowest end of the current value.
 @export var value_range_start: float = 0.0:
 	get:
 		return value_range_start
-	set(value):
+	set(incoming_value):
 		if %ProgressBarOverlapBelowValue:
-			%ProgressBarOverlapBelowValue.value = value
+			%ProgressBarOverlapBelowValue.value = incoming_value
 		if %LabelValueRangeStart:
 			%LabelValueRangeStart.text = (
-				_float_to_string_truncate_decimal_if_whole_number(value)
+				_float_to_string_truncate_decimal_if_whole_number(incoming_value)
 			)
 
 ## Highest end of the current value.
 @export var value_range_end: float = 0.0:
 	get:
 		return value_range_end
-	set(value):
+	set(incoming_value):
 		if %ProgressBarValueRangeEnd:
-			%ProgressBarValueRangeEnd.value = value
+			%ProgressBarValueRangeEnd.value = incoming_value
 		if %LabelValueRangeEnd:
 			%LabelValueRangeEnd.text = (
-				_float_to_string_truncate_decimal_if_whole_number(value)
+				_float_to_string_truncate_decimal_if_whole_number(incoming_value)
 			)
 
 ## Highest end of the current value.
 @export var value: float = 0.0:
 	get:
 		return value
-	set(value):
+	set(incoming_value):
 		if %HSlider:
-			%HSlider.value = value
+			%HSlider.value = incoming_value
 		if %LabelValue:
 			%LabelValue.text = (
-				_float_to_string_truncate_decimal_if_whole_number(value)
+				_float_to_string_truncate_decimal_if_whole_number(incoming_value)
 			)
 
 func _ready():

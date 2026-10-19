@@ -2,80 +2,69 @@
 
 [ext_resource type="Script" uid="uid://bh55hbs3r8v3h" path="res://components/ui_goal_within_range_of_range/ui_goal_within_range_of_range.gd" id="1_dbhgx"]
 
-[node name="UiGoalWithinRangeOfRange" type="Control" unique_id=1012150934]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_dbhgx")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1907702672]
-layout_mode = 0
+[node name="UiGoalWithinRangeOfRange" type="VBoxContainer" unique_id=1907702672]
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_dbhgx")
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=499790492]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=499790492]
 layout_mode = 2
 
-[node name="ProgressBarOverlapBelowValue" type="ProgressBar" parent="VBoxContainer/MarginContainer" unique_id=1087862455]
+[node name="ProgressBarOverlapBelowValue" type="ProgressBar" parent="MarginContainer" unique_id=1087862455]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
 show_percentage = false
 
-[node name="ProgressBarValueRangeEnd" type="ProgressBar" parent="VBoxContainer/MarginContainer" unique_id=1913119787]
+[node name="ProgressBarValueRangeEnd" type="ProgressBar" parent="MarginContainer" unique_id=1913119787]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
 show_percentage = false
 
-[node name="HSlider" type="HSlider" parent="VBoxContainer" unique_id=937555707]
+[node name="HSlider" type="HSlider" parent="." unique_id=937555707]
 unique_name_in_owner = true
 layout_mode = 2
 offset_transform_enabled = true
 offset_transform_position = Vector2(0, -10)
 
-[node name="LabelValue" type="Label" parent="VBoxContainer" unique_id=828800179]
+[node name="LabelValue" type="Label" parent="." unique_id=828800179]
 unique_name_in_owner = true
 layout_mode = 2
 text = "0"
 horizontal_alignment = 1
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=973657021]
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=973657021]
 layout_mode = 2
 
-[node name="LabelValueRangeStart" type="Label" parent="VBoxContainer/HBoxContainer2" unique_id=2053802704]
+[node name="LabelValueRangeStart" type="Label" parent="HBoxContainer2" unique_id=2053802704]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 text = "0"
 horizontal_alignment = 1
 
-[node name="LabelValueRangeEnd" type="Label" parent="VBoxContainer/HBoxContainer2" unique_id=968783496]
+[node name="LabelValueRangeEnd" type="Label" parent="HBoxContainer2" unique_id=968783496]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 text = "0"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1155906741]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1155906741]
 layout_mode = 2
 
-[node name="LabelMinValue" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=566527463]
+[node name="LabelMinValue" type="Label" parent="HBoxContainer" unique_id=566527463]
 unique_name_in_owner = true
 layout_mode = 2
 text = "0"
 
-[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer" unique_id=1296264857]
+[node name="Control" type="Control" parent="HBoxContainer" unique_id=1296264857]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="LabelMaxValue" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1398478353]
+[node name="LabelMaxValue" type="Label" parent="HBoxContainer" unique_id=1398478353]
 unique_name_in_owner = true
 layout_mode = 2
 text = "0"
 horizontal_alignment = 2
-
-[connection signal="value_changed" from="VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
