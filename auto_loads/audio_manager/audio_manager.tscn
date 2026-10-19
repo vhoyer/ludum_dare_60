@@ -15,6 +15,9 @@
 [ext_resource type="AudioStream" uid="uid://dlmgp8ju1eghc" path="res://assets/audio/sfx/sfx_709_evil_win_randomizer.tres" id="13_bn8tc"]
 [ext_resource type="AudioStream" uid="uid://deef4vuws87ra" path="res://assets/audio/sfx/sfx_705_AevilD.wav" id="14_eyrmi"]
 [ext_resource type="AudioStream" uid="uid://c4lrme0mlch38" path="res://assets/audio/sfx/sfx_704_AevilV.wav" id="15_py808"]
+[ext_resource type="AudioStream" uid="uid://de1vivapcx2yk" path="res://assets/audio/sfx/sfx_807_bloop_win_randomizer.tres" id="16_py808"]
+[ext_resource type="AudioStream" uid="uid://c3yb3cue3ivft" path="res://assets/audio/sfx/sfx_804_AbloopD.wav" id="17_bivk5"]
+[ext_resource type="AudioStream" uid="uid://cvds4rt78sudi" path="res://assets/audio/sfx/sfx_805_AbloopV.wav" id="18_bivk5"]
 
 [node name="AudioManager" type="Node" unique_id=548666010]
 process_mode = 3
@@ -77,4 +80,16 @@ bus = &"Voice"
 
 [node name="SFXVoicePlayerAgainstAlienEvilLose" type="AudioStreamPlayer" parent="." unique_id=1805729528]
 stream = ExtResource("15_py808")
+bus = &"Voice"
+
+[node name="SFXVoicePlayerAgainstAlienBloopWin" type="AudioStreamPlayer" parent="." unique_id=1588397163]
+stream = ExtResource("16_py808")
+bus = &"Voice"
+
+[node name="SFXVoicePlayerAgainstAlienBloopLastWin" type="AudioStreamPlayer" parent="." unique_id=898216496]
+stream = ExtResource("17_bivk5")
+bus = &"Voice"
+
+[node name="SFXVoicePlayerAgainstAlienBloopLose" type="AudioStreamPlayer" parent="." unique_id=32530676]
+stream = ExtResource("18_bivk5")
 bus = &"Voice"

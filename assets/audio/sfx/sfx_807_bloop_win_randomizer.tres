@@ -1,0 +1,11 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://de1vivapcx2yk"]
+
+[ext_resource type="AudioStream" uid="uid://bokbpfj1jwwpu" path="res://assets/audio/sfx/sfx_801_AbloopC1.wav" id="1_s6xno"]
+[ext_resource type="AudioStream" uid="uid://ucrei8sgb25q" path="res://assets/audio/sfx/sfx_802_AbloopC2.wav" id="2_anwif"]
+[ext_resource type="AudioStream" uid="uid://bhjiwn1uewrfp" path="res://assets/audio/sfx/sfx_803_AbloopC3.wav" id="3_cagcl"]
+
+[resource]
+streams_count = 3
+stream_0/stream = ExtResource("1_s6xno")
+stream_1/stream = ExtResource("2_anwif")
+stream_2/stream = ExtResource("3_cagcl")
