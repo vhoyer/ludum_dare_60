@@ -23,3 +23,6 @@ MarginContainerMedium/constants/margin_bottom = 16
 MarginContainerMedium/constants/margin_left = 16
 MarginContainerMedium/constants/margin_right = 16
 MarginContainerMedium/constants/margin_top = 16
+VSlider/icons/grabber = ExtResource("5_wms38")
+VSlider/icons/grabber_disabled = ExtResource("5_wms38")
+VSlider/icons/grabber_highlight = ExtResource("6_bcf2e")
