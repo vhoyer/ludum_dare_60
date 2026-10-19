@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bmh68yefaofg8" path="res://components/settings/settings_menu_content.tscn" id="1_orxww"]
 [ext_resource type="Script" uid="uid://bu4cyxumobyrd" path="res://stages/settings_menu/settings_menu.gd" id="1_ttqbk"]
+[ext_resource type="PackedScene" uid="uid://bqnj75ank41t6" path="res://components/background_default/background_default.tscn" id="2_xfgow"]
 
 [node name="SettingsMenu" type="Control" unique_id=1569673479]
 layout_mode = 3
@@ -11,6 +12,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ttqbk")
+
+[node name="BackgroundDefault" parent="." unique_id=1785069674 instance=ExtResource("2_xfgow")]
+layout_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2023396947]
 self_modulate = Color(1, 1, 1, 0.4)
