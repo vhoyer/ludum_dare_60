@@ -6,7 +6,7 @@ var _current_index: int:
 	get():
 		return SaveManager.data.current_level
 	set(value):
-		SaveManager.data.current_level = wrapi(value, 0, _max_levels)
+		SaveManager.data.current_level = wrapi(value, -1, _max_levels)
 
 
 var _max_levels: int:
@@ -17,6 +17,11 @@ var _max_levels: int:
 var current: GameLevel:
 	get():
 		return self.get_child(_current_index)
+
+
+var is_complete: bool:
+	get():
+		return _current_index == -1
 
 
 func _ready() -> void:

@@ -97,10 +97,15 @@ func _on_submit_button_button_down() -> void:
 	if LevelsManager.current.is_goal_met():
 		AudioEventBus.emit(AudioEventBus.Id.HUMAN_PULL_WIN_GRUNT)
 		tug_of_war.win()
+
+		await tug_of_war.end_animation_finished
+		LevelsManager.next_level()
+		if LevelsManager.is_complete:
+			StageManager.push_stage('uid://dfeemruwqkcvk')
+		else:
+			StageManager.reload_current_stage()
 	else:
 		AudioEventBus.emit(AudioEventBus.Id.HUMAN_PULL_LOSE_GRUNT)
 		tug_of_war.lose()
-
-	await tug_of_war.end_animation_finished
-	LevelsManager.next_level()
-	StageManager.reload_current_stage()
+		await tug_of_war.end_animation_finished
+		StageManager.push_stage('uid://cah01bitodg5j')

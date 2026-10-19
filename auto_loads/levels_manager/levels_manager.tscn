@@ -20,6 +20,6 @@ metadata/_custom_type_script = "uid://c6nhi0n7ir0mk"
 
 [node name="GameLevel3" type="Node" parent="." unique_id=1600452007]
 script = ExtResource("1_3gud8")
-goal_min = 18.0
+goal_min = 12.0
 dice_starting_count = 3
 metadata/_custom_type_script = "uid://c6nhi0n7ir0mk"
