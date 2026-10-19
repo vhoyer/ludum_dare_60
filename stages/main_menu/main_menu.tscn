@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://7i1g42nagf2j" path="res://stages/main_menu/start_button.gd" id="1_6almw"]
 [ext_resource type="PackedScene" uid="uid://fn5c0pwwd20k" path="res://components/background_default/background_custom_gathered_at_table.tscn" id="1_hqqfy"]
+[ext_resource type="Texture2D" uid="uid://cc7f8hwgam7e2" path="res://assets/gui/9slice1.png" id="2_hqqfy"]
 [ext_resource type="PackedScene" uid="uid://usqu7frh72wo" path="res://components/game_cursor/game_cursor.tscn" id="2_owbi8"]
 [ext_resource type="Script" uid="uid://d161jm3n6y53c" path="res://components/game_cursor/cursor_on_parent.gd" id="2_wyd67"]
 [ext_resource type="Resource" uid="uid://d17wkpun5jdvw" path="res://components/game_cursor/cursors/hammer.tres" id="3_7wn7o"]
@@ -30,41 +31,54 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="MainCentered" unique_id=1065162115]
+[node name="PanelContainer" type="MarginContainer" parent="MainCentered" unique_id=958614200]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="MainCentered/PanelContainer" unique_id=761978568]
+[node name="NinePatchRect" type="NinePatchRect" parent="MainCentered/PanelContainer" unique_id=497893527]
 layout_mode = 2
+texture = ExtResource("2_hqqfy")
+region_rect = Rect2(9.95327, 10.255995, 151.08038, 149.74887)
+patch_margin_left = 41
+patch_margin_top = 41
+patch_margin_right = 44
+patch_margin_bottom = 41
 
 [node name="MarginContainer" type="MarginContainer" parent="MainCentered/PanelContainer" unique_id=978862864]
 layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="MarginContainer2" type="MarginContainer" parent="MainCentered/PanelContainer/MarginContainer" unique_id=1011636899]
+layout_mode = 2
 theme_type_variation = &"MarginContainerMedium"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MainCentered/PanelContainer/MarginContainer" unique_id=832967596]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainCentered/PanelContainer/MarginContainer/MarginContainer2" unique_id=832967596]
 layout_mode = 2
 
-[node name="StartButton" type="Button" parent="MainCentered/PanelContainer/MarginContainer/VBoxContainer" unique_id=303258699]
+[node name="StartButton" type="Button" parent="MainCentered/PanelContainer/MarginContainer/MarginContainer2/VBoxContainer" unique_id=303258699]
 layout_mode = 2
 text = "start! ;)"
 script = ExtResource("1_6almw")
 next_stage = "uid://boew20gyqimy6"
 
-[node name="CursorOnParent" type="Node" parent="MainCentered/PanelContainer/MarginContainer/VBoxContainer/StartButton" unique_id=202094876]
+[node name="CursorOnParent" type="Node" parent="MainCentered/PanelContainer/MarginContainer/MarginContainer2/VBoxContainer/StartButton" unique_id=202094876]
 script = ExtResource("2_wyd67")
 cursor = ExtResource("3_7wn7o")
 metadata/_custom_type_script = "uid://d161jm3n6y53c"
 
-[node name="SettingsButton" type="Button" parent="MainCentered/PanelContainer/MarginContainer/VBoxContainer" unique_id=1420342401]
+[node name="SettingsButton" type="Button" parent="MainCentered/PanelContainer/MarginContainer/MarginContainer2/VBoxContainer" unique_id=1420342401]
 layout_mode = 2
 text = "Settings"
 script = ExtResource("4_jofpu")
 
-[node name="CreditsButton" type="Button" parent="MainCentered/PanelContainer/MarginContainer/VBoxContainer" unique_id=157921323]
+[node name="CreditsButton" type="Button" parent="MainCentered/PanelContainer/MarginContainer/MarginContainer2/VBoxContainer" unique_id=157921323]
 layout_mode = 2
 text = "Credits"
 script = ExtResource("5_mcab4")
 
-[node name="QuitButton" type="Button" parent="MainCentered/PanelContainer/MarginContainer/VBoxContainer" unique_id=493804935]
+[node name="QuitButton" type="Button" parent="MainCentered/PanelContainer/MarginContainer/MarginContainer2/VBoxContainer" unique_id=493804935]
 layout_mode = 2
 text = "Quit"
 script = ExtResource("4_7wn7o")
@@ -74,7 +88,7 @@ anchor_mode = 0
 
 [node name="GameCursor" parent="Camera2D" unique_id=1907159996 instance=ExtResource("2_owbi8")]
 
-[connection signal="button_down" from="MainCentered/PanelContainer/MarginContainer/VBoxContainer/StartButton" to="MainCentered/PanelContainer/MarginContainer/VBoxContainer/StartButton" method="_on_button_down"]
-[connection signal="pressed" from="MainCentered/PanelContainer/MarginContainer/VBoxContainer/SettingsButton" to="MainCentered/PanelContainer/MarginContainer/VBoxContainer/SettingsButton" method="_on_pressed"]
-[connection signal="pressed" from="MainCentered/PanelContainer/MarginContainer/VBoxContainer/CreditsButton" to="MainCentered/PanelContainer/MarginContainer/VBoxContainer/CreditsButton" method="_on_pressed"]
-[connection signal="pressed" from="MainCentered/PanelContainer/MarginContainer/VBoxContainer/QuitButton" to="MainCentered/PanelContainer/MarginContainer/VBoxContainer/QuitButton" method="_on_pressed"]
+[connection signal="button_down" from="MainCentered/PanelContainer/MarginContainer/MarginContainer2/VBoxContainer/StartButton" to="MainCentered/PanelContainer/MarginContainer/MarginContainer2/VBoxContainer/StartButton" method="_on_button_down"]
+[connection signal="pressed" from="MainCentered/PanelContainer/MarginContainer/MarginContainer2/VBoxContainer/SettingsButton" to="MainCentered/PanelContainer/MarginContainer/MarginContainer2/VBoxContainer/SettingsButton" method="_on_pressed"]
+[connection signal="pressed" from="MainCentered/PanelContainer/MarginContainer/MarginContainer2/VBoxContainer/CreditsButton" to="MainCentered/PanelContainer/MarginContainer/MarginContainer2/VBoxContainer/CreditsButton" method="_on_pressed"]
+[connection signal="pressed" from="MainCentered/PanelContainer/MarginContainer/MarginContainer2/VBoxContainer/QuitButton" to="MainCentered/PanelContainer/MarginContainer/MarginContainer2/VBoxContainer/QuitButton" method="_on_pressed"]

@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bqnj75ank41t6" path="res://components/background_default/background_default.tscn" id="1_04vlq"]
 [ext_resource type="Script" uid="uid://dpcogepx22kr8" path="res://stages/credits/back_button.gd" id="1_w38ji"]
+[ext_resource type="Texture2D" uid="uid://cc7f8hwgam7e2" path="res://assets/gui/9slice1.png" id="2_67ea6"]
 
 [node name="Lose" type="Control" unique_id=1199745896]
 layout_mode = 3
@@ -26,7 +27,24 @@ theme_type_variation = &"MarginContainerMedium"
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1082033418]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1682012415]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=27262473]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=78502786]
+layout_mode = 2
+texture = ExtResource("2_67ea6")
+region_rect = Rect2(9.95327, 10.255995, 151.08038, 149.74887)
+patch_margin_left = 41
+patch_margin_top = 41
+patch_margin_right = 44
+patch_margin_bottom = 41
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=273225966]
+layout_mode = 2
+theme_type_variation = &"MarginContainerMedium"
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer" unique_id=1682012415]
 layout_mode = 2
 theme_type_variation = &"HeaderLarge"
 text = "Game Over"

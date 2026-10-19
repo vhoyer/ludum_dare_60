@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bmh68yefaofg8" path="res://components/settings/settings_menu_content.tscn" id="1_orxww"]
 [ext_resource type="Script" uid="uid://bu4cyxumobyrd" path="res://stages/settings_menu/settings_menu.gd" id="1_ttqbk"]
 [ext_resource type="PackedScene" uid="uid://bqnj75ank41t6" path="res://components/background_default/background_default.tscn" id="2_xfgow"]
+[ext_resource type="Texture2D" uid="uid://cc7f8hwgam7e2" path="res://assets/gui/9slice1.png" id="3_nihyy"]
 
 [node name="SettingsMenu" type="Control" unique_id=1569673479]
 layout_mode = 3
@@ -34,26 +35,36 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1755873581]
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer" unique_id=396237670]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=461063435]
+[node name="NinePatchRect" type="NinePatchRect" parent="CenterContainer/MarginContainer" unique_id=1778649406]
+layout_mode = 2
+texture = ExtResource("3_nihyy")
+region_rect = Rect2(9.95327, 10.255995, 151.08038, 149.74887)
+patch_margin_left = 41
+patch_margin_top = 41
+patch_margin_right = 44
+patch_margin_bottom = 41
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/MarginContainer" unique_id=449260705]
+layout_mode = 2
+theme_type_variation = &"MarginContainerMedium"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/MarginContainer/MarginContainer" unique_id=1755873581]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/MarginContainer/MarginContainer/VBoxContainer" unique_id=461063435]
 layout_mode = 2
 theme_type_variation = &"HeaderLarge"
 text = "Settings"
 horizontal_alignment = 1
 
-[node name="PanelContainer" type="PanelContainer" parent="CenterContainer/VBoxContainer" unique_id=458237452]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer/PanelContainer" unique_id=2073665374]
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/VBoxContainer/PanelContainer" unique_id=349388630]
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/MarginContainer/MarginContainer/VBoxContainer" unique_id=349388630]
 layout_mode = 2
 theme_type_variation = &"MarginContainerMedium"
 
-[node name="SettingsMenuContent" parent="CenterContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=942847730 instance=ExtResource("1_orxww")]
+[node name="SettingsMenuContent" parent="CenterContainer/MarginContainer/MarginContainer/VBoxContainer/MarginContainer" unique_id=942847730 instance=ExtResource("1_orxww")]
 layout_mode = 2
 
-[connection signal="buttonBackPressed" from="CenterContainer/VBoxContainer/PanelContainer/MarginContainer/SettingsMenuContent" to="." method="_on_settings_menu_content_button_back_pressed"]
+[connection signal="buttonBackPressed" from="CenterContainer/MarginContainer/MarginContainer/VBoxContainer/MarginContainer/SettingsMenuContent" to="." method="_on_settings_menu_content_button_back_pressed"]
