@@ -52,6 +52,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_60rri")
+_throw_direction = Vector2(-1, -1)
+_throw_direction_variation_rad = 0.5
+_throw_force = 1000.0
+_throw_inbetween_interval = 0.015
 
 [node name="BackgroundDefault" parent="." unique_id=1785069674 instance=ExtResource("2_drn0y")]
 layout_mode = 1
