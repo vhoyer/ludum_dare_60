@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bhct0kucuthrn"]
+
+[ext_resource type="Script" uid="uid://c2jqry4jqk70r" path="res://components/ui_goal_within_range_of_range/test_adjacent_scene.gd" id="1_bpvyl"]
+[ext_resource type="PackedScene" uid="uid://civatcvgc70eb" path="res://components/ui_goal_within_range_of_range/ui_goal_within_range_of_range.tscn" id="2_qdkyh"]
+
+[node name="Test" type="Control" unique_id=524011718]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bpvyl")
+
+[node name="UiGoalWithinRangeOfRange" parent="." unique_id=1012150934 instance=ExtResource("2_qdkyh")]
+layout_mode = 1
+value_range_start = 40.0
+value_range_end = 60.0
