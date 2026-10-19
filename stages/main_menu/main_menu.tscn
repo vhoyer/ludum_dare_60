@@ -17,19 +17,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1807383795]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=528449097]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = -20
+theme_override_constants/margin_top = -20
+theme_override_constants/margin_right = -20
+theme_override_constants/margin_bottom = -20
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer" unique_id=1807383795]
+layout_mode = 2
 texture = ExtResource("8_onbu3")
-region_rect = Rect2(4, 8, 170, 157.5)
-patch_margin_left = 15
-patch_margin_top = 12
-patch_margin_right = 22
-patch_margin_bottom = 17
+region_rect = Rect2(9.831711, 10.729669, 151.40282, 149.28233)
+patch_margin_left = 9
+patch_margin_top = 9
+patch_margin_right = 11
+patch_margin_bottom = 10
 
 [node name="MainCentered" type="CenterContainer" parent="." unique_id=1983816057]
 layout_mode = 1
