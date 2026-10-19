@@ -163,6 +163,12 @@ func _randomize_side() -> void:
 			break
 
 
+var is_destroying: bool = false
+
 func destroy() -> void:
+	is_destroying = true
 	AudioEventBus.emit(AudioEventBus.Id.DIE_DESTROY)
+	%VisualRoot.hide()
+	%Shatter.restart()
+	await %Shatter.finished
 	self.queue_free()

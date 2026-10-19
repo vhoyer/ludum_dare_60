@@ -95,10 +95,12 @@ func _on_hit_table_button_button_down() -> void:
 	var points: int = 0
 
 	for dice: GameDice in dices_group.get_children():
+		if dice.is_destroying: continue
 		var value = SaveManager.data.generate_dice_result()
 		dice.reroll(value)
 
 	for dice: GameDice in dices_group.get_children():
+		if dice.is_destroying: continue
 		points += await dice.roll_finished
 
 	SaveManager.data.points = points

@@ -3,9 +3,36 @@
 [ext_resource type="Script" uid="uid://c8woqou4f4j2q" path="res://components/game_dice/game_dice.gd" id="1_kdbr7"]
 [ext_resource type="Texture2D" uid="uid://c5nmda5fkohgw" path="res://assets/dice/dropshadow.png" id="2_1pb4h"]
 [ext_resource type="Texture2D" uid="uid://eiphalqmewu4" path="res://assets/dice/rubik saturated.png" id="3_hpgiv"]
+[ext_resource type="Texture2D" uid="uid://8rii55sqiv7s" path="res://assets/dice/shard.png" id="4_hpgiv"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_no1gd"]
 bounce = 0.4
+
+[sub_resource type="Curve" id="Curve_xv7uc"]
+_data = [Vector2(0.59287524, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.6422477, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_l3vbg"]
+curve = SubResource("Curve_xv7uc")
+
+[sub_resource type="Curve" id="Curve_4jq84"]
+_data = [Vector2(0, 1), 0.0, -11.264336, 0, 0, Vector2(0.05852417, 0), -5.1255693, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_hpgiv"]
+curve = SubResource("Curve_4jq84")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1pb4h"]
+particle_flag_disable_z = true
+angle_min = -424.3
+angle_max = 447.7
+radial_velocity_min = 134.56998
+radial_velocity_max = 436.16998
+radial_velocity_curve = SubResource("CurveTexture_hpgiv")
+gravity = Vector3(0, 0, 0)
+scale_min = 0.29999998
+scale_max = 0.29999998
+alpha_curve = SubResource("CurveTexture_l3vbg")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n26ti"]
 resource_local_to_scene = true
@@ -17,6 +44,16 @@ lock_rotation = true
 script = ExtResource("1_kdbr7")
 _dice_rising_time = 0.2
 _light_direction = Vector2(0, 0.5)
+
+[node name="Shatter" type="GPUParticles2D" parent="." unique_id=1054079974]
+unique_name_in_owner = true
+scale = Vector2(0.5, 0.5)
+emitting = false
+texture = ExtResource("4_hpgiv")
+lifetime = 5.0
+one_shot = true
+explosiveness = 0.98
+process_material = SubResource("ParticleProcessMaterial_1pb4h")
 
 [node name="VisualRoot" type="Node2D" parent="." unique_id=1336242043]
 unique_name_in_owner = true
