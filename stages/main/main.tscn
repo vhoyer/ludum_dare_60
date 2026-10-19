@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://boew20gyqimy6"]
 
 [ext_resource type="Script" uid="uid://bjdopl13o6krk" path="res://stages/main/main.gd" id="1_60rri"]
+[ext_resource type="PackedScene" uid="uid://bqnj75ank41t6" path="res://components/background_default/background_default.tscn" id="2_drn0y"]
 [ext_resource type="PackedScene" uid="uid://cpsa1qlgdobpb" path="res://components/game_tug_of_war/game_tug_of_war.tscn" id="2_usqqw"]
 [ext_resource type="PackedScene" uid="uid://usqu7frh72wo" path="res://components/game_cursor/game_cursor.tscn" id="2_woy08"]
 [ext_resource type="PackedScene" uid="uid://kfbhin5nkdnx" path="res://components/game_table/game_table.tscn" id="5_no1gd"]
@@ -50,6 +51,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_60rri")
+
+[node name="BackgroundDefault" parent="." unique_id=1785069674 instance=ExtResource("2_drn0y")]
+z_index = -10
+layout_mode = 1
 
 [node name="MainColumns" type="HBoxContainer" parent="." unique_id=1820559237]
 layout_mode = 1

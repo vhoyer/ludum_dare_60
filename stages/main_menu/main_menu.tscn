@@ -18,8 +18,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="BackgroundDefault" parent="." unique_id=1785069674 instance=ExtResource("1_onbu3")]
-layout_mode = 0
-anchors_preset = 0
+layout_mode = 1
 
 [node name="MainCentered" type="CenterContainer" parent="." unique_id=1983816057]
 layout_mode = 1

@@ -21,8 +21,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="BackgroundDefault" parent="." unique_id=1785069674 instance=ExtResource("1_ufutd")]
-layout_mode = 0
-anchors_preset = 0
+layout_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1866837023]
 layout_mode = 1

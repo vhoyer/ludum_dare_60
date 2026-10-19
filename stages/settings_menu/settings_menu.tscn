@@ -14,8 +14,7 @@ grow_vertical = 2
 script = ExtResource("1_ttqbk")
 
 [node name="BackgroundDefault" parent="." unique_id=1785069674 instance=ExtResource("2_xfgow")]
-layout_mode = 0
-anchors_preset = 0
+layout_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2023396947]
 self_modulate = Color(1, 1, 1, 0.4)

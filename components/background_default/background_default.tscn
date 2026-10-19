@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cxyp8fc1co4sa" path="res://assets/dice/blank.png" id="1_bxnyb"]
 
 [node name="BackgroundDefault" type="MarginContainer" unique_id=1785069674]
+z_index = -10
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
