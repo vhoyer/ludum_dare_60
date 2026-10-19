@@ -158,7 +158,7 @@ position = Vector2(404, 40)
 shape = SubResource("WorldBoundaryShape2D_3f6tk")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="MainColumns/VBoxContainer/Dices/HBoxContainer/MarginContainer/Root2D/TableBoundaries" unique_id=510147364]
-position = Vector2(404, 482)
+position = Vector2(404, 462)
 shape = SubResource("WorldBoundaryShape2D_axbkc")
 
 [node name="DiceSpawn" type="Marker2D" parent="MainColumns/VBoxContainer/Dices/HBoxContainer/MarginContainer/Root2D" unique_id=289558422]
