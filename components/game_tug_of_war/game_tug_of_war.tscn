@@ -57,12 +57,14 @@ theme_override_constants/margin_top = 0
 theme_override_constants/margin_bottom = 0
 
 [node name="EnemyOver" type="TextureRect" parent="Fill/Content/Enemy" unique_id=840526815]
+unique_name_in_owner = true
 z_index = 10
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("3_4rdbg")
 
 [node name="EnemyUnder" type="TextureRect" parent="Fill/Content/Enemy" unique_id=518922774]
+unique_name_in_owner = true
 z_index = -10
 layout_mode = 2
 size_flags_horizontal = 4
