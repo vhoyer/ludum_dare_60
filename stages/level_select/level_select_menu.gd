@@ -13,7 +13,7 @@ func _on_spin_box_value_changed(value):
 
 func _on_play_button_button_down():
 	var next_stage_number = int(next_stage)
-	if next_stage_number != clamp(next_stage_number, MINIMUM_STAGE_NUMBER, STAGE_UIDS_LIST.size()):
+	if next_stage_number != clamp(next_stage_number, MINIMUM_STAGE_NUMBER, STAGE_UIDS_LIST.size() - 1):
 		StageManager.push_stage("res://stages/level_select/level_select.tscn")
 		return
 
