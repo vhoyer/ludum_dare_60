@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bosgk23prc6ca"]
 
 [ext_resource type="Script" uid="uid://7i1g42nagf2j" path="res://stages/main_menu/start_button.gd" id="1_6almw"]
-[ext_resource type="PackedScene" uid="uid://bqnj75ank41t6" path="res://components/background_default/background_default.tscn" id="1_onbu3"]
+[ext_resource type="PackedScene" uid="uid://fn5c0pwwd20k" path="res://components/background_default/background_custom_gathered_at_table.tscn" id="1_hqqfy"]
 [ext_resource type="PackedScene" uid="uid://usqu7frh72wo" path="res://components/game_cursor/game_cursor.tscn" id="2_owbi8"]
 [ext_resource type="Script" uid="uid://d161jm3n6y53c" path="res://components/game_cursor/cursor_on_parent.gd" id="2_wyd67"]
 [ext_resource type="Resource" uid="uid://d17wkpun5jdvw" path="res://components/game_cursor/cursors/hammer.tres" id="3_7wn7o"]
@@ -17,8 +17,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BackgroundDefault" parent="." unique_id=1785069674 instance=ExtResource("1_onbu3")]
+[node name="BackgroundCustom" parent="." unique_id=1785069674 instance=ExtResource("1_hqqfy")]
 layout_mode = 1
+offset_top = -103.0
+offset_bottom = 103.0
 
 [node name="MainCentered" type="CenterContainer" parent="." unique_id=1983816057]
 layout_mode = 1
@@ -28,31 +30,41 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MainCentered" unique_id=832967596]
+[node name="PanelContainer" type="PanelContainer" parent="MainCentered" unique_id=1065162115]
 layout_mode = 2
 
-[node name="StartButton" type="Button" parent="MainCentered/VBoxContainer" unique_id=303258699]
+[node name="Panel" type="Panel" parent="MainCentered/PanelContainer" unique_id=761978568]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MainCentered/PanelContainer" unique_id=978862864]
+layout_mode = 2
+theme_type_variation = &"MarginContainerMedium"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainCentered/PanelContainer/MarginContainer" unique_id=832967596]
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="MainCentered/PanelContainer/MarginContainer/VBoxContainer" unique_id=303258699]
 layout_mode = 2
 text = "start! ;)"
 script = ExtResource("1_6almw")
 next_stage = "uid://boew20gyqimy6"
 
-[node name="CursorOnParent" type="Node" parent="MainCentered/VBoxContainer/StartButton" unique_id=202094876]
+[node name="CursorOnParent" type="Node" parent="MainCentered/PanelContainer/MarginContainer/VBoxContainer/StartButton" unique_id=202094876]
 script = ExtResource("2_wyd67")
 cursor = ExtResource("3_7wn7o")
 metadata/_custom_type_script = "uid://d161jm3n6y53c"
 
-[node name="SettingsButton" type="Button" parent="MainCentered/VBoxContainer" unique_id=1420342401]
+[node name="SettingsButton" type="Button" parent="MainCentered/PanelContainer/MarginContainer/VBoxContainer" unique_id=1420342401]
 layout_mode = 2
 text = "Settings"
 script = ExtResource("4_jofpu")
 
-[node name="CreditsButton" type="Button" parent="MainCentered/VBoxContainer" unique_id=157921323]
+[node name="CreditsButton" type="Button" parent="MainCentered/PanelContainer/MarginContainer/VBoxContainer" unique_id=157921323]
 layout_mode = 2
 text = "Credits"
 script = ExtResource("5_mcab4")
 
-[node name="QuitButton" type="Button" parent="MainCentered/VBoxContainer" unique_id=493804935]
+[node name="QuitButton" type="Button" parent="MainCentered/PanelContainer/MarginContainer/VBoxContainer" unique_id=493804935]
 layout_mode = 2
 text = "Quit"
 script = ExtResource("4_7wn7o")
@@ -62,7 +74,7 @@ anchor_mode = 0
 
 [node name="GameCursor" parent="Camera2D" unique_id=1907159996 instance=ExtResource("2_owbi8")]
 
-[connection signal="button_down" from="MainCentered/VBoxContainer/StartButton" to="MainCentered/VBoxContainer/StartButton" method="_on_button_down"]
-[connection signal="pressed" from="MainCentered/VBoxContainer/SettingsButton" to="MainCentered/VBoxContainer/SettingsButton" method="_on_pressed"]
-[connection signal="pressed" from="MainCentered/VBoxContainer/CreditsButton" to="MainCentered/VBoxContainer/CreditsButton" method="_on_pressed"]
-[connection signal="pressed" from="MainCentered/VBoxContainer/QuitButton" to="MainCentered/VBoxContainer/QuitButton" method="_on_pressed"]
+[connection signal="button_down" from="MainCentered/PanelContainer/MarginContainer/VBoxContainer/StartButton" to="MainCentered/PanelContainer/MarginContainer/VBoxContainer/StartButton" method="_on_button_down"]
+[connection signal="pressed" from="MainCentered/PanelContainer/MarginContainer/VBoxContainer/SettingsButton" to="MainCentered/PanelContainer/MarginContainer/VBoxContainer/SettingsButton" method="_on_pressed"]
+[connection signal="pressed" from="MainCentered/PanelContainer/MarginContainer/VBoxContainer/CreditsButton" to="MainCentered/PanelContainer/MarginContainer/VBoxContainer/CreditsButton" method="_on_pressed"]
+[connection signal="pressed" from="MainCentered/PanelContainer/MarginContainer/VBoxContainer/QuitButton" to="MainCentered/PanelContainer/MarginContainer/VBoxContainer/QuitButton" method="_on_pressed"]

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://fn5c0pwwd20k"]
+
+[ext_resource type="Texture2D" uid="uid://cnvfjtmkelvoj" path="res://assets/background/background1.jpg" id="2_4a58p"]
+
+[node name="BackgroundCustom" type="MarginContainer" unique_id=1785069674]
+z_index = -10
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = -20
+theme_override_constants/margin_top = -20
+theme_override_constants/margin_right = -20
+theme_override_constants/margin_bottom = -20
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2098877286]
+layout_mode = 2
+texture = ExtResource("2_4a58p")
+expand_mode = 5
