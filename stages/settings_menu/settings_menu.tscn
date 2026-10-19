@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bmh68yefaofg8" path="res://components/settings/settings_menu_content.tscn" id="1_orxww"]
 [ext_resource type="Script" uid="uid://bu4cyxumobyrd" path="res://stages/settings_menu/settings_menu.gd" id="1_ttqbk"]
 [ext_resource type="PackedScene" uid="uid://bqnj75ank41t6" path="res://components/background_default/background_default.tscn" id="2_xfgow"]
-[ext_resource type="Texture2D" uid="uid://cc7f8hwgam7e2" path="res://assets/gui/9slice1.png" id="3_nihyy"]
+[ext_resource type="Texture2D" uid="uid://lqihmrvxdvus" path="res://assets/gui/9slice2_smooth.png" id="3_nihyy"]
 
 [node name="SettingsMenu" type="Control" unique_id=1569673479]
 layout_mode = 3
