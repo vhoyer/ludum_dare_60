@@ -54,6 +54,51 @@ func _play_sfx(event_name: AudioEventBus.Id):
 				14:
 					$SFXVoicePlayerAgainstAlienBloopLastWin.play()
 					return
+				15:
+					$SFXVoicePlayerAgainstAlienKindWin.play()
+					return
+				16:
+					$SFXVoicePlayerAgainstAlienKindWin.play()
+					return
+				17:
+					$SFXVoicePlayerAgainstAlienKindLastWin.play()
+					return
+				18:
+					$SFXVoicePlayerAgainstAlienEvilWin.play()
+					return
+				19:
+					$SFXVoicePlayerAgainstAlienEvilWin.play()
+					return
+				20:
+					$SFXVoicePlayerAgainstAlienEvilLastWin.play()
+					return
+				21:
+					$SFXVoicePlayerAgainstAlienBloopWin.play()
+					return
+				22:
+					$SFXVoicePlayerAgainstAlienBloopWin.play()
+					return
+				23:
+					$SFXVoicePlayerAgainstAlienBloopLastWin.play()
+					return
+				24:
+					$SFXVoicePlayerAgainstAlienEvilWin.play()
+					return
+				25:
+					$SFXVoicePlayerAgainstAlienEvilWin.play()
+					return
+				26:
+					$SFXVoicePlayerAgainstAlienEvilLastWin.play()
+					return
+				27:
+					$SFXVoicePlayerAgainstAlienBloopWin.play()
+					return
+				28:
+					$SFXVoicePlayerAgainstAlienBloopWin.play()
+					return
+				29:
+					$SFXVoicePlayerAgainstAlienBloopLastWin.play()
+					return
 			## Default grunt when specific alien not found.
 			$SFXVoiceGruntAstronaut.play()
 			return
@@ -93,6 +138,60 @@ func _play_sfx(event_name: AudioEventBus.Id):
 					$SFXVoicePlayerAgainstAlienBloopLose.play()
 					return
 				11:
+					$SFXVoicePlayerAgainstAlienBloopLose.play()
+					return
+				12:
+					$SFXVoicePlayerAgainstAlienBirdLose.play()
+					return
+				13:
+					$SFXVoicePlayerAgainstAlienBirdLose.play()
+					return
+				14:
+					$SFXVoicePlayerAgainstAlienBirdLose.play()
+					return
+				15:
+					$SFXVoicePlayerAgainstAlienKindLose.play()
+					return
+				16:
+					$SFXVoicePlayerAgainstAlienKindLose.play()
+					return
+				17:
+					$SFXVoicePlayerAgainstAlienKindLose.play()
+					return
+				18:
+					$SFXVoicePlayerAgainstAlienEvilLose.play()
+					return
+				19:
+					$SFXVoicePlayerAgainstAlienEvilLose.play()
+					return
+				20:
+					$SFXVoicePlayerAgainstAlienEvilLose.play()
+					return
+				21:
+					$SFXVoicePlayerAgainstAlienBloopLose.play()
+					return
+				22:
+					$SFXVoicePlayerAgainstAlienBloopLose.play()
+					return
+				23:
+					$SFXVoicePlayerAgainstAlienBloopLose.play()
+					return
+				24:
+					$SFXVoicePlayerAgainstAlienEvilLose.play()
+					return
+				25:
+					$SFXVoicePlayerAgainstAlienEvilLose.play()
+					return
+				26:
+					$SFXVoicePlayerAgainstAlienEvilLose.play()
+					return
+				27:
+					$SFXVoicePlayerAgainstAlienBloopLose.play()
+					return
+				28:
+					$SFXVoicePlayerAgainstAlienBloopLose.play()
+					return
+				29:
 					$SFXVoicePlayerAgainstAlienBloopLose.play()
 					return
 			## Default grunt when specific alien not found.
