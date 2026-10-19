@@ -1,0 +1,18 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://dlmgp8ju1eghc"]
+
+[ext_resource type="AudioStream" uid="uid://b25c8ckxh5pat" path="res://assets/audio/sfx/sfx_701_AevilC1.wav" id="1_ligay"]
+[ext_resource type="AudioStream" uid="uid://c2gctppurigt7" path="res://assets/audio/sfx/sfx_702_AevilC2.wav" id="2_8vdf8"]
+[ext_resource type="AudioStream" uid="uid://dhjyl13dmpls3" path="res://assets/audio/sfx/sfx_703_AevilC3.wav" id="3_th340"]
+[ext_resource type="AudioStream" uid="uid://cfb2sq3uc5mfg" path="res://assets/audio/sfx/sfx_707_AevilE1.wav" id="4_20gtt"]
+[ext_resource type="AudioStream" uid="uid://bpwvq57rh4y06" path="res://assets/audio/sfx/sfx_708_AevilE2.wav" id="5_qkh04"]
+
+[resource]
+streams_count = 5
+stream_0/stream = ExtResource("1_ligay")
+stream_0/weight = 2.0
+stream_1/stream = ExtResource("2_8vdf8")
+stream_1/weight = 2.0
+stream_2/stream = ExtResource("3_th340")
+stream_2/weight = 2.0
+stream_3/stream = ExtResource("4_20gtt")
+stream_4/stream = ExtResource("5_qkh04")
