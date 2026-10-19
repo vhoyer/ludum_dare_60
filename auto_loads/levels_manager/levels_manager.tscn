@@ -13,8 +13,8 @@ script = ExtResource("1_6pqnw")
 
 [node name="GameLevel1" type="Node" parent="." unique_id=275224358]
 script = ExtResource("1_3gud8")
-goal_min = 6.0
-goal_max = 100.0
+goal_min = 2.0
+goal_max = 6.0
 max_rolls = 1
 item = ExtResource("3_40wsv")
 alien_thumb = ExtResource("4_vmfb7")
@@ -23,7 +23,8 @@ metadata/_custom_type_script = "uid://c6nhi0n7ir0mk"
 
 [node name="GameLevel2" type="Node" parent="." unique_id=1620483075]
 script = ExtResource("1_3gud8")
-goal_min = 12.0
+goal_min = 4.0
+goal_max = 12.0
 dice_starting_count = 2
 item = ExtResource("6_ul6in")
 alien_thumb = ExtResource("4_vmfb7")
@@ -32,7 +33,8 @@ metadata/_custom_type_script = "uid://c6nhi0n7ir0mk"
 
 [node name="GameLevel3" type="Node" parent="." unique_id=1600452007]
 script = ExtResource("1_3gud8")
-goal_min = 12.0
+goal_min = 8.0
+goal_max = 14.0
 dice_starting_count = 3
 item = ExtResource("7_o1cg6")
 alien_thumb = ExtResource("4_vmfb7")
