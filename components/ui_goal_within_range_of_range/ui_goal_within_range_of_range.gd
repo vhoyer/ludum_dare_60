@@ -95,6 +95,27 @@ func _ready():
 	value_range_end = value_range_end
 
 
+## Set a current value and a goal as a range from [value_range_start] to
+##  [value_range_end].
+func set_points_goal_min_goal_max(points: int, goal_min: int, goal_max: int) -> void:
+	value = points
+	value_range_start = goal_min
+	value_range_end = goal_max
+
+
+## Set a current value, a goal as a range from [value_range_start] to
+##  [value_range_end], a minimum of zero, and a maximum of about 10% greater
+##  than the goal maximum.
+func set_points_goal_min_goal_max_default_min_max(points: int, goal_min: int, goal_max: int) -> void:
+	set_points_goal_min_goal_max(points, goal_min, goal_max)
+
+	var default_min = 0
+	min_value = default_min
+
+	var default_max = floor(goal_max * 1.1)
+	max_value = default_max
+
+
 ## Set a goal as a range from [value_range_start] to [value_range_end].
 func set_value_range(start: float, end: float) -> void:
 	value_range_start = start
