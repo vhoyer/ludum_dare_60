@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://i8ry21644gvb" path="res://components/settings/settings_menu_content.gd" id="1_ygsja"]
 [ext_resource type="PackedScene" uid="uid://k8h15d33erig" path="res://components/settings/screenshake/screenshake_intensity_option_button.tscn" id="2_gvot6"]
 [ext_resource type="PackedScene" uid="uid://bnfwtncedr0e4" path="res://components/settings/volume/volume_slider.tscn" id="3_my5v2"]
+[ext_resource type="PackedScene" uid="uid://c3udc31qbhar6" path="res://components/settings/controller_rumble/controller_rumble_intensity_option_button.tscn" id="3_sx77e"]
 
 [node name="SettingsMenuContent" type="VBoxContainer" unique_id=2007361946]
 anchors_preset = 15
@@ -14,7 +15,9 @@ theme_override_constants/separation = 8
 script = ExtResource("1_ygsja")
 
 [node name="ScreenshakeIntensity" parent="." unique_id=52034218 instance=ExtResource("2_gvot6")]
-visible = false
+layout_mode = 2
+
+[node name="ControllerRumbleIntensityOptionButton" parent="." unique_id=1627843419 instance=ExtResource("3_sx77e")]
 layout_mode = 2
 
 [node name="VolumeSliderMaster" parent="." unique_id=27669893 instance=ExtResource("3_my5v2")]
