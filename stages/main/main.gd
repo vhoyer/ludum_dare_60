@@ -37,7 +37,6 @@ const LEVEL_GOAL_MAXIMUM_MILLION = 1000000
 
 
 func _ready() -> void:
-	var goal_gauge_model:= goal_gauge.text
 	var labels_model:= rolls_label.text
 
 	SaveManager.data.watch(self, ['points', 'current_level'], func():
