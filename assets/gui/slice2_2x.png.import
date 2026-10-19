@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjag7rwxg70ic"
-path="res://.godot/imported/arrowhead2.png-af6d0e7aa28a397185141b5d52bdf05d.ctex"
+uid="uid://cvpy73j8fexe7"
+path="res://.godot/imported/slice2_2x.png-09711100266c2c4bc44e6bc8853ef14b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gui/arrowhead2.png"
-dest_files=["res://.godot/imported/arrowhead2.png-af6d0e7aa28a397185141b5d52bdf05d.ctex"]
+source_file="res://assets/gui/slice2_2x.png"
+dest_files=["res://.godot/imported/slice2_2x.png-09711100266c2c4bc44e6bc8853ef14b.ctex"]
 
 [params]
 

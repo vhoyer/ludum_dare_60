@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://bqnj75ank41t6" path="res://components/background_default/background_default.tscn" id="2_drn0y"]
 [ext_resource type="PackedScene" uid="uid://cpsa1qlgdobpb" path="res://components/game_tug_of_war/game_tug_of_war.tscn" id="2_usqqw"]
 [ext_resource type="PackedScene" uid="uid://usqu7frh72wo" path="res://components/game_cursor/game_cursor.tscn" id="2_woy08"]
+[ext_resource type="Texture2D" uid="uid://dysc4c5gb3qbd" path="res://assets/table/cloth_velvet.png" id="3_ty5cg"]
+[ext_resource type="Texture2D" uid="uid://brpshq550hbwj" path="res://assets/table/lighting.png" id="4_ngigp"]
 [ext_resource type="PackedScene" uid="uid://kfbhin5nkdnx" path="res://components/game_table/game_table.tscn" id="5_no1gd"]
 [ext_resource type="Script" uid="uid://d161jm3n6y53c" path="res://components/game_cursor/cursor_on_parent.gd" id="6_4vbm2"]
 [ext_resource type="Texture2D" uid="uid://lqihmrvxdvus" path="res://assets/gui/9slice2_smooth.png" id="6_17rgw"]
@@ -14,6 +16,9 @@
 [ext_resource type="Script" uid="uid://df5gcvr3up6cb" path="res://stages/main/tool_button.gd" id="10_l7y0w"]
 [ext_resource type="Resource" uid="uid://d17wkpun5jdvw" path="res://components/game_cursor/cursors/hammer.tres" id="11_drn0y"]
 [ext_resource type="Resource" uid="uid://bx586f3ywe4bs" path="res://components/game_cursor/cursors/default.tres" id="12_l7y0w"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_sjrfj"]
+blend_mode = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_no1gd"]
 content_margin_left = 8.0
@@ -55,6 +60,22 @@ script = ExtResource("1_60rri")
 
 [node name="BackgroundDefault" parent="." unique_id=1785069674 instance=ExtResource("2_drn0y")]
 layout_mode = 1
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="BackgroundDefault" unique_id=19473794]
+self_modulate = Color(0.2299079, 0.36059305, 0.60347676, 1)
+layout_mode = 2
+texture = ExtResource("3_ty5cg")
+region_rect = Rect2(100, 100, 100, 100)
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundDefault/NinePatchRect2" unique_id=714422032]
+self_modulate = Color(0.03137255, 1, 0.6862745, 1)
+material = SubResource("CanvasItemMaterial_sjrfj")
+position = Vector2(599.50574, 348.99176)
+rotation = -1.5707964
+scale = Vector2(0.7401607, 3.3764029)
+texture = ExtResource("4_ngigp")
 
 [node name="MainColumns" type="HBoxContainer" parent="." unique_id=1820559237]
 layout_mode = 1
