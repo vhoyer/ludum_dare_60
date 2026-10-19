@@ -6,6 +6,9 @@
 [ext_resource type="AudioStream" uid="uid://b1tkjxioa7hvn" path="res://assets/audio/sfx/sfx_214_pound_medium_randomizer.tres" id="3_0qhmr"]
 [ext_resource type="AudioStream" uid="uid://br1b37xebg7je" path="res://assets/audio/sfx/sfx_301_button_click.wav" id="4_0qhmr"]
 [ext_resource type="AudioStream" uid="uid://5bs6i8qbpeqj" path="res://assets/audio/sfx/sfx_407_grunt_astronaut_randomizer.tres" id="5_rco6r"]
+[ext_resource type="AudioStream" uid="uid://c3nd8vqg13mh0" path="res://assets/audio/sfx/sfx_506_bird_win_randomizer.tres" id="7_fpwru"]
+[ext_resource type="AudioStream" uid="uid://b4rpirirwiw7w" path="res://assets/audio/sfx/sfx_504_AbirdD1.wav" id="7_m240t"]
+[ext_resource type="AudioStream" uid="uid://b543uvvlhnioy" path="res://assets/audio/sfx/sfx_505_Abirdv1.wav" id="8_fpwru"]
 
 [node name="AudioManager" type="Node" unique_id=548666010]
 process_mode = 3
@@ -34,6 +37,14 @@ bus = &"SFX"
 stream = ExtResource("5_rco6r")
 bus = &"Voice"
 
-[node name="SFXVoiceGruntAlienBird" type="AudioStreamPlayer" parent="." unique_id=792922028]
-stream = ExtResource("5_rco6r")
+[node name="SFXVoicePlayerAgainstAlienBirdWin" type="AudioStreamPlayer" parent="." unique_id=792922028]
+stream = ExtResource("7_fpwru")
+bus = &"Voice"
+
+[node name="SFXVoicePlayerAgainstAlienBirdLastWin" type="AudioStreamPlayer" parent="." unique_id=174050416]
+stream = ExtResource("7_m240t")
+bus = &"Voice"
+
+[node name="SFXVoicePlayerAgainstAlienBirdLose" type="AudioStreamPlayer" parent="." unique_id=1233464146]
+stream = ExtResource("8_fpwru")
 bus = &"Voice"
