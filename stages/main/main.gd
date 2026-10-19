@@ -16,6 +16,9 @@ var goal_gauge: Label = %GoalGauge
 var goal_gauge_2: UiGoalWithinRangeOfRange = %GoalGauge2
 
 @onready
+var goal_gauge_3: UiGoalWithinRangeOfRange = %GoalGauge3
+
+@onready
 var tug_of_war: GameTugOfWar = %GameTugOfWar
 
 @onready
@@ -50,6 +53,12 @@ func _ready() -> void:
 			SaveManager.data.points,
 			clamp(int(LevelsManager.current.goal_min), 0, LEVEL_GOAL_MAXIMUM_MILLION),
 			clamp(int(LevelsManager.current.goal_max), 0, LEVEL_GOAL_MAXIMUM_MILLION))
+		goal_gauge_3.set_points_goal_min_goal_max_default_min_max(
+			SaveManager.data.points,
+			clamp(int(LevelsManager.current.goal_min), 0, LEVEL_GOAL_MAXIMUM_MILLION),
+			clamp(int(LevelsManager.current.goal_max), 0, LEVEL_GOAL_MAXIMUM_MILLION))
+		goal_gauge_3.tick_count = 13
+		goal_gauge_3.editable = false
 		pass)
 
 	SaveManager.data.watch(self, ['roll_counter', 'current_level'], func():
