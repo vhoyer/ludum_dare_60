@@ -1,6 +1,8 @@
 extends HBoxContainer
 
 
-func _on_option_button_item_selected(_index):
-	# TODO: Insert code to change the game's intensity of screenshake.
-	pass # Replace with function body.
+func _ready() -> void:
+	%OptionButton.select(SaveManager.config.screen_shake)
+
+func _on_option_button_item_selected(index: int) -> void:
+	SaveManager.config.screen_shake = index

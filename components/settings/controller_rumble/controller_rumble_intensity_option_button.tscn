@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://c3udc31qbhar6"]
+
+[ext_resource type="Script" uid="uid://crcqorjmwbdb" path="res://components/settings/controller_rumble/controller_rumble_intensity_option_button.gd" id="1_s8605"]
+
+[node name="ControllerRumbleIntensityOptionButton" type="HBoxContainer" unique_id=52034218]
+alignment = 1
+script = ExtResource("1_s8605")
+
+[node name="HalfText" type="HBoxContainer" parent="." unique_id=730843264]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LabelSettingName" type="Label" parent="HalfText" unique_id=1147652983]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Controller
+Rumble
+Intensity"
+horizontal_alignment = 2
+
+[node name="Colon" type="Label" parent="HalfText" unique_id=159014174]
+layout_mode = 2
+text = ":"
+
+[node name="HalfValue" type="HBoxContainer" parent="." unique_id=3631834]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OptionButton" type="OptionButton" parent="HalfValue" unique_id=1961441692]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+selected = 0
+item_count = 2
+popup/item_0/text = "0 - None"
+popup/item_0/id = 1
+popup/item_1/text = "1 - Normal"
+popup/item_1/id = 0
+
+[connection signal="item_selected" from="HalfValue/OptionButton" to="." method="_on_option_button_item_selected"]
