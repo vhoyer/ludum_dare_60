@@ -47,7 +47,6 @@ func _ready() -> void:
 			clamp(int(LevelsManager.current.goal_min), 0, LEVEL_GOAL_MAXIMUM_MILLION),
 			clamp(int(LevelsManager.current.goal_max), 0, LEVEL_GOAL_MAXIMUM_MILLION))
 		goal_gauge.tick_count = 13
-		goal_gauge.editable = false
 		pass)
 
 	SaveManager.data.watch(self, ['roll_counter', 'current_level'], func():
