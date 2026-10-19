@@ -11,6 +11,20 @@
 [ext_resource type="Texture2D" uid="uid://m71fipvqa6l6" path="res://assets/items/cabin.png" id="7_o1cg6"]
 [ext_resource type="Texture2D" uid="uid://qvgmxiqxflhe" path="res://assets/alien/alien_02_thumb.png" id="8_o1cg6"]
 [ext_resource type="Texture2D" uid="uid://bsfsccoe34af" path="res://assets/alien/alien_02_arm.png" id="9_r62wx"]
+[ext_resource type="Texture2D" uid="uid://cybnecxxpm3a7" path="res://assets/alien/alien_03_thumb.png" id="10_syyfn"]
+[ext_resource type="Texture2D" uid="uid://5046kj3y58mi" path="res://assets/alien/alien_03_arm.png" id="11_fnfep"]
+[ext_resource type="Texture2D" uid="uid://bj3m1dpampawt" path="res://assets/alien/alien_05_thumb.png" id="14_isy7m"]
+[ext_resource type="Texture2D" uid="uid://k723oxudjrao" path="res://assets/alien/alien_05_arm.png" id="15_1suyl"]
+[ext_resource type="Texture2D" uid="uid://cjjbydppl78uj" path="res://assets/alien/alien_06_thumb.png" id="16_65dkw"]
+[ext_resource type="Texture2D" uid="uid://ba5660ms0ied0" path="res://assets/alien/alien_06_arm.png" id="17_3cw04"]
+[ext_resource type="Texture2D" uid="uid://uwua11c66hv" path="res://assets/alien/alien_07_thumb.png" id="18_xfj27"]
+[ext_resource type="Texture2D" uid="uid://ccklk2ctgd81x" path="res://assets/alien/alien_07_arm.png" id="19_x65yy"]
+[ext_resource type="Texture2D" uid="uid://qvq3501ld7rs" path="res://assets/alien/alien_08_thumb.png" id="20_ljhs5"]
+[ext_resource type="Texture2D" uid="uid://dy8hmsiy06d8j" path="res://assets/alien/alien_08_arm.png" id="21_qkcb1"]
+[ext_resource type="Texture2D" uid="uid://csonux7xmaoc6" path="res://assets/alien/alien_09_thumb.png" id="22_sevq5"]
+[ext_resource type="Texture2D" uid="uid://budgti0f5ga65" path="res://assets/alien/alien_09_arm.png" id="23_ucbcf"]
+[ext_resource type="Texture2D" uid="uid://cwf3c4qvg7hgu" path="res://assets/alien/alien_10_thumb.png" id="24_061fr"]
+[ext_resource type="Texture2D" uid="uid://b5llecx1l05eq" path="res://assets/alien/alien_10_arm.png" id="25_q6puo"]
 
 [node name="LevelsManager" type="Node" unique_id=791325084]
 script = ExtResource("1_6pqnw")
@@ -62,8 +76,8 @@ goal_min = 10.0
 goal_max = 30.0
 dice_starting_count = 5
 item = ExtResource("6_ul6in")
-alien_thumb = ExtResource("4_vmfb7")
-alien_whole = ExtResource("5_l3ahm")
+alien_thumb = ExtResource("8_o1cg6")
+alien_whole = ExtResource("9_r62wx")
 metadata/_custom_type_script = "uid://c6nhi0n7ir0mk"
 
 [node name="GameLevel6" type="Node" parent="." unique_id=1978701385]
@@ -72,8 +86,8 @@ goal_min = 18.0
 goal_max = 30.0
 dice_starting_count = 6
 item = ExtResource("7_o1cg6")
-alien_thumb = ExtResource("4_vmfb7")
-alien_whole = ExtResource("5_l3ahm")
+alien_thumb = ExtResource("8_o1cg6")
+alien_whole = ExtResource("9_r62wx")
 metadata/_custom_type_script = "uid://c6nhi0n7ir0mk"
 
 [node name="GameLevel7" type="Node" parent="." unique_id=711871441]
@@ -83,8 +97,8 @@ goal_max = 42.0
 dice_starting_count = 7
 max_rolls = 2
 item = ExtResource("3_40wsv")
-alien_thumb = ExtResource("4_vmfb7")
-alien_whole = ExtResource("5_l3ahm")
+alien_thumb = ExtResource("10_syyfn")
+alien_whole = ExtResource("11_fnfep")
 metadata/_custom_type_script = "uid://c6nhi0n7ir0mk"
 
 [node name="GameLevel8" type="Node" parent="." unique_id=1901268937]
@@ -93,8 +107,8 @@ goal_min = 16.0
 goal_max = 48.0
 dice_starting_count = 8
 item = ExtResource("6_ul6in")
-alien_thumb = ExtResource("4_vmfb7")
-alien_whole = ExtResource("5_l3ahm")
+alien_thumb = ExtResource("10_syyfn")
+alien_whole = ExtResource("11_fnfep")
 metadata/_custom_type_script = "uid://c6nhi0n7ir0mk"
 
 [node name="GameLevel9" type="Node" parent="." unique_id=1057233039]
@@ -103,8 +117,8 @@ goal_min = 27.0
 goal_max = 45.0
 dice_starting_count = 9
 item = ExtResource("7_o1cg6")
-alien_thumb = ExtResource("4_vmfb7")
-alien_whole = ExtResource("5_l3ahm")
+alien_thumb = ExtResource("10_syyfn")
+alien_whole = ExtResource("11_fnfep")
 metadata/_custom_type_script = "uid://c6nhi0n7ir0mk"
 
 [node name="GameLevel10" type="Node" parent="." unique_id=909815570]
@@ -145,8 +159,8 @@ goal_max = 78.0
 dice_starting_count = 13
 max_rolls = 2
 item = ExtResource("3_40wsv")
-alien_thumb = ExtResource("4_vmfb7")
-alien_whole = ExtResource("5_l3ahm")
+alien_thumb = ExtResource("14_isy7m")
+alien_whole = ExtResource("15_1suyl")
 metadata/_custom_type_script = "uid://c6nhi0n7ir0mk"
 
 [node name="GameLevel14" type="Node" parent="." unique_id=187790509]
@@ -155,8 +169,8 @@ goal_min = 28.0
 goal_max = 84.0
 dice_starting_count = 14
 item = ExtResource("6_ul6in")
-alien_thumb = ExtResource("4_vmfb7")
-alien_whole = ExtResource("5_l3ahm")
+alien_thumb = ExtResource("14_isy7m")
+alien_whole = ExtResource("15_1suyl")
 metadata/_custom_type_script = "uid://c6nhi0n7ir0mk"
 
 [node name="GameLevel15" type="Node" parent="." unique_id=763435225]
@@ -165,8 +179,8 @@ goal_min = 28.0
 goal_max = 84.0
 dice_starting_count = 15
 item = ExtResource("7_o1cg6")
-alien_thumb = ExtResource("4_vmfb7")
-alien_whole = ExtResource("5_l3ahm")
+alien_thumb = ExtResource("14_isy7m")
+alien_whole = ExtResource("15_1suyl")
 metadata/_custom_type_script = "uid://c6nhi0n7ir0mk"
 
 [node name="GameLevel16" type="Node" parent="." unique_id=432879548]
@@ -176,8 +190,8 @@ goal_max = 96.0
 dice_starting_count = 16
 max_rolls = 2
 item = ExtResource("3_40wsv")
-alien_thumb = ExtResource("4_vmfb7")
-alien_whole = ExtResource("5_l3ahm")
+alien_thumb = ExtResource("16_65dkw")
+alien_whole = ExtResource("17_3cw04")
 metadata/_custom_type_script = "uid://c6nhi0n7ir0mk"
 
 [node name="GameLevel17" type="Node" parent="." unique_id=836744597]
@@ -186,8 +200,8 @@ goal_min = 34.0
 goal_max = 102.0
 dice_starting_count = 17
 item = ExtResource("6_ul6in")
-alien_thumb = ExtResource("4_vmfb7")
-alien_whole = ExtResource("5_l3ahm")
+alien_thumb = ExtResource("16_65dkw")
+alien_whole = ExtResource("17_3cw04")
 metadata/_custom_type_script = "uid://c6nhi0n7ir0mk"
 
 [node name="GameLevel18" type="Node" parent="." unique_id=1567872252]
@@ -196,8 +210,8 @@ goal_min = 54.0
 goal_max = 90.0
 dice_starting_count = 15
 item = ExtResource("7_o1cg6")
-alien_thumb = ExtResource("4_vmfb7")
-alien_whole = ExtResource("5_l3ahm")
+alien_thumb = ExtResource("16_65dkw")
+alien_whole = ExtResource("17_3cw04")
 metadata/_custom_type_script = "uid://c6nhi0n7ir0mk"
 
 [node name="GameLevel19" type="Node" parent="." unique_id=947812234]
@@ -207,8 +221,8 @@ goal_max = 114.0
 dice_starting_count = 16
 max_rolls = 2
 item = ExtResource("3_40wsv")
-alien_thumb = ExtResource("4_vmfb7")
-alien_whole = ExtResource("5_l3ahm")
+alien_thumb = ExtResource("18_xfj27")
+alien_whole = ExtResource("19_x65yy")
 metadata/_custom_type_script = "uid://c6nhi0n7ir0mk"
 
 [node name="GameLevel20" type="Node" parent="." unique_id=182899947]
@@ -217,8 +231,8 @@ goal_min = 40.0
 goal_max = 120.0
 dice_starting_count = 17
 item = ExtResource("6_ul6in")
-alien_thumb = ExtResource("4_vmfb7")
-alien_whole = ExtResource("5_l3ahm")
+alien_thumb = ExtResource("18_xfj27")
+alien_whole = ExtResource("19_x65yy")
 metadata/_custom_type_script = "uid://c6nhi0n7ir0mk"
 
 [node name="GameLevel21" type="Node" parent="." unique_id=80569542]
@@ -227,8 +241,8 @@ goal_min = 63.0
 goal_max = 105.0
 dice_starting_count = 15
 item = ExtResource("7_o1cg6")
-alien_thumb = ExtResource("4_vmfb7")
-alien_whole = ExtResource("5_l3ahm")
+alien_thumb = ExtResource("18_xfj27")
+alien_whole = ExtResource("19_x65yy")
 metadata/_custom_type_script = "uid://c6nhi0n7ir0mk"
 
 [node name="GameLevel22" type="Node" parent="." unique_id=2086092579]
@@ -238,8 +252,8 @@ goal_max = 132.0
 dice_starting_count = 22
 max_rolls = 2
 item = ExtResource("3_40wsv")
-alien_thumb = ExtResource("4_vmfb7")
-alien_whole = ExtResource("5_l3ahm")
+alien_thumb = ExtResource("20_ljhs5")
+alien_whole = ExtResource("21_qkcb1")
 metadata/_custom_type_script = "uid://c6nhi0n7ir0mk"
 
 [node name="GameLevel23" type="Node" parent="." unique_id=1884188013]
@@ -248,8 +262,8 @@ goal_min = 46.0
 goal_max = 138.0
 dice_starting_count = 23
 item = ExtResource("6_ul6in")
-alien_thumb = ExtResource("4_vmfb7")
-alien_whole = ExtResource("5_l3ahm")
+alien_thumb = ExtResource("20_ljhs5")
+alien_whole = ExtResource("21_qkcb1")
 metadata/_custom_type_script = "uid://c6nhi0n7ir0mk"
 
 [node name="GameLevel24" type="Node" parent="." unique_id=1410878094]
@@ -258,8 +272,8 @@ goal_min = 72.0
 goal_max = 120.0
 dice_starting_count = 24
 item = ExtResource("7_o1cg6")
-alien_thumb = ExtResource("4_vmfb7")
-alien_whole = ExtResource("5_l3ahm")
+alien_thumb = ExtResource("20_ljhs5")
+alien_whole = ExtResource("21_qkcb1")
 metadata/_custom_type_script = "uid://c6nhi0n7ir0mk"
 
 [node name="GameLevel25" type="Node" parent="." unique_id=2079103201]
@@ -269,8 +283,8 @@ goal_max = 150.0
 dice_starting_count = 25
 max_rolls = 2
 item = ExtResource("3_40wsv")
-alien_thumb = ExtResource("4_vmfb7")
-alien_whole = ExtResource("5_l3ahm")
+alien_thumb = ExtResource("22_sevq5")
+alien_whole = ExtResource("23_ucbcf")
 metadata/_custom_type_script = "uid://c6nhi0n7ir0mk"
 
 [node name="GameLevel26" type="Node" parent="." unique_id=1141784512]
@@ -279,8 +293,8 @@ goal_min = 52.0
 goal_max = 156.0
 dice_starting_count = 26
 item = ExtResource("6_ul6in")
-alien_thumb = ExtResource("4_vmfb7")
-alien_whole = ExtResource("5_l3ahm")
+alien_thumb = ExtResource("22_sevq5")
+alien_whole = ExtResource("23_ucbcf")
 metadata/_custom_type_script = "uid://c6nhi0n7ir0mk"
 
 [node name="GameLevel27" type="Node" parent="." unique_id=767842513]
@@ -289,8 +303,8 @@ goal_min = 81.0
 goal_max = 135.0
 dice_starting_count = 27
 item = ExtResource("7_o1cg6")
-alien_thumb = ExtResource("4_vmfb7")
-alien_whole = ExtResource("5_l3ahm")
+alien_thumb = ExtResource("22_sevq5")
+alien_whole = ExtResource("23_ucbcf")
 metadata/_custom_type_script = "uid://c6nhi0n7ir0mk"
 
 [node name="GameLevel28" type="Node" parent="." unique_id=781681031]
@@ -300,8 +314,8 @@ goal_max = 168.0
 dice_starting_count = 28
 max_rolls = 2
 item = ExtResource("3_40wsv")
-alien_thumb = ExtResource("4_vmfb7")
-alien_whole = ExtResource("5_l3ahm")
+alien_thumb = ExtResource("24_061fr")
+alien_whole = ExtResource("25_q6puo")
 metadata/_custom_type_script = "uid://c6nhi0n7ir0mk"
 
 [node name="GameLevel29" type="Node" parent="." unique_id=100758075]
@@ -310,8 +324,8 @@ goal_min = 58.0
 goal_max = 174.0
 dice_starting_count = 29
 item = ExtResource("6_ul6in")
-alien_thumb = ExtResource("4_vmfb7")
-alien_whole = ExtResource("5_l3ahm")
+alien_thumb = ExtResource("24_061fr")
+alien_whole = ExtResource("25_q6puo")
 metadata/_custom_type_script = "uid://c6nhi0n7ir0mk"
 
 [node name="GameLevel30" type="Node" parent="." unique_id=1192117111]
@@ -320,6 +334,6 @@ goal_min = 90.0
 goal_max = 150.0
 dice_starting_count = 30
 item = ExtResource("7_o1cg6")
-alien_thumb = ExtResource("4_vmfb7")
-alien_whole = ExtResource("5_l3ahm")
+alien_thumb = ExtResource("24_061fr")
+alien_whole = ExtResource("25_q6puo")
 metadata/_custom_type_script = "uid://c6nhi0n7ir0mk"
