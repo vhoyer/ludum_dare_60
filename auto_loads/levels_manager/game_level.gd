@@ -17,7 +17,7 @@ var dice_size: float = 1
 @export
 var max_rolls: int = 3
 
-@export_group('visual')
+@export_category('visual')
 @export
 var item: Texture2D
 
