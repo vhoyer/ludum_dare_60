@@ -10,13 +10,7 @@ var dices_group: Node2D = %Dices
 var dice_spawn: Node2D = %DiceSpawn
 
 @onready
-var goal_gauge: Label = %GoalGauge
-
-@onready
-var goal_gauge_2: UiGoalWithinRangeOfRange = %GoalGauge2
-
-@onready
-var goal_gauge_3: UiGoalWithinRangeOfRange = %GoalGauge3
+var goal_gauge: UiGoalWithinRangeOfRange = %GoalGauge
 
 @onready
 var tug_of_war: GameTugOfWar = %GameTugOfWar
@@ -48,17 +42,13 @@ func _ready() -> void:
 
 	SaveManager.data.watch(self, ['points', 'current_level'], func():
 		tug_of_war.value = SaveManager.data.points / LevelsManager.current.goal_min
-		goal_gauge.text = goal_gauge_model.format(SaveManager.data).format(LevelsManager.current)
-		goal_gauge_2.set_points_goal_min_goal_max_default_min_max(
+
+		goal_gauge.set_points_goal_min_goal_max_default_min_max(
 			SaveManager.data.points,
 			clamp(int(LevelsManager.current.goal_min), 0, LEVEL_GOAL_MAXIMUM_MILLION),
 			clamp(int(LevelsManager.current.goal_max), 0, LEVEL_GOAL_MAXIMUM_MILLION))
-		goal_gauge_3.set_points_goal_min_goal_max_default_min_max(
-			SaveManager.data.points,
-			clamp(int(LevelsManager.current.goal_min), 0, LEVEL_GOAL_MAXIMUM_MILLION),
-			clamp(int(LevelsManager.current.goal_max), 0, LEVEL_GOAL_MAXIMUM_MILLION))
-		goal_gauge_3.tick_count = 13
-		goal_gauge_3.editable = false
+		goal_gauge.tick_count = 13
+		goal_gauge.editable = false
 		pass)
 
 	SaveManager.data.watch(self, ['roll_counter', 'current_level'], func():
