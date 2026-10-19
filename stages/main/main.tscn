@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://usqu7frh72wo" path="res://components/game_cursor/game_cursor.tscn" id="2_woy08"]
 [ext_resource type="PackedScene" uid="uid://kfbhin5nkdnx" path="res://components/game_table/game_table.tscn" id="5_no1gd"]
 [ext_resource type="Script" uid="uid://d161jm3n6y53c" path="res://components/game_cursor/cursor_on_parent.gd" id="6_4vbm2"]
+[ext_resource type="Texture2D" uid="uid://cc7f8hwgam7e2" path="res://assets/gui/9slice1.png" id="6_17rgw"]
 [ext_resource type="PackedScene" uid="uid://dnwbop5o5ljf" path="res://components/ui_goal_within_range_of_range/ui_goal_within_range_of_range_wide.tscn" id="6_drn0y"]
 [ext_resource type="Script" uid="uid://bkm48xrdtc50e" path="res://stages/main/debug_label.gd" id="6_no1gd"]
 [ext_resource type="Resource" uid="uid://i1wcyjmq7t4p" path="res://components/game_cursor/cursors/hand.tres" id="7_no1gd"]
@@ -91,11 +92,28 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 0
 
-[node name="GoalGauge" type="MarginContainer" parent="MainColumns/VBoxContainer" unique_id=1041880809]
+[node name="MarginContainer" type="MarginContainer" parent="MainColumns/VBoxContainer" unique_id=2033866479]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MainColumns/VBoxContainer/MarginContainer" unique_id=1401942093]
+layout_mode = 2
+texture = ExtResource("6_17rgw")
+region_rect = Rect2(9.95327, 10.255995, 151.08038, 149.74887)
+patch_margin_left = 41
+patch_margin_top = 41
+patch_margin_right = 44
+patch_margin_bottom = 41
+
+[node name="MarginContainer" type="MarginContainer" parent="MainColumns/VBoxContainer/MarginContainer" unique_id=1649332114]
+layout_mode = 2
+theme_type_variation = &"MarginContainerMedium"
+theme_override_constants/margin_bottom = 0
+
+[node name="GoalGauge" type="MarginContainer" parent="MainColumns/VBoxContainer/MarginContainer/MarginContainer" unique_id=1041880809]
 layout_mode = 2
 theme_type_variation = &"MarginContainerMedium"
 
-[node name="GoalGauge" parent="MainColumns/VBoxContainer/GoalGauge" unique_id=1855809116 instance=ExtResource("6_drn0y")]
+[node name="GoalGauge" parent="MainColumns/VBoxContainer/MarginContainer/MarginContainer/GoalGauge" unique_id=1855809116 instance=ExtResource("6_drn0y")]
 unique_name_in_owner = true
 layout_mode = 2
 
