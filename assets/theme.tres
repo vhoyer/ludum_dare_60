@@ -1,9 +1,17 @@
 [gd_resource type="Theme" format=3 uid="uid://b10mtsfylwshn"]
 
 [ext_resource type="FontFile" uid="uid://ms2r4r1swcoi" path="res://assets/font/Tilt_Neon/TiltNeon-Regular-VariableFont_XROT,YROT.ttf" id="1_5x3i2"]
+[ext_resource type="StyleBox" uid="uid://ba1wo654itswm" path="res://assets/gui/button_hover_style_box_flat.tres" id="1_lu33j"]
+[ext_resource type="StyleBox" uid="uid://dm12gtpmpguw2" path="res://assets/gui/button_disabled_style_box_flat.tres" id="1_x2pqw"]
+[ext_resource type="StyleBox" uid="uid://bt864mib0hhtq" path="res://assets/gui/button_normal_style_box_flat.tres" id="2_lu33j"]
+[ext_resource type="StyleBox" uid="uid://coy51kttqnqas" path="res://assets/gui/button_pressed_style_box_flat.tres" id="2_wycmq"]
 
 [resource]
 default_font = ExtResource("1_5x3i2")
+Button/styles/disabled = ExtResource("1_x2pqw")
+Button/styles/hover = ExtResource("1_lu33j")
+Button/styles/normal = ExtResource("2_lu33j")
+Button/styles/pressed = ExtResource("2_wycmq")
 MarginContainerMedium/base_type = &"MarginContainer"
 MarginContainerMedium/constants/margin_bottom = 16
 MarginContainerMedium/constants/margin_left = 16
