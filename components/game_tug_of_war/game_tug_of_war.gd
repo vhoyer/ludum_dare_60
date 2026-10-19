@@ -25,6 +25,12 @@ var _value_but_real: float = 0.5:
 		_value_but_real = value
 		_model_updated.emit()
 
+@export
+var item_texture: Texture2D:
+	set(value):
+		item_texture = value
+		_model_updated.emit()
+
 @export_group('private')
 
 @export
@@ -92,6 +98,7 @@ func _ready() -> void:
 
 func _update_view() -> void:
 	fill_bar.position.y = (self.size.y - _fill_margin * 2) * _value_but_real + _fill_margin + _jitter - _offset
+	%Item.texture = item_texture
 
 
 func _on_jitter_scheduler_timeout() -> void:
