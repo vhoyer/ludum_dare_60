@@ -3,10 +3,14 @@
 [ext_resource type="Script" uid="uid://c6nhi0n7ir0mk" path="res://auto_loads/levels_manager/game_level.gd" id="1_3gud8"]
 [ext_resource type="Script" uid="uid://b88m5ka3hrfu8" path="res://auto_loads/levels_manager/levels_manager.gd" id="1_6pqnw"]
 [ext_resource type="Texture2D" uid="uid://snn30p1a6npw" path="res://assets/items/trusts.png" id="3_40wsv"]
+[ext_resource type="Texture2D" uid="uid://qc453ly5y8n5" path="res://assets/alien/alien_01_thumb.png" id="4_l3ahm"]
 [ext_resource type="Texture2D" uid="uid://da6vm36laa0x8" path="res://assets/alien/alien_04_thumb.png" id="4_vmfb7"]
 [ext_resource type="Texture2D" uid="uid://ru572e04la4u" path="res://assets/alien/alien_04_whole.png" id="5_l3ahm"]
+[ext_resource type="Texture2D" uid="uid://cf1mnv1oc0n5n" path="res://assets/alien/alien_01_arm.png" id="5_ul6in"]
 [ext_resource type="Texture2D" uid="uid://b4drw1tk582c2" path="res://assets/items/tank.png" id="6_ul6in"]
 [ext_resource type="Texture2D" uid="uid://m71fipvqa6l6" path="res://assets/items/cabin.png" id="7_o1cg6"]
+[ext_resource type="Texture2D" uid="uid://qvgmxiqxflhe" path="res://assets/alien/alien_02_thumb.png" id="8_o1cg6"]
+[ext_resource type="Texture2D" uid="uid://bsfsccoe34af" path="res://assets/alien/alien_02_arm.png" id="9_r62wx"]
 
 [node name="LevelsManager" type="Node" unique_id=791325084]
 script = ExtResource("1_6pqnw")
@@ -17,8 +21,8 @@ goal_min = 2.0
 goal_max = 6.0
 max_rolls = 1
 item = ExtResource("3_40wsv")
-alien_thumb = ExtResource("4_vmfb7")
-alien_whole = ExtResource("5_l3ahm")
+alien_thumb = ExtResource("4_l3ahm")
+alien_whole = ExtResource("5_ul6in")
 metadata/_custom_type_script = "uid://c6nhi0n7ir0mk"
 
 [node name="GameLevel2" type="Node" parent="." unique_id=1620483075]
@@ -27,8 +31,8 @@ goal_min = 4.0
 goal_max = 12.0
 dice_starting_count = 2
 item = ExtResource("6_ul6in")
-alien_thumb = ExtResource("4_vmfb7")
-alien_whole = ExtResource("5_l3ahm")
+alien_thumb = ExtResource("4_l3ahm")
+alien_whole = ExtResource("5_ul6in")
 metadata/_custom_type_script = "uid://c6nhi0n7ir0mk"
 
 [node name="GameLevel3" type="Node" parent="." unique_id=1600452007]
@@ -37,8 +41,8 @@ goal_min = 9.0
 goal_max = 15.0
 dice_starting_count = 3
 item = ExtResource("7_o1cg6")
-alien_thumb = ExtResource("4_vmfb7")
-alien_whole = ExtResource("5_l3ahm")
+alien_thumb = ExtResource("4_l3ahm")
+alien_whole = ExtResource("5_ul6in")
 metadata/_custom_type_script = "uid://c6nhi0n7ir0mk"
 
 [node name="GameLevel4" type="Node" parent="." unique_id=310190478]
@@ -48,8 +52,8 @@ goal_max = 24.0
 dice_starting_count = 4
 max_rolls = 2
 item = ExtResource("3_40wsv")
-alien_thumb = ExtResource("4_vmfb7")
-alien_whole = ExtResource("5_l3ahm")
+alien_thumb = ExtResource("8_o1cg6")
+alien_whole = ExtResource("9_r62wx")
 metadata/_custom_type_script = "uid://c6nhi0n7ir0mk"
 
 [node name="GameLevel5" type="Node" parent="." unique_id=216915770]
