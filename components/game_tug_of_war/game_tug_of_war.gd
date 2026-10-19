@@ -111,6 +111,8 @@ func _ready() -> void:
 func _update_view() -> void:
 	fill_bar.position.y = (self.size.y - _fill_margin * 2) * _value_but_real + _fill_margin + _jitter - _offset
 	%Item.texture = item_texture
+	%EnemyOver.texture = alien_over_texture
+	%EnemyUnder.texture = alien_under_texture
 
 
 func _on_jitter_scheduler_timeout() -> void:
