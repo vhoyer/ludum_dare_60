@@ -59,7 +59,7 @@ layout_mode = 2
 
 [node name="StartButton" type="Button" parent="MainCentered/PanelContainer/MarginContainer/MarginContainer2/VBoxContainer" unique_id=303258699]
 layout_mode = 2
-text = "start! ;)"
+text = "Start"
 script = ExtResource("1_6almw")
 next_stage = "uid://boew20gyqimy6"
 
