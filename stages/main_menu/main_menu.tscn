@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://bosgk23prc6ca"]
 
 [ext_resource type="Script" uid="uid://7i1g42nagf2j" path="res://stages/main_menu/start_button.gd" id="1_6almw"]
+[ext_resource type="PackedScene" uid="uid://bqnj75ank41t6" path="res://components/background_default/background_default.tscn" id="1_onbu3"]
 [ext_resource type="PackedScene" uid="uid://usqu7frh72wo" path="res://components/game_cursor/game_cursor.tscn" id="2_owbi8"]
 [ext_resource type="Script" uid="uid://d161jm3n6y53c" path="res://components/game_cursor/cursor_on_parent.gd" id="2_wyd67"]
 [ext_resource type="Resource" uid="uid://d17wkpun5jdvw" path="res://components/game_cursor/cursors/hammer.tres" id="3_7wn7o"]
 [ext_resource type="Script" uid="uid://tv3dksflndin" path="res://stages/main_menu/quit_button.gd" id="4_7wn7o"]
 [ext_resource type="Script" uid="uid://ueeqi2h4imq1" path="res://stages/main_menu/settings_button.gd" id="4_jofpu"]
 [ext_resource type="Script" uid="uid://ds3sxjjlpw56p" path="res://stages/main_menu/credits_button.gd" id="5_mcab4"]
-[ext_resource type="Texture2D" uid="uid://cxyp8fc1co4sa" path="res://assets/dice/blank.png" id="8_onbu3"]
 
 [node name="Main" type="Control" unique_id=1060325929]
 layout_mode = 3
@@ -17,26 +17,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=528449097]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = -20
-theme_override_constants/margin_top = -20
-theme_override_constants/margin_right = -20
-theme_override_constants/margin_bottom = -20
-
-[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer" unique_id=1807383795]
-layout_mode = 2
-texture = ExtResource("8_onbu3")
-region_rect = Rect2(9.831711, 10.729669, 151.40282, 149.28233)
-patch_margin_left = 9
-patch_margin_top = 9
-patch_margin_right = 11
-patch_margin_bottom = 10
+[node name="BackgroundDefault" parent="." unique_id=1785069674 instance=ExtResource("1_onbu3")]
+layout_mode = 0
+anchors_preset = 0
 
 [node name="MainCentered" type="CenterContainer" parent="." unique_id=1983816057]
 layout_mode = 1
