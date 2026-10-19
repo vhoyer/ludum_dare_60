@@ -1,3 +1,4 @@
+class_name UiGoalWithinRangeOfRange
 extends Control
 
 ## If true, the [HSlider] can be interacted with.
