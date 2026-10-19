@@ -2,6 +2,17 @@
 
 [ext_resource type="Script" uid="uid://bh55hbs3r8v3h" path="res://components/ui_goal_within_range_of_range/ui_goal_within_range_of_range.gd" id="1_5movb"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hnrls"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gps1y"]
+bg_color = Color(0, 0.7198799, 0.33596388, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5movb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5movb"]
+bg_color = Color(0, 0, 0, 1)
+
 [node name="UiGoalWithinRangeOfRange" type="MarginContainer" unique_id=1855809116]
 anchors_preset = 10
 anchor_right = 1.0
@@ -19,16 +30,20 @@ theme_override_constants/separation = -2
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/VBoxContainer" unique_id=499790492]
 layout_mode = 2
 
-[node name="ProgressBarOverlapBelowValue" type="ProgressBar" parent="VBoxContainer/VBoxContainer/MarginContainer" unique_id=1087862455]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(100, 20)
-layout_mode = 2
-show_percentage = false
-
 [node name="ProgressBarValueRangeEnd" type="ProgressBar" parent="VBoxContainer/VBoxContainer/MarginContainer" unique_id=1913119787]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_hnrls")
+theme_override_styles/fill = SubResource("StyleBoxFlat_gps1y")
+show_percentage = false
+
+[node name="ProgressBarOverlapBelowValue" type="ProgressBar" parent="VBoxContainer/VBoxContainer/MarginContainer" unique_id=1087862455]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 20)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxEmpty_5movb")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5movb")
 show_percentage = false
 
 [node name="HSlider" type="HSlider" parent="VBoxContainer/VBoxContainer" unique_id=937555707]
