@@ -40,7 +40,10 @@ func _ready() -> void:
 	var labels_model:= rolls_label.text
 
 	SaveManager.data.watch(self, ['points', 'current_level'], func():
-		tug_of_war.value = SaveManager.data.points / LevelsManager.current.goal_min
+		if SaveManager.data.points == 0:
+			tug_of_war.value = 0.5
+		else:
+			tug_of_war.value = SaveManager.data.points / LevelsManager.current.goal_min
 
 		goal_gauge.set_points_goal_min_goal_max_default_min_max(
 			SaveManager.data.points,

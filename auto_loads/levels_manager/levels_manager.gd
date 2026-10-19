@@ -45,3 +45,4 @@ func prev_level() -> void:
 func _current_level_updated() -> void:
 	SaveManager.data.dice_count = current.dice_starting_count
 	SaveManager.data.roll_counter = 0
+	SaveManager.data.points = 0
