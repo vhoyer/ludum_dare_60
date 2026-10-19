@@ -56,6 +56,12 @@ func _ready() -> void:
 		%SubmitButton.disabled = SaveManager.data.roll_counter <= 0
 		pass)
 
+	SaveManager.data.watch(self, ['current_level'], func():
+		tug_of_war.item_texture = LevelsManager.current.item
+		tug_of_war.alien_over_texture = LevelsManager.current.alien_thumb
+		tug_of_war.alien_under_texture = LevelsManager.current.alien_whole
+		pass)
+
 
 func _on_roll_button_button_down() -> void:
 	VHDUtils.remove_children(dices_group)

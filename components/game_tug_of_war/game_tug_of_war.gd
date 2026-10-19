@@ -31,6 +31,18 @@ var item_texture: Texture2D:
 		item_texture = value
 		_model_updated.emit()
 
+@export
+var alien_over_texture: Texture2D:
+	set(value):
+		alien_over_texture = value
+		_model_updated.emit()
+
+@export
+var alien_under_texture: Texture2D:
+	set(value):
+		alien_under_texture = value
+		_model_updated.emit()
+
 @export_group('private')
 
 @export

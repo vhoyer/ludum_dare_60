@@ -70,8 +70,10 @@ texture = ExtResource("4_nohnp")
 
 [node name="Item" type="TextureRect" parent="Fill/Content" unique_id=1575409061]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 texture = ExtResource("3_nohnp")
+expand_mode = 1
 stretch_mode = 5
 
 [node name="Player" type="MarginContainer" parent="Fill/Content" unique_id=66538258]
