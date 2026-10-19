@@ -17,7 +17,7 @@ grow_vertical = 2
 size_flags_horizontal = 0
 script = ExtResource("1_4rdbg")
 item_texture = ExtResource("3_nohnp")
-_fill_margin = 120.0
+_fill_margin = 190.0
 _jitter_range = 10.0
 
 [node name="Fill" type="Control" parent="." unique_id=2065076108]
