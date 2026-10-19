@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cah01bitodg5j"]
 
+[ext_resource type="PackedScene" uid="uid://bqnj75ank41t6" path="res://components/background_default/background_default.tscn" id="1_04vlq"]
 [ext_resource type="Script" uid="uid://dpcogepx22kr8" path="res://stages/credits/back_button.gd" id="1_w38ji"]
 
 [node name="Lose" type="Control" unique_id=1199745896]
@@ -9,6 +10,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="BackgroundDefault" parent="." unique_id=1785069674 instance=ExtResource("1_04vlq")]
+layout_mode = 0
+anchors_preset = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=201865142]
 layout_mode = 1
