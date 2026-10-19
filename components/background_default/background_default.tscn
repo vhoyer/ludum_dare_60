@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://bqnj75ank41t6"]
 
-[ext_resource type="Texture2D" uid="uid://cxyp8fc1co4sa" path="res://assets/dice/blank.png" id="1_bxnyb"]
+[ext_resource type="Texture2D" uid="uid://dysc4c5gb3qbd" path="res://assets/table/cloth_velvet.png" id="1_yo0wj"]
+[ext_resource type="Texture2D" uid="uid://brpshq550hbwj" path="res://assets/table/lighting.png" id="2_ee5oq"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_l5sno"]
+blend_mode = 1
 
 [node name="BackgroundDefault" type="MarginContainer" unique_id=1785069674]
 z_index = -10
@@ -14,11 +18,18 @@ theme_override_constants/margin_top = -20
 theme_override_constants/margin_right = -20
 theme_override_constants/margin_bottom = -20
 
-[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=890050172]
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=904410563]
+self_modulate = Color(0.2299079, 0.36059305, 0.60347676, 1)
 layout_mode = 2
-texture = ExtResource("1_bxnyb")
-region_rect = Rect2(9.831711, 10.729669, 151.40282, 149.28233)
-patch_margin_left = 9
-patch_margin_top = 9
-patch_margin_right = 11
-patch_margin_bottom = 10
+texture = ExtResource("1_yo0wj")
+region_rect = Rect2(100, 100, 100, 100)
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect" unique_id=53895121]
+self_modulate = Color(0.03137255, 1, 0.6862745, 1)
+material = SubResource("CanvasItemMaterial_l5sno")
+position = Vector2(599.50574, 348.99176)
+rotation = -1.5707964
+scale = Vector2(0.7401607, 3.3764029)
+texture = ExtResource("2_ee5oq")

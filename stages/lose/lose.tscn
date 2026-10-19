@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bqnj75ank41t6" path="res://components/background_default/background_default.tscn" id="1_04vlq"]
 [ext_resource type="Script" uid="uid://dpcogepx22kr8" path="res://stages/credits/back_button.gd" id="1_w38ji"]
 [ext_resource type="Texture2D" uid="uid://lqihmrvxdvus" path="res://assets/gui/9slice2_smooth.png" id="2_67ea6"]
+[ext_resource type="Texture2D" uid="uid://8scgjfsp0c4p" path="res://assets/background/lose.png" id="2_s64kg"]
 
 [node name="Lose" type="Control" unique_id=1199745896]
 layout_mode = 3
@@ -14,6 +15,11 @@ grow_vertical = 2
 
 [node name="BackgroundDefault" parent="." unique_id=1785069674 instance=ExtResource("1_04vlq")]
 layout_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundDefault" unique_id=1552533535]
+position = Vector2(575.111, 326.5)
+scale = Vector2(0.61388874, 0.6138888)
+texture = ExtResource("2_s64kg")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=201865142]
 layout_mode = 1
