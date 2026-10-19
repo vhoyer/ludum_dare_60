@@ -42,99 +42,104 @@ vertical = true
 [sub_resource type="ButtonGroup" id="ButtonGroup_n26ti"]
 allow_unpress = true
 
-[node name="Main" type="HBoxContainer" unique_id=1820559237]
+[node name="Main" type="Control" unique_id=2021514755]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_60rri")
-_throw_direction = Vector2(-1, -1)
-_throw_direction_variation_rad = 0.5
-_throw_force = 1000.0
-_throw_inbetween_interval = 0.015
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1225823530]
+[node name="MainColumns" type="HBoxContainer" parent="." unique_id=1820559237]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Camera2D" type="Camera2D" parent="MainColumns" unique_id=1225823530]
 anchor_mode = 0
 
-[node name="GameCursor" parent="Camera2D" unique_id=1907159996 instance=ExtResource("2_woy08")]
+[node name="GameCursor" parent="MainColumns/Camera2D" unique_id=1907159996 instance=ExtResource("2_woy08")]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D" unique_id=2115178302]
+[node name="CanvasLayer" type="CanvasLayer" parent="MainColumns/Camera2D" unique_id=2115178302]
 
-[node name="DebugLabel" type="Label" parent="Camera2D/CanvasLayer" unique_id=2041311537]
+[node name="DebugLabel" type="Label" parent="MainColumns/Camera2D/CanvasLayer" unique_id=2041311537]
 offset_right = 107.0
 offset_bottom = 23.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_no1gd")
 text = "DEBUG LABEL"
 script = ExtResource("6_no1gd")
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1559845026]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MainColumns" unique_id=1559845026]
 layout_mode = 2
 
-[node name="GameTugOfWar" parent="VBoxContainer2" unique_id=598563760 instance=ExtResource("2_usqqw")]
+[node name="GameTugOfWar" parent="MainColumns/VBoxContainer2" unique_id=598563760 instance=ExtResource("2_usqqw")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=342927523]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainColumns" unique_id=342927523]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 0
 
-[node name="GoalGauge" type="MarginContainer" parent="VBoxContainer" unique_id=1041880809]
+[node name="GoalGauge" type="MarginContainer" parent="MainColumns/VBoxContainer" unique_id=1041880809]
 layout_mode = 2
 theme_type_variation = &"MarginContainerMedium"
 
-[node name="GoalGauge" parent="VBoxContainer/GoalGauge" unique_id=1855809116 instance=ExtResource("6_drn0y")]
+[node name="GoalGauge" parent="MainColumns/VBoxContainer/GoalGauge" unique_id=1855809116 instance=ExtResource("6_drn0y")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Dices" type="MarginContainer" parent="VBoxContainer" unique_id=350811888]
+[node name="Dices" type="MarginContainer" parent="MainColumns/VBoxContainer" unique_id=350811888]
 layout_mode = 2
 size_flags_vertical = 3
 theme_type_variation = &"MarginContainerMedium"
 
-[node name="GameTable" parent="VBoxContainer/Dices" unique_id=1424488825 instance=ExtResource("5_no1gd")]
+[node name="GameTable" parent="MainColumns/VBoxContainer/Dices" unique_id=1424488825 instance=ExtResource("5_no1gd")]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Dices" unique_id=1748016336]
+[node name="HBoxContainer" type="HBoxContainer" parent="MainColumns/VBoxContainer/Dices" unique_id=1748016336]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Dices/HBoxContainer" unique_id=1058467911]
+[node name="MarginContainer" type="MarginContainer" parent="MainColumns/VBoxContainer/Dices/HBoxContainer" unique_id=1058467911]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Root2D" type="Node2D" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer" unique_id=1786961258]
+[node name="Root2D" type="Node2D" parent="MainColumns/VBoxContainer/Dices/HBoxContainer/MarginContainer" unique_id=1786961258]
 position = Vector2(-1, 0)
 
-[node name="Dices" type="Node2D" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/Root2D" unique_id=1878736496]
+[node name="Dices" type="Node2D" parent="MainColumns/VBoxContainer/Dices/HBoxContainer/MarginContainer/Root2D" unique_id=1878736496]
 unique_name_in_owner = true
 
-[node name="TableBoundaries" type="StaticBody2D" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/Root2D" unique_id=363925701]
+[node name="TableBoundaries" type="StaticBody2D" parent="MainColumns/VBoxContainer/Dices/HBoxContainer/MarginContainer/Root2D" unique_id=363925701]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/Root2D/TableBoundaries" unique_id=1716343004]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainColumns/VBoxContainer/Dices/HBoxContainer/MarginContainer/Root2D/TableBoundaries" unique_id=1716343004]
 position = Vector2(40, 249)
 shape = SubResource("WorldBoundaryShape2D_n26ti")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/Root2D/TableBoundaries" unique_id=1843171515]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="MainColumns/VBoxContainer/Dices/HBoxContainer/MarginContainer/Root2D/TableBoundaries" unique_id=1843171515]
 position = Vector2(728, 249)
 shape = SubResource("WorldBoundaryShape2D_no1gd")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/Root2D/TableBoundaries" unique_id=675039779]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="MainColumns/VBoxContainer/Dices/HBoxContainer/MarginContainer/Root2D/TableBoundaries" unique_id=675039779]
 position = Vector2(404, 40)
 shape = SubResource("WorldBoundaryShape2D_3f6tk")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/Root2D/TableBoundaries" unique_id=510147364]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="MainColumns/VBoxContainer/Dices/HBoxContainer/MarginContainer/Root2D/TableBoundaries" unique_id=510147364]
 position = Vector2(404, 482)
 shape = SubResource("WorldBoundaryShape2D_axbkc")
 
-[node name="DiceSpawn" type="Marker2D" parent="VBoxContainer/Dices/HBoxContainer/MarginContainer/Root2D" unique_id=289558422]
+[node name="DiceSpawn" type="Marker2D" parent="MainColumns/VBoxContainer/Dices/HBoxContainer/MarginContainer/Root2D" unique_id=289558422]
 unique_name_in_owner = true
 position = Vector2(665, 387)
 
-[node name="TableInside" type="MarginContainer" parent="VBoxContainer/Dices" unique_id=1203254494]
+[node name="TableInside" type="MarginContainer" parent="MainColumns/VBoxContainer/Dices" unique_id=1203254494]
 layout_mode = 2
 theme_type_variation = &"MarginContainerMedium"
 theme_override_constants/margin_left = 70
@@ -142,67 +147,67 @@ theme_override_constants/margin_top = 70
 theme_override_constants/margin_right = 70
 theme_override_constants/margin_bottom = 70
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Dices/TableInside" unique_id=1938651238]
+[node name="HBoxContainer" type="HBoxContainer" parent="MainColumns/VBoxContainer/Dices/TableInside" unique_id=1938651238]
 layout_mode = 2
 theme_override_constants/separation = 16
 alignment = 2
 
-[node name="VSeparator" type="VSeparator" parent="VBoxContainer/Dices/TableInside/HBoxContainer" unique_id=2002874918]
+[node name="VSeparator" type="VSeparator" parent="MainColumns/VBoxContainer/Dices/TableInside/HBoxContainer" unique_id=2002874918]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_no1gd")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Dices/TableInside/HBoxContainer" unique_id=1812104140]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainColumns/VBoxContainer/Dices/TableInside/HBoxContainer" unique_id=1812104140]
 layout_mode = 2
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer" unique_id=1919894881]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MainColumns/VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer" unique_id=1919894881]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 2
 
-[node name="RollsLabel" type="Label" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2" unique_id=179544154]
+[node name="RollsLabel" type="Label" parent="MainColumns/VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2" unique_id=179544154]
 unique_name_in_owner = true
 layout_mode = 2
 text = "%s/%s"
 horizontal_alignment = 1
 
-[node name="RollButton" type="Button" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2" unique_id=765454622]
+[node name="RollButton" type="Button" parent="MainColumns/VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2" unique_id=765454622]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 8
 text = "roll"
 
-[node name="CursorOnParent3" type="Node" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2/RollButton" unique_id=1943325524]
+[node name="CursorOnParent3" type="Node" parent="MainColumns/VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2/RollButton" unique_id=1943325524]
 script = ExtResource("6_4vbm2")
 cursor = ExtResource("12_l7y0w")
 metadata/_custom_type_script = "uid://d161jm3n6y53c"
 
-[node name="Label2" type="Label" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2" unique_id=348406944]
+[node name="Label2" type="Label" parent="MainColumns/VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2" unique_id=348406944]
 layout_mode = 2
 text = "Old Cheats"
 horizontal_alignment = 1
 
-[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2" unique_id=1699371908]
+[node name="HSeparator" type="HSeparator" parent="MainColumns/VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2" unique_id=1699371908]
 layout_mode = 2
 
-[node name="HitTableButton" type="Button" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2" unique_id=1059237294]
+[node name="HitTableButton" type="Button" parent="MainColumns/VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2" unique_id=1059237294]
 layout_mode = 2
 text = "Hit Table"
 
-[node name="CursorOnParent" type="Node" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2/HitTableButton" unique_id=1497928893]
+[node name="CursorOnParent" type="Node" parent="MainColumns/VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2/HitTableButton" unique_id=1497928893]
 script = ExtResource("6_4vbm2")
 cursor = ExtResource("7_no1gd")
 metadata/_custom_type_script = "uid://d161jm3n6y53c"
 
-[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2" unique_id=1561723587]
+[node name="HSeparator2" type="HSeparator" parent="MainColumns/VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2" unique_id=1561723587]
 layout_mode = 2
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2" unique_id=1213762350]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="MainColumns/VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2" unique_id=1213762350]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 stretch_mode = 0
 
-[node name="HammerButton" type="Button" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2/AspectRatioContainer" unique_id=1320561716]
+[node name="HammerButton" type="Button" parent="MainColumns/VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2/AspectRatioContainer" unique_id=1320561716]
 layout_mode = 2
 toggle_mode = true
 button_group = SubResource("ButtonGroup_n26ti")
@@ -215,34 +220,34 @@ expand_icon = true
 script = ExtResource("10_l7y0w")
 cursor = ExtResource("11_drn0y")
 
-[node name="CursorOnParent" type="Node" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2/AspectRatioContainer/HammerButton" unique_id=1771497619]
+[node name="CursorOnParent" type="Node" parent="MainColumns/VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2/AspectRatioContainer/HammerButton" unique_id=1771497619]
 script = ExtResource("6_4vbm2")
 cursor = ExtResource("12_l7y0w")
 metadata/_custom_type_script = "uid://d161jm3n6y53c"
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer" unique_id=1402469312]
+[node name="VBoxContainer3" type="VBoxContainer" parent="MainColumns/VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer" unique_id=1402469312]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 alignment = 2
 
-[node name="SubmitButton" type="Button" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer3" unique_id=273079299]
+[node name="SubmitButton" type="Button" parent="MainColumns/VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer3" unique_id=273079299]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 8
 text = "End Turn"
 
-[node name="CursorOnParent2" type="Node" parent="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer3/SubmitButton" unique_id=75567156]
+[node name="CursorOnParent2" type="Node" parent="MainColumns/VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer3/SubmitButton" unique_id=75567156]
 script = ExtResource("6_4vbm2")
 cursor = ExtResource("12_l7y0w")
 metadata/_custom_type_script = "uid://d161jm3n6y53c"
 
-[node name="PreventInteraction" type="CanvasLayer" parent="." unique_id=16300880]
+[node name="PreventInteraction" type="CanvasLayer" parent="MainColumns" unique_id=16300880]
 unique_name_in_owner = true
 visible = false
 
-[node name="ColorRect" type="ColorRect" parent="PreventInteraction" unique_id=1167216264]
+[node name="ColorRect" type="ColorRect" parent="MainColumns/PreventInteraction" unique_id=1167216264]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -250,7 +255,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0)
 
-[connection signal="button_down" from="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2/RollButton" to="." method="_on_roll_button_button_down"]
-[connection signal="button_down" from="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2/HitTableButton" to="." method="_on_hit_table_button_button_down"]
-[connection signal="toggled" from="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2/AspectRatioContainer/HammerButton" to="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2/AspectRatioContainer/HammerButton" method="_on_toggled"]
-[connection signal="button_down" from="VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer3/SubmitButton" to="." method="_on_submit_button_button_down"]
+[connection signal="button_down" from="MainColumns/VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2/RollButton" to="MainColumns" method="_on_roll_button_button_down"]
+[connection signal="button_down" from="MainColumns/VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2/HitTableButton" to="MainColumns" method="_on_hit_table_button_button_down"]
+[connection signal="toggled" from="MainColumns/VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2/AspectRatioContainer/HammerButton" to="MainColumns/VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer2/AspectRatioContainer/HammerButton" method="_on_toggled"]
+[connection signal="button_down" from="MainColumns/VBoxContainer/Dices/TableInside/HBoxContainer/VBoxContainer/VBoxContainer3/SubmitButton" to="MainColumns" method="_on_submit_button_button_down"]
