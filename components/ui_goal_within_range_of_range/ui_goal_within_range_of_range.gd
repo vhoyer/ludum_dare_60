@@ -1,13 +1,22 @@
 extends Control
 
-## Minimum value.
-## Range is clamped if [value_range_start] is less than [min_value].
+## If true, the [HSlider] can be interacted with.
+## If false, the value can be changed only by code.
 @export var editable: bool = true:
 	get:
 		return editable
 	set(value):
 		if %HSlider:
 			%HSlider.editable = value
+
+## Number of ticks displayed on the slider, including border ticks.
+## Ticks are uniformly-distributed value markers.
+@export var tick_count: int = 0:
+	get:
+		return tick_count
+	set(value):
+		if %HSlider:
+			%HSlider.tick_count = value
 
 ## Minimum value.
 ## Range is clamped if [value_range_start] is less than [min_value].
