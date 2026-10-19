@@ -9,6 +9,7 @@ script = ExtResource("1_6pqnw")
 [node name="GameLevel1" type="Node" parent="." unique_id=275224358]
 script = ExtResource("1_3gud8")
 goal_min = 6.0
+goal_max = 100.0
 max_rolls = 1
 metadata/_custom_type_script = "uid://c6nhi0n7ir0mk"
 

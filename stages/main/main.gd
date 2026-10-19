@@ -13,6 +13,9 @@ var dice_spawn: Node2D = %DiceSpawn
 var goal_gauge: Label = %GoalGauge
 
 @onready
+var goal_gauge_2: UiGoalWithinRangeOfRange = %GoalGauge2
+
+@onready
 var tug_of_war: GameTugOfWar = %GameTugOfWar
 
 @onready
@@ -33,6 +36,9 @@ var _throw_force: float
 var _throw_inbetween_interval: float = 0.3
 
 
+const LEVEL_GOAL_MAXIMUM_MILLION = 1000000
+
+
 func _ready() -> void:
 	var goal_gauge_model:= goal_gauge.text
 	var labels_model:= rolls_label.text
@@ -40,6 +46,10 @@ func _ready() -> void:
 	SaveManager.data.watch(self, ['points', 'current_level'], func():
 		tug_of_war.value = SaveManager.data.points / LevelsManager.current.goal_min
 		goal_gauge.text = goal_gauge_model.format(SaveManager.data).format(LevelsManager.current)
+		goal_gauge_2.set_points_goal_min_goal_max_default_min_max(
+			SaveManager.data.points,
+			clamp(int(LevelsManager.current.goal_min), 0, LEVEL_GOAL_MAXIMUM_MILLION),
+			clamp(int(LevelsManager.current.goal_max), 0, LEVEL_GOAL_MAXIMUM_MILLION))
 		pass)
 
 	SaveManager.data.watch(self, ['roll_counter', 'current_level'], func():

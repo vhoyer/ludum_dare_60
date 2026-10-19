@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bjdopl13o6krk" path="res://stages/main/main.gd" id="1_60rri"]
 [ext_resource type="PackedScene" uid="uid://cpsa1qlgdobpb" path="res://components/game_tug_of_war/game_tug_of_war.tscn" id="2_usqqw"]
 [ext_resource type="PackedScene" uid="uid://usqu7frh72wo" path="res://components/game_cursor/game_cursor.tscn" id="2_woy08"]
+[ext_resource type="PackedScene" uid="uid://civatcvgc70eb" path="res://components/ui_goal_within_range_of_range/ui_goal_within_range_of_range.tscn" id="5_l7y0w"]
 [ext_resource type="PackedScene" uid="uid://kfbhin5nkdnx" path="res://components/game_table/game_table.tscn" id="5_no1gd"]
 [ext_resource type="Script" uid="uid://d161jm3n6y53c" path="res://components/game_cursor/cursor_on_parent.gd" id="6_4vbm2"]
 [ext_resource type="Script" uid="uid://bkm48xrdtc50e" path="res://stages/main/debug_label.gd" id="6_no1gd"]
@@ -89,6 +90,11 @@ theme_type_variation = &"MarginContainerMedium"
 unique_name_in_owner = true
 layout_mode = 2
 text = "points: {points} | min target: {goal_min}; max target: {goal_max}"
+
+[node name="GoalGauge2" parent="VBoxContainer/GoalGauge" unique_id=1012150934 instance=ExtResource("5_l7y0w")]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = 6.0
 
 [node name="Dices" type="MarginContainer" parent="VBoxContainer" unique_id=350811888]
 layout_mode = 2
