@@ -27,6 +27,15 @@ func _play_sfx(event_name: AudioEventBus.Id):
 				5:
 					$SFXVoicePlayerAgainstAlienBirdLastWin.play()
 					return
+				6:
+					$SFXVoicePlayerAgainstAlienKindWin.play()
+					return
+				7:
+					$SFXVoicePlayerAgainstAlienKindWin.play()
+					return
+				8:
+					$SFXVoicePlayerAgainstAlienKindLastWin.play()
+					return
 			## Default grunt when specific alien not found.
 			$SFXVoiceGruntAstronaut.play()
 			return
@@ -40,6 +49,15 @@ func _play_sfx(event_name: AudioEventBus.Id):
 					return
 				5:
 					$SFXVoicePlayerAgainstAlienBirdLose.play()
+					return
+				6:
+					$SFXVoicePlayerAgainstAlienKindLose.play()
+					return
+				7:
+					$SFXVoicePlayerAgainstAlienKindLose.play()
+					return
+				8:
+					$SFXVoicePlayerAgainstAlienKindLose.play()
 					return
 			## Default grunt when specific alien not found.
 			$SFXVoiceGruntAstronaut.play()
