@@ -30,49 +30,63 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Fill" unique_id=1405466274]
+[node name="Marker2D" type="Marker2D" parent="Fill" unique_id=1165304257]
+gizmo_extents = 162.5
+
+[node name="Content" type="VBoxContainer" parent="Fill" unique_id=1405466274]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = -100.0
-offset_top = -560.0
-offset_right = 400.0
-offset_bottom = 2240.0
-scale = Vector2(0.4, 0.4)
-theme_override_constants/separation = -140
+offset_top = -667.0
+offset_right = 100.0
+offset_bottom = 667.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = -70
 
-[node name="Enemy" type="MarginContainer" parent="Fill/VBoxContainer" unique_id=1556819735]
+[node name="Enemy" type="MarginContainer" parent="Fill/Content" unique_id=1556819735]
+unique_name_in_owner = true
 layout_mode = 2
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_bottom = 0
 
-[node name="EnemyOver" type="TextureRect" parent="Fill/VBoxContainer/Enemy" unique_id=840526815]
+[node name="EnemyOver" type="TextureRect" parent="Fill/Content/Enemy" unique_id=840526815]
 z_index = 10
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("1_2hdvj")
 
-[node name="EnemyUnder" type="TextureRect" parent="Fill/VBoxContainer/Enemy" unique_id=518922774]
+[node name="EnemyUnder" type="TextureRect" parent="Fill/Content/Enemy" unique_id=518922774]
 z_index = -10
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("2_4rdbg")
 
-[node name="Item" type="TextureRect" parent="Fill/VBoxContainer" unique_id=1575409061]
+[node name="Item" type="TextureRect" parent="Fill/Content" unique_id=1575409061]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(500, 500)
 layout_mode = 2
 texture = ExtResource("3_nohnp")
-expand_mode = 1
 stretch_mode = 5
 
-[node name="Player" type="MarginContainer" parent="Fill/VBoxContainer" unique_id=66538258]
+[node name="Player" type="MarginContainer" parent="Fill/Content" unique_id=66538258]
+unique_name_in_owner = true
 layout_mode = 2
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_bottom = 0
 
-[node name="PlayerOver" type="TextureRect" parent="Fill/VBoxContainer/Player" unique_id=313077783]
+[node name="PlayerOver" type="TextureRect" parent="Fill/Content/Player" unique_id=313077783]
 z_index = 10
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("4_8235j")
 
-[node name="PlayerUnder" type="TextureRect" parent="Fill/VBoxContainer/Player" unique_id=1427720392]
+[node name="PlayerUnder" type="TextureRect" parent="Fill/Content/Player" unique_id=1427720392]
 z_index = -10
 layout_mode = 2
 size_flags_horizontal = 4
